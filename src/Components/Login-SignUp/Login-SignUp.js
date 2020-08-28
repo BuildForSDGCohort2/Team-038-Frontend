@@ -4,7 +4,7 @@ import './Login-SignUp.css';
 const Login = () => {
   return (
     <div className="SignUp">
-      <h2>Header</h2>
+      <h2>Login In</h2>
     </div>
   );
 }
@@ -12,7 +12,7 @@ const Login = () => {
 const SignUp = () => {
     return (
       <div className="Header">
-        <h2>Header</h2>
+        <h2>Sign Up</h2>
       </div>
     );
   }

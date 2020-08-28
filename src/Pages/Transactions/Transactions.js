@@ -1,12 +1,12 @@
-import React from 'react';
-import './Traansactions.css';
+import React from "react";
+import "./Transactions.css";
 
-const Traansactions = () => {
+const Transactions = () => {
   return (
-    <div className="Traansactions">
-      <h2>Traansactions Page</h2>
+    <div className="Transactions">
+      <h2> Transactions Page </h2>{" "}
     </div>
   );
-}
+};
 
-export default Traansactions;
+export default Transactions;

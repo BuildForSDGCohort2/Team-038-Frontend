@@ -26,7 +26,7 @@ This process here should be able to guide you on how to contribute effectively t
             git clone (the repository link)
         ```
         
-    * Make your forked repo the remote upstream 
+    * Make your the main repo the remote upstream 
         ```
             git remote add upstream https://github.com/BuildForSDGCohort2/Team-038-Frontend.git
         ```
@@ -35,10 +35,15 @@ This process here should be able to guide you on how to contribute effectively t
         ```
         git checkout (name-of-branch)
         ```
+    * run npm install tp install all dependencies, libraries and tools the project needs installed, from the package.json file.
+
+        ```
+        npm install
+        ```
 
     After changes have been made do:
         ```
-        git pull upstream
+        git pull upstream develop
         ```
     Consistently pull from the upstream to avoid not getting your pull request merged and to avoid conflicts.
     This way you can resolve conflicts from your local computer even before pushing always check what branch you are on when making changes
@@ -46,6 +51,7 @@ This process here should be able to guide you on how to contribute effectively t
     * Make your changes, add them and make your commits
 
         ``` 
+        git add .
         git commit -m "your message"
         ```
     Write good commit messages, this is very important, so that other teamates reviewing would know what your code is doing.
@@ -59,7 +65,6 @@ This process here should be able to guide you on how to contribute effectively t
 
 Write good commit messages, this is very important, so people reviewing can know what your fix, feature e.t.c. is doing
 Your PR should carry good story. 
-Dont forget to add it to your trello story
 if you are going to make changes to an existing code, state why you are doing so in the commit messages
 
 it is not just about the code, user workflow matters too!!
