@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Repify V1.0
+Official Version 1.0 web application for Repify beneficial app
 
-## Available Scripts
+****************
+Team: 038-A
+****************
 
-In the project directory, you can run:
+A guide on how to use the repo!
+you can contact @Realice or @Majeed Shuaib for help
 
-### `npm start`
+Please before you push your codes to the repository make sure you pull from the main repository (), so the changes that have been made can be reflected on your local machine, for us to avoid merge conflicts use the git command line
+   
+    git pull upstream Devlop
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Developers guide
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This process here should be able to guide you on how to contribute effectively to this project, follow the steps below. You should not be new to the git workflow process however if you still are, the guide should still be able to help you through the process.
 
-### `npm test`
+## Develop is the default branch
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    * Fork the repository to generate a copy of your own. Please fork.
 
-### `npm run build`
+    * Clone the repository.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        ```
+            git clone (the repository link)
+        ```
+        
+    * Make your forked repo the remote upstream 
+        ```
+            git remote add upstream https://github.com/BuildForSDGCohort2/Team-038-Frontend.git
+        ```
+    * swich to your branch 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+        ```
+        git checkout (name-of-branch)
+        ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    After changes have been made do:
+        ```
+        git pull upstream
+        ```
+    Consistently pull from the upstream to avoid not getting your pull request merged and to avoid conflicts.
+    This way you can resolve conflicts from your local computer even before pushing always check what branch you are on when making changes
+    
+    * Make your changes, add them and make your commits
 
-### `npm run eject`
+        ``` 
+        git commit -m "your message"
+        ```
+    Write good commit messages, this is very important, so that other teamates reviewing would know what your code is doing.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    * Push your codes to your forked repository, make sure you are pushing to your branch please
+        
+        ```
+            git push origin (name-of-branch)
+        ```
+    Make your Pull request from that branch of your repo to the branch of this repo and wait for it to be merged.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Write good commit messages, this is very important, so people reviewing can know what your fix, feature e.t.c. is doing
+Your PR should carry good story. 
+Dont forget to add it to your trello story
+if you are going to make changes to an existing code, state why you are doing so in the commit messages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+it is not just about the code, user workflow matters too!!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Code with Love
