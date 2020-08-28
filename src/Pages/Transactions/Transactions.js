@@ -4,7 +4,7 @@ import "./Transactions.css";
 const Transactions = () => {
   return (
     <div className="Transactions">
-      <h2> Transactions Page </h2>{" "}
+      <h2> Transactions Page </h2>
     </div>
   );
 };

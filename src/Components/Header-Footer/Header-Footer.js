@@ -1,5 +1,5 @@
-import React from 'react';
-import './Header-Footer.css';
+import React from "react";
+import "./Header-Footer.css";
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <h2>Header</h2>
     </div>
   );
-}
+};
 
 const Footer = () => {
     return (
@@ -15,6 +15,6 @@ const Footer = () => {
         <h2>Header</h2>
       </div>
     );
-  }
+  };
 
 export { Header, Footer };

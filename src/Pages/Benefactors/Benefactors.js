@@ -1,5 +1,5 @@
-import React from 'react';
-import './Benefactors.css';
+import React from "react";
+import "./Benefactors.css";
 
 const Benefactors = () => {
   return (
@@ -7,6 +7,6 @@ const Benefactors = () => {
       <h2>Benefactors</h2>
     </div>
   );
-}
+};
 
 export default Benefactors;

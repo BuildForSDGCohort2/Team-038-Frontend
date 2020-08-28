@@ -1,5 +1,5 @@
-import React from 'react';
-import './Wallet.css';
+import React from "react";
+import "./Wallet.css";
 
 const Wallet = () => {
   return (
