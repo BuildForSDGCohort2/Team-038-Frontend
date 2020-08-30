@@ -5,7 +5,7 @@ import Facebook from "../Images/facebook.png";
 import Paystack from "../Images/paystack.jpg";
 
 
-const Footer = () =>{
+const Footer = () => {
     return(
         <div id="footer">
             <h2 className="title">Our Partners</h2>
@@ -27,7 +27,7 @@ const Footer = () =>{
                <span className="link">Partners</span>
            </p>
         </div>
-    )
-}
+    );
+};
 
 export default Footer;
