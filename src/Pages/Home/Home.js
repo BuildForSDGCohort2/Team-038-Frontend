@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -16,12 +17,11 @@ const Home = () => {
               on a regular basis. Lets saves you the stress of manually sending
               them money.
             </p>
-            <a className="btn">
               <Link className="btnLink" to="/register">Lets take care of It</Link>
-            </a>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

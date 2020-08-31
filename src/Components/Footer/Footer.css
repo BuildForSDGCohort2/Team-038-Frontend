@@ -1,0 +1,55 @@
+#footer {
+  background: #f1faf9dc;
+  padding: 10px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.logos {
+  max-height: auto;
+  max-width: 300px;
+  margin: 5px auto;
+}
+
+#fb {
+  background: #fff;
+  padding: 14px;
+}
+
+.title {
+  text-align: center;
+}
+
+.newsletter {
+  display: inline-block;
+  margin: 0 35%;
+}
+
+#mail {
+  padding: 5px;
+  max-width: 300px;
+  padding-right: 30px;
+}
+
+#send {
+  padding: 5px;
+  right: 15px;
+}
+
+#copyright {
+  text-align: center;
+}
+
+.link {
+  margin: 0 3px;
+  color: rgb(0, 225, 255);
+}
+
+.link:hover {
+  cursor: pointer;
+  color: rgb(250, 90, 90);
+}
