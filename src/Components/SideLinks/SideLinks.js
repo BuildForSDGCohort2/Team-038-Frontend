@@ -1,12 +1,14 @@
 import React from "react";
-import "./Benefactors.css";
+import "./SideLinks.css";
 
-const Benefactors = () => {
+const SideLinks = () => {
   return (
-    <div className="Home">
-      <h2>Benefactors</h2>
+    <div className="SideLinks">
+      <aside>
+          
+      </aside>
     </div>
   );
 };
 
-export default Benefactors;
+export default SideLinks;

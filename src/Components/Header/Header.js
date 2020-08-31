@@ -1,12 +1,12 @@
 import React from "react";
-import "./Header-Footer.css";
+import "./Header.css";
 import Logo from "./Repify.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="Header">
-      <nav className="nav navBar">
+      <nav className="nav navBar"> 
         <Link to="/">
           <img src={Logo} alt="Replify" />
         </Link>
@@ -25,12 +25,4 @@ const Header = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <div className="Footer">
-      <h2>Footer</h2>
-    </div>
-  );
-};
-
-export { Header, Footer };
+export default Header;

@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #32E0C4;
+    --text-color: #2E2626;
+    --dark-color: #393E46;
+    --background-color: rgba(118, 234, 215, 0.05);
+};
+
+/* NavBar */
+
+nav {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    color: var(--primary-color);
+}
+
+.navLink {
+    list-style: none;
+}
+
+.links:nth-child(1) {
+    padding-right: 4.5rem;
+}
+
+.links {
+    text-decoration: none;
+    color: var(--text-color);
+    padding-bottom: 4rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

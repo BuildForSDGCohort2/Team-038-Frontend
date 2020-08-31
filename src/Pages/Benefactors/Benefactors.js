@@ -3,7 +3,7 @@ import "./Benefactors.css";
 
 const Benefactors = () => {
   return (
-    <div className="Home">
+    <div className="Benefactors">
       <h2>Benefactors</h2>
     </div>
   );
