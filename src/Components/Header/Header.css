@@ -1,0 +1,55 @@
+/* Declearing Variables */
+:root {
+    --primary-color: #32e0c4;
+    --text-color: #2e2626;
+    --dark-color: #393e46;
+    --background-color: rgba(118, 234, 215, 0.05);
+}
+
+/* NavBar */
+
+nav {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    color: var(--primary-color);
+}
+
+.navLink {
+    list-style: none;
+}
+
+.links {
+    text-decoration: none;
+    color: var(--text-color);
+    padding-bottom: 4rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.links:nth-child(1) {
+    padding-right: 4.5rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 778px) {
+    nav {
+        padding-top: 1rem;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .links:nth-child(1) {
+        padding-right: 2.5rem;
+    }
+
+    .links {
+        font-size: 1rem;
+    }
+}
