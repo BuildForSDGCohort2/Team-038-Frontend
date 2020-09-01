@@ -1,0 +1,57 @@
+#About {
+    --about-bg: #F7FFFF;
+    background: var(--about-bg);
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.PColor {
+    color: var(--primary-color);
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.AboutWrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.AboutDes {
+    width: 90%;
+    margin-top: 25%;
+    text-align: left;
+}
+
+.SubHeading, .Heading {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.Heading {
+    font-weight: bolder;
+    line-height: 2;
+}
+
+.AboutText {
+    --font-size : .9rem;
+    width: 85%;
+    font-size: var(--font-size);
+    line-height: calc(1.5 * var(--font-size));
+}
+
+.Top {
+    margin-top: 1.5rem;
+}
+
+.PaymentGif {
+    height: 657px;
+}
