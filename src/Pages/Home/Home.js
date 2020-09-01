@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Footer from "../../Components/Footer/Footer";
-import HowWeWork from "../../Components/How_we_work_home_section/How_we_work.js"
+import HowWeWork from "../../Components/HowWeWork/HowWeWork";
 
 
 const Home = () => {

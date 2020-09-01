@@ -1,7 +1,7 @@
 import React from "react";
-import "./How_we_work.css";
+import "./HowWeWork.css";
 
-const How_we_work = () => {
+const howWeWork = () => {
     return (
         <div className="how-we-work-section">
             <h2> Three Steps To Less Worries </h2>
@@ -36,6 +36,5 @@ const How_we_work = () => {
             </div>
         </div>
     );
-}
-
-export default How_we_work;
+};
+export default howWeWork;

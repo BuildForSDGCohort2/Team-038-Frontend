@@ -49,13 +49,12 @@ button:active {
 
 .column .title {
     font-family: Trebuchet, sans-serif;
-    ;
     font-style: normal;
     font-weight: bold;
     font-size: 23px;
     line-height: 132.4%;
     text-transform: uppercase;
-    color: #76EAD7;
+    color:  #76ead7;
     text-align: left;
     padding: 50px 50px;
 }
@@ -79,5 +78,5 @@ button:active {
     background-repeat: no-repeat;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0
 }
