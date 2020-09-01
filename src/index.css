@@ -16,6 +16,7 @@ li {
     --text-color: #2E2626;
     --dark-color: #393E46;
     --background-color: rgba(118, 234, 215, 0.05);
+    --font-size: min(max(.8rem, 4vw), 1rem);
 }
 
 html,
@@ -25,5 +26,6 @@ body {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--text-color)
+    color: var(--text-color);
+    font-size: var(--font-size);
 }

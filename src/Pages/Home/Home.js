@@ -2,12 +2,13 @@ import React from "react";
 import "./Home.css";
 import Footer from "./Footer/Footer";
 import Hero from "./Hero/Hero";
+import Header from "../../Components/Header/Header";
 
 const Home = () => {
   return (
     <div className="Home">
       <Hero />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
