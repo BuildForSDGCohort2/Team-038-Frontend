@@ -3,6 +3,7 @@
     padding-bottom: 90px;
     background: rgb(248, 253, 255);
 }
+
 .how-we-work-section h2 {
     font-family: Trebuchet, sans-serif;
     font-weight: bold;
@@ -14,12 +15,14 @@
     padding-top: 65px;
     padding-bottom: 60px;
 }
+
 .container {
     display: flex;
     padding-top: 70px;
     padding-bottom: 50px;
     justify-content: space-evenly;
 }
+
 .column {
     background-color: rgb(251, 254, 255);
     height: 470px;
@@ -30,12 +33,15 @@
     cursor: pointer;
     border: 2px solid rgb(230, 234, 235);
 }
+
 .column:hover {
     border-color: rgb(47, 142, 231);
 }
+
 .column.active {
     background-color: rgb(219, 223, 223);
 }
+
 .column .title {
     font-family: Trebuchet, sans-serif;
     font-style: normal;
@@ -47,6 +53,7 @@
     text-align: left;
     padding: 50px 50px;
 }
+
 .column p {
     padding: 25px 25px;
     font-family: Trebuchet, sans-serif;
@@ -58,6 +65,7 @@
     color: #524d4d;
     text-align: left;
 }
+
 .column .image {
     background-image: url('./image.png');
     width: 148px;
