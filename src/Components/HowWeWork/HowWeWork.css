@@ -54,7 +54,7 @@ button:active {
     font-size: 23px;
     line-height: 132.4%;
     text-transform: uppercase;
-    color:  #76ead7;
+    color: #76ead7;
     text-align: left;
     padding: 50px 50px;
 }
@@ -78,5 +78,5 @@ button:active {
     background-repeat: no-repeat;
     position: absolute;
     bottom: 0;
-    right: 0
+    right: 0;
 }
