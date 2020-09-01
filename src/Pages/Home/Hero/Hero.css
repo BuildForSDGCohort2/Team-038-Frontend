@@ -28,7 +28,7 @@
 .HeroContent {
     width: 50%;
     margin-top: 30vh;
-    color: #ffffff;
+    color: #fff;
 }
 
 .HeroHeading {
@@ -38,17 +38,16 @@
 .heroDes {
     width: 70%;
     line-height: calc(1.5 * var(--font-size));
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     margin-bottom: 2.5rem;
 }
 
 .btnLink {
     background: var(--primary-color);
     color: #ffffff;
-    padding: 1rem .8rem;
-    border-radius: .3rem;
+    padding: 1rem 0.8rem;
+    border-radius: 0.3rem;
     text-decoration: none;
-    color: #ffffff;
 }
 
 /* Media Queries */
@@ -56,18 +55,19 @@
 @media screen and (max-width: 1040px) {
     .HeroContent {
         width: 80%;
-    }  
-  
+    }
 }
 
 @media screen and (max-width: 660px) {
     .HeroContent {
         width: 90%;
         margin-top: 20vh;
-    }  
+    }
+
     .heroDes {
         width: 90%;
     }
+
     .HeroHeading {
         font-size: 1.5rem;
     }

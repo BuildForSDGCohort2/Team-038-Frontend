@@ -12,11 +12,11 @@ li {
 
 /* Saving colors to variables */
 :root {
-    --primary-color: #32E0C4;
-    --text-color: #2E2626;
-    --dark-color: #393E46;
+    --primary-color: #32e0c4;
+    --text-color: #2e2626;
+    --dark-color: #393e46;
     --background-color: rgba(118, 234, 215, 0.05);
-    --font-size: min(max(.8rem, 4vw), 1rem);
+    --font-size: min(max(0.8rem, 4vw), 1rem);
 }
 
 html,
