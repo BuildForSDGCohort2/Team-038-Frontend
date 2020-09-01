@@ -1,12 +1,13 @@
 import React from "react";
 import "./Home.css";
-import Footer from "../../Components/Footer/Footer";
+import Footer from "./Footer/Footer";
+import Hero from "./Hero/Hero";
 
 const Home = () => {
   return (
     <div className="Home">
-      <h2>Home Page</h2>
-      <Footer/>
+      <Hero />
+      <Footer />
     </div>
   );
 };
