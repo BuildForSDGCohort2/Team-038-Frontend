@@ -9,6 +9,7 @@ import Benefactors from "./Pages/Benefactors/Benefactors";
 import { Normal, Organisation } from "./Pages/Profile/Profile";
 import { Login, SignUp } from "./Components/Login-SignUp/Login-SignUp";
 import NotFound from "./Pages/NotFound/NotFound";
+import AboutUs from "./Pages/AboutUs/AboutUs"
 const App = () => {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={SignUp} />
           <Route path="/404" component={NotFound} />
+          <Route path="/about" component={AboutUs} />
           <Redirect to="/404" />
         </Switch>
       </Router>
