@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import HowWeWork from "./HowWeWork/HowWeWork";
 import Footer from "./Footer/Footer";
 import Hero from "./Hero/Hero";
 import About from "./About/About";
@@ -7,9 +8,10 @@ import About from "./About/About";
 const Home = () => {
   return (
     <div className="HomePage">
-      {/* <div className="Home"><Hero /></div> */}
+      <div className="Home"><Hero /></div>
       <About />
-      {/* <Footer /> */}
+      <HowWeWork />
+      <Footer />
     </div>
   );
 };
