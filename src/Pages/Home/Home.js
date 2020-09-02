@@ -8,10 +8,10 @@ import About from "./About/About";
 const Home = () => {
   return (
     <div className="HomePage">
-      {/* <Hero /> */}
+      <Hero />
       <About /> 
-      {/* <HowWeWork />
-      <Footer /> */}
+      <HowWeWork />
+      <Footer />
     </div>
   );
 };

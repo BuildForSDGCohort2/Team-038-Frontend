@@ -6,7 +6,7 @@ import Header from "../../../Components/Header/Header";
 const About = () => {
   return (
     <div id="About">
-      {/* <Header /> */}
+      <Header />
       <div className="AboutWrapper">
         <div className="AboutDes">
           <h2 className="SubHeading">About Repify</h2>
