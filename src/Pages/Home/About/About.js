@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import AboutGif from "../Images/Payment.gif"
+import AboutGif from "../Images/Payment.gif";
 import Header from "../../../Components/Header/Header";
 
 const About = () => {
