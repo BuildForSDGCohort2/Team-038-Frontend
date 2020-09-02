@@ -1,6 +1,7 @@
 .how-we-work-section {
     width: 100%;
     padding-bottom: 90px;
+    background: rgb(248, 253, 255);
 }
 
 .how-we-work-section h2 {
@@ -11,40 +12,34 @@
     text-align: center;
     text-transform: capitalize;
     color: rgb(90, 89, 89);
-    padding-top: 47px;
+    padding-top: 65px;
+    padding-bottom: 60px;
 }
 
 .container {
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 45px;
+    padding-top: 70px;
+    padding-bottom: 50px;
     justify-content: space-evenly;
-}
-
-button {
-    background-color: rgb(251, 254, 255);
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: inset 0 0 25px rgb(223, 220, 220);
-    border: none;
-    outline: none;
-}
-
-button:hover {
-    background-color: rgb(47, 142, 231);
-}
-
-button:active {
-    background-color: rgb(47, 142, 231);
 }
 
 .column {
     background-color: rgb(251, 254, 255);
-    height: 480px;
-    width: 348px;
+    height: 470px;
+    width: 350px;
     position: relative;
-    border-radius: 11px;
-    border: none;
+    border-radius: 12px;
+    box-shadow: inset 0 0 16px rgb(230, 234, 235);
+    cursor: pointer;
+    border: 2px solid rgb(230, 234, 235);
+}
+
+.column:hover {
+    border-color: rgb(47, 142, 231);
+}
+
+.column.active {
+    background-color: rgb(219, 223, 223);
 }
 
 .column .title {
@@ -79,4 +74,44 @@ button:active {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+/*  Media Query */
+
+@media screen and (max-width: 1040px) {
+    .how-we-work-section h2 {
+        font-size: 30px;
+        line-height: 155.4%;
+        padding-top: 35px;
+        padding-bottom: 1px;
+    }
+
+    .container {
+        width: 90%;
+        height: 90%;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 22px;
+    }
+
+    .column {
+        height: 220px;
+        width: 300px;
+    }
+
+    .column .image {
+        background-image: none;
+    }
+
+    .column .title {
+        padding-top: 38px;
+        padding-bottom: 1px;
+        line-height: 120.4%;
+    }
+
+    .column:hover {
+        border-color: rgb(89, 245, 58);
+    }
 }
