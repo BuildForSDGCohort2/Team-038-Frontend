@@ -90,9 +90,41 @@
     }
 }
 
-@media screen and (max-width: 605px) { 
+@media screen and (max-width: 605px) {
     #About {
         overflow: visible;
         overflow-x: hidden;
     }
+
+    .AboutWrapper {
+        display: block;
+    }
+
+    .Heading {
+        font-size: 1.4rem;
+    }
+
+    .SubHeading {
+        font-size: 1.2rem;
+    }
+    .AboutText {
+        width: 100%;
+    }
+
+    .PaymentGif {
+        height: 357px;
+    }
 }
+
+@media screen and (max-width: 403px) { 
+    .Heading {
+        font-size: 1.2rem;
+        line-height: 1;
+        margin: 0.6rem auto;
+    }
+
+    .SubHeading {
+        font-size: 1rem;
+    }
+}
+
