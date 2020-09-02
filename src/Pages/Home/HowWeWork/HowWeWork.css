@@ -95,7 +95,7 @@
         justify-content: space-between;
         margin-left: 22px;
     }
-    
+
     .column {
         height: 220px;
         width: 300px;
@@ -110,7 +110,7 @@
         padding-bottom: 1px;
         line-height: 120.4%;
     }
-    
+
     .column:hover {
         border-color: rgb(89, 245, 58);
     }
