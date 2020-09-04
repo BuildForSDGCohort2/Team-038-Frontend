@@ -1,6 +1,6 @@
 import React from "react";
 import "./HowWeWork.css";
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 
 const howWeWork = () => {
     return (

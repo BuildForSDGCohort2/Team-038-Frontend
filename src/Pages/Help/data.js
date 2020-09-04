@@ -67,6 +67,6 @@ const data = {
         image: SchedulePaymentImg,
         content: howToSchedulePayment
     },
-}
+};
 
 export default data;
