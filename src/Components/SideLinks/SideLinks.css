@@ -1,4 +1,4 @@
-.SideLinks{
+.SideLinks {
   margin-top: 8%;
   margin-right: 35px;
   float: right;
@@ -14,7 +14,7 @@
 .icon {
   height: 38px;
   width: 38px;
-  margin: 10% 0px 10% 0%;
+  margin: 10% 0 10% 0;
   background-color: #fff;
   border-radius: 50%;
   transition: width 2s height 2s linear;
@@ -57,12 +57,12 @@ body {
 }
 
 @media screen and (max-width: 450px) {
-  .SideLinks{
+  .SideLinks {
     margin-top: 35%;
   }
 
   .icon {
-    margin: 2% 0px 8% 19%;
+    margin: 2% 0 8% 19%;
   }
 
   .sideLinkArrow {
@@ -71,13 +71,13 @@ body {
 }
 
 @media screen and (width: 320px) {
-  .SideLinks{
+  .SideLinks {
     margin-top: 30%;
     margin-right: 0;
   }
 
   .icon {
-    margin: 2% 0px 12% 19%;
+    margin: 2% 0 12% 19%;
   }
 
   .sideLinkArrow {
@@ -86,7 +86,7 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-  .SideLinks{
+  .SideLinks {
     margin-top: 10%;
     margin-right: 8%;
   }
@@ -94,7 +94,7 @@ body {
   .icon {
     width: 78px;
     height: 78px;
-    margin: 12% 0px 25% 0%;
+    margin: 12% 0 25% 0;
   }
 
   .sideLinkArrow {
@@ -102,13 +102,13 @@ body {
     padding: 10px;
   }
 
-  #cusor{
+  #cusor {
     height: 68px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .SideLinks{
+  .SideLinks {
     margin-top: 3%;
     margin-right: 6%;
   }
@@ -116,7 +116,7 @@ body {
   .icon {
     width: 58px;
     height: 58px;
-    margin: 5% 0px 15% 10%;
+    margin: 5% 0 15% 10%;
   }
 
   .sideLinkArrow {
