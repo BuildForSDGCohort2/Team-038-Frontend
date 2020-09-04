@@ -1,0 +1,57 @@
+.SideLinks{
+  margin-top: 30px;
+  float: right;
+}
+.sideLinkIcons {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.icon {
+  height: 38px;
+  width: 38px;
+  margin: 10px 0px 10px 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: width 2s height 2s linear;
+}
+
+.icon:hover {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+
+#cusor {
+  width:150px;
+  height: 100px;
+  animation: swing 1s infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.sideLinkArrow {
+  background: rgba(255, 255, 255, 0.479);
+  box-shadow: 0 0 12px rgb(252, 234, 234);
+  border-radius: 50%;
+  padding: 10px;
+  margin-top: 80px;
+  margin-right: 25px;
+}
+
+.sideLinkArrow:hover {
+  cursor: pointer;
+}
+
+
+
+

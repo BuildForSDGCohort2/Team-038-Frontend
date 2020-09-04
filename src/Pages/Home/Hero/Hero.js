@@ -2,11 +2,13 @@ import React from "react";
 import "./Hero.css";
 import { Link } from "react-router-dom";
 import Header from "../../../Components/Header/Header";
+import SideLink from "../../../Components/SideLinks/SideLinks";
 
 const Hero = () => {
   return (
       <div className="overLay">
         <Header />
+        <SideLink/>
         <div className="Hero">
           <div className="HeroContent">
             <h1 className="HeroHeading">Automate your payments</h1>
