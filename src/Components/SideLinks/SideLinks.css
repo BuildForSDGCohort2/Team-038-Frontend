@@ -52,6 +52,6 @@
   cursor: pointer;
 }
 
-
-
-
+body {
+  background: var(--body-color);
+}
