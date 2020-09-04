@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideLinks.css";
-import arrow from "./arrow.png";
+import arrow from "./downarrow.png";
 import facebook from "./facebook-logo.png";
 import instagram from "./instagram.png";
 import linkedIn from "./linkedin.png";
@@ -15,8 +15,8 @@ const SideLinks = () => {
         <img className="icon" src={twitter} alt="twitter"/>
         <img className="icon" src={instagram} alt="instagram"/>
         <img className="icon" src={linkedIn} alt="linkedin"/>
+        <div className="sideLinkArrow"><img id="cusor" src={arrow} alt="arrow"/></div> 
       </aside>
-      <div className="sideLinkArrow"><img id="cusor" src={arrow} alt="arrow"/></div> 
     </div>
   );
 };
