@@ -16,6 +16,7 @@ const howWeWork = () => {
                         <div className="image"></div>
                     </div>
                 </Link>
+                <div className="dummy"></div>
                 <Link to="/about/#howToAddBeneficiary" className="btn-flat ">
                     <div className="add-beneficiary column">
                         <div className="title"> ADD <br /> BENEFACTOR </div>
@@ -25,6 +26,7 @@ const howWeWork = () => {
                         <div className="image"></div>
                     </div>
                 </Link>
+                <div className="dummy"></div>
                 <Link to="/about/#howToSchedulePayment" className="btn-flat ">
                     <div className="schedule-payment column">
                         <div className="title"> SCHEDULE <br /> PAYMENT </div>

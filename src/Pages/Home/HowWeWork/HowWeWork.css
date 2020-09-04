@@ -40,7 +40,6 @@
 
 .column:hover {
     border-color: rgb(116, 247, 252);
-
 }
 
 .column .title {
@@ -55,7 +54,7 @@
     padding: 50px 50px;
 }
 
-.column .title:hover{
+.column .title:hover {
     color: rgb(116, 247, 252);
 }
 
@@ -84,12 +83,6 @@
 /*  Media Query */
 
 @media screen and (max-width: 1040px) {
-    .how-we-work-section h2 {
-        font-size: 29px;
-        line-height: 155.4%;
-        padding-top: 35px;
-        padding-bottom: 1px;
-    }
     .container {
         width: 90%;
         height: 90%;
@@ -98,6 +91,9 @@
         align-items: center;
         justify-content: space-between;
         margin-left: 22px;
+    }
+    .dummy {
+        padding-top: 30px;
     }
     .column {
         height: 220px;
@@ -113,8 +109,8 @@
     }
     .column:hover {
         border-color: rgb(132, 245, 253);
-    }.column .title:hover{
+    }
+    .column .title:hover {
         color: rgb(116, 247, 252);
     }
-    
 }
