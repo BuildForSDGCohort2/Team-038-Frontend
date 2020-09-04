@@ -76,9 +76,9 @@
 
 .f-r {
   float: right;
+  margin: 4px 0;
 }
 
-.f-r, 
 p {
   margin: 4px 0;
 }
