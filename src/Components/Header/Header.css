@@ -35,6 +35,10 @@ nav {
     padding-right: 4.5rem;
 }
 
+.links:hover {
+    color: #fff;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 778px) {

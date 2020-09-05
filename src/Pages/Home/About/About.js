@@ -2,6 +2,7 @@ import React from "react";
 import "./About.css";
 import AboutGif from "../Images/Payment.gif";
 import Header from "../../../Components/Header/Header";
+import Button from "../../../Components/SideLinks/Button/Button";
 
 const About = () => {
   return (
@@ -24,6 +25,7 @@ const About = () => {
             to subscribe to say Spectranet or data on a regs or even DSTV or
             Netflix.
           </p>
+          <Button Title = "Ease The Stress" />
         </div>
         <div className="AboutGif">
             <img src={AboutGif} className="PaymentGif" alt="ReplifyGif"/>

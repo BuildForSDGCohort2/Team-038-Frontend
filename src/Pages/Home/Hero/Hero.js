@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
-import { Link } from "react-router-dom";
 import Header from "../../../Components/Header/Header";
+import Button from "../../../Components/SideLinks/Button/Button";
 
 const Hero = () => {
   return (
@@ -16,9 +16,7 @@ const Hero = () => {
               on a regular basis. Lets saves you the stress of manually sending
               them money.
             </p>
-            <Link className="btnLink" to="/register">
-              Lets take care of It
-            </Link>
+            <Button Title=" Get Started " />
           </div>
         </div>
       </div>

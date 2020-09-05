@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import Logo from "./Repify.png";
 import { Link } from "react-router-dom";
+import Button from "../SideLinks/Button/Button";
 
 const Header = () => {
   return (
@@ -16,7 +17,7 @@ const Header = () => {
               Login
             </Link>
             <Link className="links" to="/register">
-              Sign
+              Sign Up
             </Link>
           </li>
         </ul>
