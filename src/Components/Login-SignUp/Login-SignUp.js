@@ -12,7 +12,7 @@ const Login = () => {
 const SignUp = () => {
   return (
     <div className="Header">
-      <h2>Sign Up</h2>
+      <h2>Sign Up: Testing Heroku pipeline for develop</h2>
     </div>
   );
 };
