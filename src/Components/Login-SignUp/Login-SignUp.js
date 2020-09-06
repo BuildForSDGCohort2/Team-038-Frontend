@@ -4,7 +4,7 @@ import "./Login-SignUp.css";
 const Login = () => {
   return (
     <div className="SignUp">
-      <h2>Login In</h2>
+      <h2>Login In</h2>  
     </div>
   );
 };
