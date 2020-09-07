@@ -8,6 +8,7 @@ import Beneficiaries from "./Pages/Beneficiaries/Beneficiaries";
 import Benefactors from "./Pages/Benefactors/Benefactors";
 import { Normal, Organisation } from "./Pages/Profile/Profile";
 import NotFound from "./Pages/NotFound/NotFound";
+import AboutServices from "./Pages/Help/AboutServices";
 const App = () => {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/profile/organisation" exact component={Organisation} />
           <Route path="/login" exact component={Home} />
           <Route path="/register" exact component={Home} />
+          <Route path="/about" exact component={AboutServices} />
           <Route path="/404" component={NotFound} />
           <Redirect to="/404" />
         </Switch>
