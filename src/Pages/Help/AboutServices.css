@@ -1,0 +1,58 @@
+.helpContent {
+    padding-top: 50px;
+    background: rgb(246, 252, 252);
+}
+
+.helpContent h1 {
+    font-family: Trebuchet, sans-serif;
+    font-weight: bold;
+    font-size: 5vw;
+    line-height: 132.4%;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgb(90, 89, 89);
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.dummy {
+    padding-top: 70px;
+}
+
+.section {
+    margin: auto;
+    width: 70%;
+    border: 1.5px solid rgba(231, 235, 227, 0.945);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 14px rgb(226, 235, 241);
+}
+
+.section h2 {
+    text-transform: capitalize;
+    font-size: 4vw;
+    color: rgb(90, 89, 89);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.imageContainer {
+    margin: auto;
+    width: 70%;
+}
+
+.imageContainer img {
+    width: 85%;
+    padding: 10px;
+}
+
+.section p {
+    padding: 30px 30px;
+    font-family: Trebuchet, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 132.4%;
+    color: #524d4d;
+    text-align: justify;
+}
