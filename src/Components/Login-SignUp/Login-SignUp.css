@@ -79,6 +79,7 @@ span.policy {
 .signup {
   padding-top: 25px;
 }
+
 .signupForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,7 +100,7 @@ span.policy {
 #signupBtn {
   width: 200px;
   padding: 15px;
-  font-size: 1.3em; 
+  font-size: 1.3em;
   margin: 5px 0;
   background: #32e0c4;
   color: #fff;
@@ -140,7 +141,7 @@ span.policy {
   #signupBtn {
     padding: 5px;
   }
-  
+
   .signup {
     overflow: auto;
   }
