@@ -7,11 +7,11 @@ import { Login, SignUp } from "../../../Components/Login-SignUp/Login-SignUp";
 
 class Hero extends React.Component {
   constructor(){
-    super()
+    super();
     this.state = {
       login: false,
       signup: false
-    }
+    };
   }
 
   handleLogin = () => {
@@ -28,7 +28,7 @@ class Hero extends React.Component {
     this.setState({signup: false});
   }
  
-  render = () =>{
+  render = () => {
     
     return (
       <div className="Home">
