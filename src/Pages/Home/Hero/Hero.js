@@ -2,12 +2,14 @@ import React from "react";
 import "./Hero.css";
 import Header from "../../../Components/Header/Header";
 import Button from "../../../Components/SideLinks/Button/Button";
+import SideLink from "../../../Components/SideLinks/SideLinks";
 
 const Hero = () => {
   return (
     <div className="Home">
       <div className="overLay">
         <Header />
+        <SideLink/>
         <div className="Hero">
           <div className="HeroContent">
             <h1 className="HeroHeading"> Automate your payments </h1>
