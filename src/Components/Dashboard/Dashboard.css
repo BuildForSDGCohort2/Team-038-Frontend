@@ -1,12 +1,18 @@
+:root {
+    --nav-color: rgba(118, 234, 215, 0.08);
+}
+
+/* Top Nav Bar */
+
 .TopNav {
-    background: rgba(118, 234, 215, 0.08);
+    background: var(--nav-color);
     padding-top: 1rem;
     padding-bottom: .4rem;
 
 }
 
 .DashboardNav {
-    width: 90%;
+    width: 93%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -28,4 +34,24 @@
 .UserProfile img {
     width: 35px;
     height: 35px;
+}
+
+/* Side Bar */
+.SideNav {
+    --side-width: 18%;
+
+    background: var(--nav-color);
+    width: var(--side-width);
+    min-height: 100vh;
+}
+
+.SlideNav {
+    width: 60%;
+    height: 50vh;
+    padding-top: 30%;
+    margin: auto;
+}
+
+.SideList {
+    padding-top: 2.5rem;
 }
