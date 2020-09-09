@@ -16,16 +16,15 @@ class Hero extends React.Component {
 
   handleLogin = () => {
     this.setState({login: true});
+    this.setState({signup: false});
   }
-  closeLogin = () => {
+  close = () => {
     this.setState({login: false});
+    this.setState({signup:false});
   }
   
   handleSignup = () => {
     this.setState({signup: true});
-  }
-  closeSignup = () => {
-    this.setState({signup: false});
   }
  
   render = () => {
@@ -48,8 +47,8 @@ class Hero extends React.Component {
               <Link className="btnLink" to="/register">
                 Lets take care of It
               </Link>
-              {this.state.login === true ? <Login close={this.closeLogin}/>: null}
-              {this.state.signup === true ? <SignUp close={this.closeSignup}/> : null}
+              {this.state.login === true ? <Login close={this.close} handleSignup={this.handleSignup}/>: null}
+              {this.state.signup === true ? <SignUp close={this.close} handleLogin={this.handleLogin}/> : null}
             </div>
           </div>
         </div>

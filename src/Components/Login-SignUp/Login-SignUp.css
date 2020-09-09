@@ -14,9 +14,11 @@ body {
   font-size: 1.2em;
   width: 45%;
   margin: 10px auto;
-  border: 2px solid #4a4a4a;
+  border: 2px solid #f2f2f2;
   border-radius: 10px;
   color: #fff;
+  background: #f2f2f2;
+  color: #000;
 }
 
 .loginForm label {
@@ -41,8 +43,8 @@ body {
   cursor: pointer;
 }
 
-.loginForm p {
-  margin: 2px;
+.linkWrap {
+  margin: 5px;
 }
 
 .link {
@@ -57,7 +59,7 @@ body {
 
 span.policy {
   margin-left: auto;
-  color: #32e0c4;
+  color: #000;
   word-spacing: 20px;
   cursor: pointer;
 }
@@ -86,9 +88,11 @@ span.policy {
   grid-gap: 15px;
   width: 45%;
   margin: 10px auto;
-  border: 2px solid #6d6c6c;
+  border: 2px solid #f2f2f2;
   border-radius: 10px;
   padding: 20px 10px 10px 10px;
+  background: #f2f2f2;
+  color: #000;
 }
 
 .signupForm input {
@@ -116,7 +120,7 @@ span.policy {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.589);
+  background: rgba(0, 0, 0, 0.753);
   display: block;
 }
 
