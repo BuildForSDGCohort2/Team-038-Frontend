@@ -1,8 +1,8 @@
 import React from "react";
 import "./About.css";
 import AboutGif from "../Images/Payment.gif";
-import Header from "../../../Components/Header/Header";
-import Button from "../../../Components/SideLinks/Button/Button";
+import Button from "../../../Components/Button/Button";
+// import Header from "../../../Components/Header/Header";
 
 const About = () => {
   return (
@@ -11,7 +11,7 @@ const About = () => {
       <div className="AboutWrapper">
         <div className="AboutDes">
           <h2 className="SubHeading">About Repify</h2>
-          <h1 className="Heading PColor">payments automations</h1>
+          <h1 className="Heading PColor">payments automatons</h1>
           <p className="AboutText">
             Imagine if you could <span className="PColor">Automate</span>  sending money to people you usually
             send money to on a regular basis. Say your mother, father, siblings

@@ -1,8 +1,8 @@
 import React from "react";
 import "./Hero.css";
 import Header from "../../../Components/Header/Header";
-import Button from "../../../Components/SideLinks/Button/Button";
 import SideLink from "../../../Components/SideLinks/SideLinks";
+import Button from "../../../Components/Button/Button";
 
 const Hero = () => {
   return (
