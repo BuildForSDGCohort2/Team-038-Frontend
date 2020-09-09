@@ -18,8 +18,12 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/dashboard/wallet" exact component={Normal} />
-          <Route path="/organisation/dashboard" exact component={Organisation} />
+          <Route path="/dashboard/user" exact component={Normal}></Route>
+          <Route
+            path="/organisation/dashboard"
+            exact
+            component={Organisation}
+          />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={SignUp} />
           <Route path="/about" exact component={AboutServices} />

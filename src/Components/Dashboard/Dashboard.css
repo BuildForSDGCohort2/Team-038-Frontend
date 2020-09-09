@@ -1,0 +1,31 @@
+.TopNav {
+    background: rgba(118, 234, 215, 0.08);
+    padding-top: 1rem;
+    padding-bottom: .4rem;
+
+}
+
+.DashboardNav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.NavItem {
+    padding-left: 1rem;
+}
+
+.UserProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserProfile img {
+    width: 35px;
+    height: 35px;
+}
