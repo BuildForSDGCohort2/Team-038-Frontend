@@ -10,8 +10,7 @@
 .TopNav {
     background: var(--nav-color);
     padding-top: 1rem;
-    padding-bottom: .4rem;
-
+    padding-bottom: 0.4rem;
 }
 
 .DashboardNav {
