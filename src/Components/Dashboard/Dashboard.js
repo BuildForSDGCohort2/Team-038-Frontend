@@ -40,7 +40,8 @@ const SideNav = () => {
               activeClassName="Active"
               className="NavLink"
             >
-              <MdAttachMoney className="SideIcons" /> Wallet
+              <MdAttachMoney className="SideIcons" />
+              <span className="LinkText">Wallet</span>
             </NavLink>
           </li>
           <li className="SideList">
@@ -50,7 +51,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <RiUserLine className="SideIcons" />
-              Profile
+              <span className="LinkText">Profile</span>
             </NavLink>
           </li>{" "}
           <li className="SideList">
@@ -60,7 +61,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <RiDonutChartLine className="SideIcons" />
-              Transactions
+              <span className="LinkText">Transactions</span>
             </NavLink>
           </li>
           <li className="SideList">
@@ -70,7 +71,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <RiInboxArchiveLine className="SideIcons" />
-              Benefactors
+              <span className="LinkText">Benefactors</span>
             </NavLink>
           </li>
           <li className="SideList">
@@ -80,7 +81,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <MdDeviceHub className="SideIcons" />
-              Beneficiaries
+              <span className="LinkText">Beneficiaries</span>
             </NavLink>
           </li>
           <li className="SideList">
@@ -90,7 +91,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <RiSettings2Line className="SideIcons" />
-              Settings
+              <span className="LinkText">Settings</span>
             </NavLink>
           </li>
           <li className="SideList">
@@ -100,7 +101,7 @@ const SideNav = () => {
               className="NavLink"
             >
               <MdExitToApp className="SideIcons" />
-              Log Out
+              <span className="LinkText">Log Out</span>
             </NavLink>
           </li>
         </ul>

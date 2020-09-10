@@ -1,5 +1,8 @@
 :root {
     --nav-color: rgba(118, 234, 215, 0.08);
+    --link-size: 1.2rem;
+    --icon-size: 2rem;
+    --active-color: #eb5757;
 }
 
 /* Top Nav Bar */
@@ -46,7 +49,7 @@
 }
 
 .SlideNav {
-    width: 60%;
+    width: 70%;
     height: 50vh;
     padding-top: 30%;
     margin: auto;
@@ -54,4 +57,24 @@
 
 .SideList {
     padding-top: 2.5rem;
+}
+
+.NavLink {
+    font-size: var(--link-size);
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.Active {
+    color: red;
+}
+
+.SideIcons {
+    font-size: 1.5rem;
+}
+
+.LinkText {
+    padding-left: 0.5rem;
 }
