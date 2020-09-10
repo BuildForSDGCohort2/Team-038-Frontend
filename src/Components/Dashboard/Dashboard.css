@@ -67,6 +67,10 @@
     align-items: center;
 }
 
+.NavLink:hover {
+    color: var(--primary-color);
+}
+
 .Active {
     color: red;
 }

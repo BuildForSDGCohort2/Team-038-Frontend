@@ -1,23 +1,17 @@
 import React from "react";
 import "./Profile.css";
 import { TopNav, SideNav } from "../../Components/Dashboard/Dashboard";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Redirect,
-// } from "react-router-dom";
-// import Wallet from "../Wallet/Wallet";
-// import Transaction from "../Transactions/Transactions";
-// import Benefactors from "../Benefactors/Benefactors";
-// import Beneficiaries from "../Beneficiaries/Beneficiaries";
-// import Settings from "../Settings/Settings";
+// import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 const Normal = () => {
   return (
     <div className="User">
-    <TopNav />
-    <SideNav />
+      <TopNav />
+      <SideNav />
+      <div className="Body">
+        {/* <Outlet /> */}
+      </div>
     </div>
   );
 };

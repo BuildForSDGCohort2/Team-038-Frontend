@@ -1,7 +1,6 @@
 import React from "react";
 import "./Transactions.css";
 import Header from "../../Components/Header/Header";
-import Footer from "../Home/Footer/Footer";
 
 const Transactions = () => {
   return (

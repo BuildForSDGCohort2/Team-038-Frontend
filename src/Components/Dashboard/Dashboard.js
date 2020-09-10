@@ -53,7 +53,7 @@ const SideNav = () => {
               <RiUserLine className="SideIcons" />
               <span className="LinkText">Profile</span>
             </NavLink>
-          </li>{" "}
+          </li>
           <li className="SideList">
             <NavLink
               to="/dashboard/wallet"
