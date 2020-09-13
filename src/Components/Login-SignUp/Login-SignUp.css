@@ -1,3 +1,155 @@
 body {
-    background: var(--body-color);
+  background: var(--body-color);
+}
+
+.login {
+  padding-top: 25px;
+}
+
+.loginForm {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 1.2em;
+  width: 45%;
+  margin: 10px auto;
+  border: 2px solid #f2f2f2;
+  border-radius: 10px;
+  background: #f2f2f2;
+  color: #000;
+}
+
+.loginForm label {
+  margin-top: 10px;
+}
+
+.loginForm input {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+#loginBtn {
+  width: 150px;
+  padding: 5px;
+  font-size: 1.3em;
+  margin: 5px 0;
+  background: #32e0c4;
+  color: #fff;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #a8a7a7;
+  cursor: pointer;
+}
+
+.linkWrap {
+  margin: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #32e0c4;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #9c0702;
+}
+
+span.policy {
+  margin-left: auto;
+  color: #000;
+  word-spacing: 20px;
+  cursor: pointer;
+}
+
+.btnClose {
+  padding: 10px;
+  font-size: 1.3em;
+  line-height: 14px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 28%;
+  text-decoration: none;
+  color: #fff;
+  background: rgb(146, 143, 143);
+}
+
+/* CSS Styling for the Signup component begins here */
+
+.signup {
+  padding-top: 25px;
+}
+
+.signupForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  width: 45%;
+  margin: 10px auto;
+  border: 2px solid #f2f2f2;
+  border-radius: 10px;
+  padding: 20px 10px 10px 10px;
+  background: #f2f2f2;
+  color: #000;
+}
+
+.signupForm input {
+  width: 90%;
+  padding: 8px;
+  margin: 2px;
+}
+
+#signupBtn {
+  width: 200px;
+  padding: 15px;
+  font-size: 1.3em;
+  margin: 5px 0;
+  background: #32e0c4;
+  color: #fff;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #a8a7a7;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.753);
+  display: block;
+}
+
+@media screen and (max-width: 780px) {
+  .loginForm {
+    width: 65%;
+  }
+
+  .signupForm {
+    grid-template-columns: 1fr;
+    grid-gap: 1px;
+    height: 500px;
+    overflow: auto;
+    width: 75%;
+  }
+
+  .signupForm input {
+    width: 90%;
+    padding: 8px;
+  }
+
+  #signupBtn {
+    padding: 5px;
+  }
+
+  .signup {
+    overflow: auto;
+  }
+
+  .btnClose {
+    margin-bottom: 25%;
+  }
 }
