@@ -60,6 +60,6 @@ class Settings extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default Settings;
