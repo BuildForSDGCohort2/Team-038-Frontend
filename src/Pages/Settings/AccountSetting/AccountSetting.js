@@ -17,6 +17,6 @@ const AccountSetting = () => {
         <button className="setBtn">Save Changes</button>
       </div>
   );
-}
+};
 
 export default AccountSetting;

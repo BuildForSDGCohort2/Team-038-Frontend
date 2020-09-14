@@ -14,8 +14,8 @@ class Settings extends React.Component {
     this.state = {
       option: 0,
       active:0
-    }
-  };
+    };
+  }
 
   selectOption(id) {
     this.setState({option: id});

@@ -6,16 +6,16 @@
   width: 150px;
 }
 
+.to input {
+  margin-left: 3px;
+}
+
 .filter-option div {
   margin: 5px;
   padding: 5px;
 }
 
 .to label {
-  margin-left: 3px;
-}
-
-.to input {
   margin-left: 3px;
 }
 
