@@ -26,6 +26,6 @@ const AccountStatement = () => {
         <button className="setBtn">Save Changes</button>
     </div>
   );
-}
+};
 
 export default AccountStatement;

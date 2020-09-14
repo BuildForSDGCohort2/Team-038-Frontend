@@ -40,6 +40,6 @@ const HelpSupport = () => {
         <button className="setBtn">Save Changes</button>
     </div>
   );
-}
+};
 
 export default HelpSupport;

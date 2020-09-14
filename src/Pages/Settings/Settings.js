@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Settings.css";
 import AccountSetting from "./AccountSetting/AccountSetting";
 import AccountStatement from "./AccountStatement/AccountStatement";
@@ -15,7 +15,7 @@ class Settings extends React.Component {
       option: 0,
       active:0
     }
-  }
+  };
 
   selectOption(id) {
     this.setState({option: id});
@@ -58,7 +58,8 @@ class Settings extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
-}
+};
+
 export default Settings;

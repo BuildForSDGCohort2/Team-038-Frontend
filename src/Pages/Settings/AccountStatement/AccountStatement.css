@@ -11,17 +11,17 @@
   padding: 5px;
 }
 
-.to {
-  padding-left: 10px;
-  border-left: 2px solid #0f0f0f4b;
-}
-
 .to label {
   margin-left: 3px;
 }
 
 .to input {
   margin-left: 3px;
+}
+
+.to {
+  padding-left: 10px;
+  border-left: 2px solid #0f0f0f4b;
 }
 
 #stmtEmail {

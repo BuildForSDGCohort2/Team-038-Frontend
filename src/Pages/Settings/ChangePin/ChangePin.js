@@ -15,6 +15,6 @@ const ChangePin = () => {
       <button className="setBtn">Save Changes</button>
     </div>
   );
-}
+};
 
 export default ChangePin;

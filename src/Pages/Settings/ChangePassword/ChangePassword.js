@@ -16,6 +16,6 @@ const ChangePassword = () => {
       <button id="btnSend">Save Changes</button>
     </div>
   );
-}
+};
 
 export default ChangePassword;
