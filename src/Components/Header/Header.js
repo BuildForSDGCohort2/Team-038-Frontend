@@ -3,7 +3,7 @@ import "./Header.css";
 import Logo from "./Repify.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ handleSignup, handleLogin }) => {
   return (
     <div className="Header">
       <nav className="nav navBar"> 
@@ -12,11 +12,11 @@ const Header = () => {
         </Link>
         <ul className="navItems">
           <li className="navLink">
-            <Link className="links" to="/login">
+            <Link className="links" onClick={handleLogin} to="/login">
               Login
             </Link>
-            <Link className="links" to="/register">
-              Sign Up
+            <Link className="links" onClick={handleSignup} to="/register">
+              Sign
             </Link>
           </li>
         </ul>
