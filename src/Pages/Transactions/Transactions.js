@@ -1,10 +1,11 @@
 import React from "react";
 import "./Transactions.css";
+import Header from "../../Components/Header/Header";
 
 const Transactions = () => {
   return (
     <div className="Transactions">
-      <h2> Transactions Page </h2>
+      <Header />
     </div>
   );
 };

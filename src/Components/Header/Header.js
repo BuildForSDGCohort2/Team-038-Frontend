@@ -8,7 +8,7 @@ const Header = ({ handleSignup, handleLogin }) => {
     <div className="Header">
       <nav className="nav navBar"> 
         <Link to="/">
-          <img src={Logo} className="logo" alt="Replify" />
+          <img src={Logo} className="logo" alt="Repify" />
         </Link>
         <ul className="navItems">
           <li className="navLink">
