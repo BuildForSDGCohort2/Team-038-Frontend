@@ -10,7 +10,7 @@
 .TopNav {
     background: var(--nav-color);
     padding-top: 1rem;
-    padding-bottom: .8rem;
+    padding-bottom: 0.8rem;
     position: sticky;
     top: 0;
 }

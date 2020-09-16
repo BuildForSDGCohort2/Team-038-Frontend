@@ -1,10 +1,12 @@
 body {
     background: var(--body-color);
 }
+
 .Wallet {
     width: calc(100% - 10rem);
     margin: auto;
 }
+
 .WalletHero {
     display: flex;
     align-items: center;
