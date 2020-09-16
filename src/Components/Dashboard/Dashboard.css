@@ -10,7 +10,9 @@
 .TopNav {
     background: var(--nav-color);
     padding-top: 1rem;
-    padding-bottom: 0.4rem;
+    padding-bottom: .8rem;
+    position: sticky;
+    top: 0;
 }
 
 .DashboardNav {
@@ -45,6 +47,7 @@
     background: var(--nav-color);
     width: var(--side-width);
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .SlideNav {
