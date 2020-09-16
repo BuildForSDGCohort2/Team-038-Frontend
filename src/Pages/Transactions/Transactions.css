@@ -2,7 +2,7 @@ body {
     background: var(--body-color);
 }
 
-.transactionsPage {
+.Transactions {
     display: flex;
     align-content: center;
     padding: 18px;
@@ -171,7 +171,7 @@ th {
 /* Media Query */
 
 @media screen and (max-width: 1040px) {
-    .transactionsPage {
+    .Transactions {
         padding: 5px;
     }
 

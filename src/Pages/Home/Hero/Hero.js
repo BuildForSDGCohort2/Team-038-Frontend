@@ -1,8 +1,8 @@
 import React from "react";
 import "./Hero.css";
-import { Link } from "react-router-dom";
 import Header from "../../../Components/Header/Header";
 import SideLink from "../../../Components/SideLinks/SideLinks";
+import Button from "../../../Components/Button/Button";
 import { Login, SignUp } from "../../../Components/Login-SignUp/Login-SignUp";
 
 class Hero extends React.Component {
@@ -44,9 +44,7 @@ class Hero extends React.Component {
                 on a regular basis. Lets saves you the stress of manually sending
                 them money.
               </p>
-              <Link className="btnLink" to="/register">
-                Lets take care of It
-              </Link>
+              <Button Title=" Get Started " />
               {this.state.login === true ? <Login close={this.close} handleSignup={this.handleSignup}/>: null}
               {this.state.signup === true ? <SignUp close={this.close} handleLogin={this.handleLogin}/> : null}
             </div>
