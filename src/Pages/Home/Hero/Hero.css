@@ -42,14 +42,6 @@
     margin-bottom: 2.5rem;
 }
 
-.btnLink {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 1rem 0.8rem;
-    border-radius: 0.3rem;
-    text-decoration: none;
-}
-
 /* Media Queries */
 
 @media screen and (max-width: 1040px) {

@@ -8,14 +8,14 @@ const Header = ({ handleSignup, handleLogin }) => {
     <div className="Header">
       <nav className="nav navBar"> 
         <Link to="/">
-          <img src={Logo} className="logo" alt="Replify" />
+          <img src={Logo} className="logo" alt="Repify" />
         </Link>
         <ul className="navItems">
           <li className="navLink">
             <Link className="links" onClick={handleLogin} to="/login">
               Login
             </Link>
-            <Link className="links" onClick={handleSignup} to="/register">
+            <Link className="links" onClick={handleSignup} to="/dashboard/user#/wallet">
               Sign
             </Link>
           </li>

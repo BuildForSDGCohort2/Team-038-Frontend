@@ -51,10 +51,6 @@
     line-height: calc(1.5 * var(--font-size));
 }
 
-.Top {
-    margin-top: 1.5rem;
-}
-
 .PaymentGif {
     height: 523px;
 }
