@@ -1,8 +1,8 @@
 import React from "react";
-import "./Dashboard.css";
-import Logo from "../Header/Repify.png";
-import Bell from "./Notification.svg";
-import User from "./Profile.png";
+import "./DashboardNavBars.css";
+import Logo from "./img/Repify.png";
+import Bell from "./img/Notification.svg";
+import User from "./img/Profile.png";
 import { NavLink } from "react-router-dom";
 import {
   RiUserLine,
@@ -17,7 +17,9 @@ const TopNav = () => {
     <div className="TopNav">
       <nav className="DashboardNav">
         <div className="BrandLogo">
+          <NavLink to="/">
           <img src={Logo} className="Brand" alt="Repify" />
+          </NavLink>
         </div>
         <div className="UserProfile">
           <img src={Bell} alt="Notification" className="Notify NavItem" />
@@ -36,7 +38,7 @@ const SideNav = () => {
         <ul className="SideItems">
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/wallet"
               activeClassName="Active"
               className="NavLink"
             >
@@ -46,7 +48,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/profile"
               activeClassName="Active"
               className="NavLink"
             >
@@ -56,7 +58,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/transaction"
               activeClassName="Active"
               className="NavLink"
             >
@@ -66,7 +68,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/benefactor"
               activeClassName="Active"
               className="NavLink"
             >
@@ -76,7 +78,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/beneficiaries"
               activeClassName="Active"
               className="NavLink"
             >
@@ -86,7 +88,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/settings"
               activeClassName="Active"
               className="NavLink"
             >
@@ -96,7 +98,7 @@ const SideNav = () => {
           </li>
           <li className="SideList">
             <NavLink
-              to="/dashboard/wallet"
+              to="/logout"
               activeClassName="Active"
               className="NavLink"
             >

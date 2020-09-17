@@ -5,17 +5,19 @@ body {
 .Transactions {
     display: flex;
     align-content: center;
-    padding: 18px;
+    padding: 5px;
     font-family: Montserrat;
     font-style: normal;
+    width: calc(100% - 10rem);
+    margin: auto;
 }
 
 .gridContainer {
     display: grid;
-    height: 500px;
-    grid-template-columns: 350px 350px;
+    height: 300px;
+    grid-template-columns: 370px 370px;
     grid-template-rows: 30% auto;
-    padding: 40px;
+    padding: 5px;
     grid-gap: 40px;
     column-gap: 50px;
 }

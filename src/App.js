@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
-import { Normal, Organisation } from "./Pages/Profile/Profile";
+import { Normal, Organisation } from "./Pages/Dashboard/Dashboard";
 import { Login, SignUp } from "./Components/Login-SignUp/Login-SignUp";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutServices from "./Pages/Help/AboutServices";
@@ -19,12 +19,8 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/dashboard/user" component={Normal} />
-          <Route
-            path="/organisation/dashboard"
-            exact
-            component={Organisation}
-          />
+          <Route path="/dashboard/user"  component={Normal} />
+          <Route path="/dashboard/organisation" exact component={Organisation} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={SignUp} />
           <Route path="/about" exact component={AboutServices} />
@@ -37,10 +33,3 @@ const App = () => {
 };
 
 export default App;
-
-
-/* <Route path="/dashboard/wallet" component={Wallet} />
-<Route path="/dashboard/transaction" component={Transaction} />
-<Route path="/dashboard/benefactors" component={Benefactors} />
-<Route path="/dashboard/beneficiaries" component={Beneficiaries} />
-<Route path="/dashboard/settings" component={Settings} /> */

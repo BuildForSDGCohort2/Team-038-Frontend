@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Transactions.css";
-import Header from "../../Components/Header/Header";
 import TransactionsHistoryTable from "./TransactionsHistoryTable";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -41,9 +40,9 @@ class Transactions extends Component {
       setEndDateFilter: true
     })
   };
-
+  
+  //make a get request to the backend and fetch transactions 
   getTransactions = () => {
-    //make a get request to the backend and fetch transactions 
     const Alltransactions = data ? data : []
     this.setState(state => {
       return {
@@ -68,7 +67,6 @@ class Transactions extends Component {
 
   render() {
     return (<div className="Transactions">
-      <Header />
       <div className="gridContainer">
         <div className="topLeft grid-col1">
           <h3>Transactions</h3>

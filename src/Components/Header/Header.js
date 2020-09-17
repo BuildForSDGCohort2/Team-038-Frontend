@@ -15,7 +15,7 @@ const Header = ({ handleSignup, handleLogin }) => {
             <Link className="links" onClick={handleLogin} to="/login">
               Login
             </Link>
-            <Link className="links" onClick={handleSignup} to="/register">
+            <Link className="links" onClick={handleSignup} to="/dashboard/user#/wallet">
               Sign
             </Link>
           </li>
