@@ -58,7 +58,7 @@ const TransactionsRows = (props) => {
                 <td className="date">{date}</td>
             </tr>);
     }
-}
+};
 
 /**
  * @param {*} props 
