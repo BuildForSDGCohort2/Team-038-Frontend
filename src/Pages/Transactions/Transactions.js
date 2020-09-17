@@ -28,14 +28,14 @@ class Transactions extends Component {
   //called when a user picks a filter end date
   handlesEndDateChange = (date) => {
     this.setState({
-      endDate: date,
+      endDate: date
     });
   };
-  
+
   //called when a user picks a filter start date
   handlesStartDateChange = (date) => {
     this.setState({
-      startDate: date,
+      startDate: date
     });
   };
 
