@@ -6,7 +6,7 @@ body {
     display: flex;
     align-content: center;
     padding: 5px;
-    font-family: "Montserrat";
+    font-family: Trebuchet, sans-serif;
     font-style: normal;
     width: calc(100% - 10rem);
     margin: auto;
@@ -28,7 +28,7 @@ body {
 }
 
 .grid-col1 h3 {
-    font-family: "Inter";
+    font-family: Trebuchet, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
