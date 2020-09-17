@@ -29,7 +29,7 @@ class Transactions extends Component {
   handlesStartDateChange = (date) => {
     this.setState({
       startDate: date,
-      setStartDateFilter:true
+      setStartDateFilter: true,
     });
   };
 
@@ -37,7 +37,7 @@ class Transactions extends Component {
   handlesEndDateChange = (date) => {
     this.setState({
       endDate: date,
-      setEndDateFilter:true
+      setEndDateFilter: true,
     });
   };
 
