@@ -16,7 +16,7 @@ const Normal = () => {
       <div className="Dashboard">
         <SideNav />
         <div className="MainBody">
-          {/* <Wallet /> */}
+          <Wallet />
         </div>
       </div>
     </div>

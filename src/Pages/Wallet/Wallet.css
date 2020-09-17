@@ -15,8 +15,36 @@ body {
 
 .WalletBody {
     margin-top: 8%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: minmax(160px, auto); */
+    grid-gap: 1.5rem;
+    /* grid-template-areas:"WalletAccount" "WalletTrans" "ProfileCard""ProfileCard" ; */
 }
 
 .WalletCard {
     background: var(--nav-color);
+    border-radius: 10px;
+    width: 350px;
+    height: 161px;
+}
+
+.WalletAccount {
+    grid-column: 1/4;
+}
+
+.WalletTrans {
+    grid-row: 3/5;
+}
+
+.ProfileCard {
+    background: var(--nav-color);
+    grid-column: 4/13;
+    grid-row: 1/5;
+    width: 600px;
+    height: 281px;
+}
+
+.CardItems {
+    padding: 1.5rem;
 }

@@ -16,31 +16,37 @@ const Wallet = (props) => {
         </div>
       </div>
       <div className="WalletBody">
-        <div className="WalletCard">
-          <p className="CardHeading">Repify Balance</p>
-          <h3 className="WalletBalance"># 23, 000</h3>
-          <Link className="BlueColor CardLink">Fund Account</Link>
-        </div>
-        <div className="WalletCard">
-          <p className="CardHeading">Last Transactions</p>
-          <div className="LastTransact Received">
-            <div className="CardHeading Bold">Received</div>
-            <p className="Transact">
-              <span className="Money BlueColor">#10, 000</span> from Mr Gideon
-            </p>
-          </div>
-          <div className="LastTransact Sent">
-            <div className="CardHeading Bold">Sent</div>
-            <p className="Transact">
-              <span className="Money RedColor">#10, 000</span> from Mr Gideon
-            </p>
+        <div className="WalletCard WalletAccount">
+          <div className="CardItems">
+            <p className="CardHeading">Repify Balance</p>
+            <h3 className="WalletBalance"># 23, 000</h3>
+            <Link className="BlueColor CardLink">Fund Account</Link>
           </div>
         </div>
-      </div>
-      <div className="WalletCard">
-        <h4 className="UserName">Daniel Bemsen</h4>
-        <h2 className="RepifyId">REP4285883022543</h2>
-        <p className="AccountType">Person</p>
+        <div className="WalletCard WalletTrans">
+          <div className="CardItems">
+            <p className="CardHeading">Last Transactions</p>
+            <div className="LastTransact Received">
+              <div className="CardHeading Bold">Received</div>
+              <p className="Transact">
+                <span className="Money BlueColor">#10, 000</span> from Mr Gideon
+              </p>
+            </div>
+            <div className="LastTransact Sent">
+              <div className="CardHeading Bold">Sent</div>
+              <p className="Transact">
+                <span className="Money RedColor">#10, 000</span> from Mr Gideon
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="ProfileCard">
+          <div className="CardItems">
+            <h4 className="UserName">Daniel Bemsen</h4>
+            <h2 className="RepifyId">REP4285883022543</h2>
+            <p className="AccountType">Person</p>
+          </div>
+        </div>
       </div>
     </div>
   );
