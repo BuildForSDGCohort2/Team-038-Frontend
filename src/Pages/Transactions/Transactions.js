@@ -40,7 +40,7 @@ class Transactions extends Component {
       setEndDateFilter: true
     })
   };
-  
+
   //make a get request to the backend and fetch transactions 
   getTransactions = () => {
     const Alltransactions = data ? data : []
