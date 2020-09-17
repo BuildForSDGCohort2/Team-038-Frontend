@@ -25,7 +25,7 @@ const TransactionsCategoryRows = (props) => {
             </tr>
         );
     }
-}
+};
 
 /**
  * create a row in the table for each transaction object 
@@ -78,7 +78,7 @@ const TransactionsHistoryTable = (props) => {
             </div>
         );
     }
-    transactions.forEach(transaction => {
+    transactions.forEach((transaction) => {
         rows.push(
             <TransactionsCategoryRows category={transaction.category} />
         );

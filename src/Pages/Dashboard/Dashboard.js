@@ -6,7 +6,7 @@ import {
   HashRouter
 } from "react-router-dom";
 import Wallet from "../Wallet/Wallet";
-import Profile from "../Propfile/Profile"
+import Profile from "../Propfile/Profile";
 import Transaction from "../Transactions/Transactions";
 import Benefactors from "../Benefactors/Benefactors";
 import Beneficiaries from "../Beneficiaries/Beneficiaries";

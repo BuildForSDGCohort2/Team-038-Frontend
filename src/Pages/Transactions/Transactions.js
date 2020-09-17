@@ -4,7 +4,7 @@ import "./Transactions.css";
 import TransactionsHistoryTable from "./TransactionsHistoryTable";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import calendar_today from "./img/calendar_today.png";
+import calendarToday from "./img/calendar_today.png";
 
 // Temporary Dummy Data 
 import data from "./data.js";
@@ -22,28 +22,26 @@ class Transactions extends Component {
       transactions: [],
       setStartDateFilter: false,
       setEndtDateFilter: false,
-    }
+    };
   }
 
   //called when a user picks a filter start date
-  handlesStartDateChange = date => {
+  handlesStartDateChange = (date) => {
     this.setState({
       startDate: date,
-      setStartDateFilter: true,
     })
   };
 
   //called when a user picks a filter end date
-  handlesEndDateChange = date => {
+  handlesEndDateChange = (date) => {
     this.setState({
       endDate: date,
-      setEndDateFilter: true
     })
   };
 
   //make a get request to the backend and fetch transactions 
   getTransactions = () => {
-    const Alltransactions = data ? data : []
+    const Alltransactions = data ? data : [];
     this.setState(state => {
       return {
         transactions: Alltransactions
@@ -57,7 +55,7 @@ class Transactions extends Component {
    */
   DatePickerCustomInput = ({ onClick }) => (
     <div className="calendar_today">
-      <img src={calendar_today} alt="calendar_today" onClick={onClick}></img>
+      <img src={calendarToday} alt="calendar_today" onClick={onClick}></img>
     </div>
   );
 

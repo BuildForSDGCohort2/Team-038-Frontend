@@ -6,7 +6,7 @@ body {
     display: flex;
     align-content: center;
     padding: 5px;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-style: normal;
     width: calc(100% - 10rem);
     margin: auto;
@@ -28,19 +28,19 @@ body {
 }
 
 .grid-col1 h3 {
-    font-family: Inter;
+    font-family: "Inter";
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
     line-height: 30px;
-    color: #04172A;
+    color: #04172a;
 }
 
 .grid-col1 .todayDate {
     font-weight: normal;
     font-size: 15px;
     line-height: 22px;
-    color: #000000;
+    color: #000;
 }
 
 .grid-col2 {
@@ -51,15 +51,15 @@ body {
 .grid-col2 button {
     width: 150px;
     height: 40px;
-    background: #32E0C4;
-    border: 1px solid #32E0C4;
-    font-family: Montserrat;
+    background: #32e0c4;
+    border: 1px solid #32e0c4;
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
     line-height: 23px;
     text-transform: capitalize;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .grid-col3 .gridBox {
@@ -85,7 +85,8 @@ body {
     font-size: 14px;
 }
 
-.gridBox .box2, .box4 {
+.gridBox .box2, 
+.box4 {
     display: grid;
     grid-template-columns: 80px 30px;
     grid-auto-rows: 15px;
@@ -95,14 +96,15 @@ body {
     font-size: 14px;
 }
 
-.displayStartDate, .displayEndDate {
+.displayStartDate, 
+.displayEndDate {
     font-size: 12px;
 }
 
 .gridBox .box3 {
     width: 2px;
     height: 125px;
-    background: #C4C4C4;
+    background: #c4c4c4;
     place-self: center;
 }
 
@@ -121,18 +123,18 @@ body {
     width: 335px;
 }
 
-thead tr th {
-    font-size: 16px;
-}
-
 th {
     text-align: left;
     font-size: 12px;
     padding: 3px;
 }
 
+thead tr th {
+    font-size: 16px;
+}
+
 .transactionSent {
-    color: #EB5757;
+    color: #eb5757;
     padding: 2px;
     font-size: 12px;
 }
@@ -176,7 +178,6 @@ th {
     .Transactions {
         padding: 5px;
     }
-
     .gridContainer {
         grid-template-columns: 200px;
         grid-template-rows: 10% 15% 35% 40%;
@@ -184,18 +185,16 @@ th {
         grid-column-gap: 5px;
         grid-row-gap: 5px;
     }
-
-    .grid-col1, .grid-col2 {
+    .grid-col1, 
+    .grid-col2 {
         place-self: center;
         justify-self: center;
         text-align: center;
     }
-
     .grid-col2 button {
         height: 25px;
         width: 120px;
     }
-
     .grid-col3 .gridBox {
         display: grid;
         grid-template-columns: 35% 10% 35%;
@@ -209,11 +208,9 @@ th {
         row-gap: 5px;
         justify-content: space-evenly;
     }
-
     .gridBox .box1 {
         padding: 5px;
     }
-
     .gridBox .box2, .box4 {
         padding: 5px;
         width: 120px;
@@ -223,16 +220,13 @@ th {
         row-gap: 20px;
         font-size: 12px;
     }
-
     .gridBox .box3 {
         margin-bottom: 50px;
         height: 70px;
     }
-
     .grid-col4 {
         width: 260px;
     }
-
     .grid-col4 .transactionsTable {
         width: 250px;
     }
