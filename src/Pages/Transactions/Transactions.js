@@ -42,7 +42,7 @@ class Transactions extends Component {
   //make a get request to the backend and fetch transactions 
   getTransactions = () => {
     const Alltransactions = data ? data : [];
-    this.setState(state => {
+    this.setState(() => {
       return {
         transactions: Alltransactions
       };
