@@ -37,7 +37,7 @@ body {
 }
 
 .WalletLink {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .CardLink {
@@ -57,7 +57,7 @@ body {
     background: var(--nav-color);
     border-radius: 10px;
     width: 350px;
-    height: 161px;
+    height: 145px;
 }
 
 .WalletAccount {
@@ -66,11 +66,14 @@ body {
 
 .WalletTrans {
     grid-row: 3/5;
-    height: 200px;
+    height: 160px;
 }
 
 .LastTransact {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
+}
+.Transact {
+    font-size: 0.8rem;
 }
 .Money {
     letter-spacing: 1px;
@@ -84,8 +87,8 @@ body {
     background: var(--nav-color);
     grid-column: 4/13;
     grid-row: 1/5;
-    width: 600px;
-    height: 281px;
+    width: 500px;
+    height: 250px;
 }
 
 .CardItems {
@@ -99,7 +102,7 @@ body {
 }
 
 .RepifyId {
-    line-height: 3;
+    line-height: 2.2;
 }
 
 .AccountType {
