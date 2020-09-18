@@ -2,6 +2,18 @@ body {
     background: var(--body-color);
 }
 
+.Bold {
+    font-weight: bolder;
+}
+
+.BlueColor {
+    color: var(--primary-color);
+}
+
+.RedColor {
+    color: var(--active-color)
+}
+
 .Wallet {
     width: calc(100% - 10rem);
     margin: auto;
@@ -13,12 +25,31 @@ body {
     justify-content: space-between;
 }
 
+.WalletHero .SmallText {
+    line-height: 2;
+    font-size: 0.9rem;
+}
+
+.WalletBalance {
+    letter-spacing: 1px;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+.WalletLink {
+    margin-top: 1.5rem;
+}
+
+.CardLink {
+    text-decoration: none;
+}
+
 .WalletBody {
     margin-top: 8%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     /* grid-template-rows: minmax(160px, auto); */
-    grid-gap: 1.5rem;
+    grid-gap: 1.2rem;
     /* grid-template-areas:"WalletAccount" "WalletTrans" "ProfileCard""ProfileCard" ; */
 }
 
@@ -35,8 +66,20 @@ body {
 
 .WalletTrans {
     grid-row: 3/5;
+    height: 200px;
 }
 
+.LastTransact {
+    margin-top: 1.2rem;
+}
+.Money {
+    letter-spacing: 1px;
+}
+
+.LastTransact .CardHeading {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
 .ProfileCard {
     background: var(--nav-color);
     grid-column: 4/13;
@@ -47,4 +90,19 @@ body {
 
 .CardItems {
     padding: 1.5rem;
+}
+
+.ProfileCard .CardItems {
+    padding: 2.5rem;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.RepifyId {
+    line-height: 3;
+}
+
+.AccountType {
+    position: absolute;
+    bottom: -70px;
 }

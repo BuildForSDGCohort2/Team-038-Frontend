@@ -18,14 +18,16 @@ const Wallet = (props) => {
       <div className="WalletBody">
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
-            <p className="CardHeading">Repify Balance</p>
+            <h5 className="CardHeading">Repify Balance</h5>
             <h3 className="WalletBalance"># 23, 000</h3>
-            <Link className="BlueColor CardLink">Fund Account</Link>
+            <p className="WalletLink">
+              <Link className="BlueColor CardLink" to="/found">Fund Account</Link>
+            </p>
           </div>
         </div>
         <div className="WalletCard WalletTrans">
           <div className="CardItems">
-            <p className="CardHeading">Last Transactions</p>
+            <h5 className="CardHeading">Last Transactions</h5>
             <div className="LastTransact Received">
               <div className="CardHeading Bold">Received</div>
               <p className="Transact">
@@ -35,15 +37,15 @@ const Wallet = (props) => {
             <div className="LastTransact Sent">
               <div className="CardHeading Bold">Sent</div>
               <p className="Transact">
-                <span className="Money RedColor">#10, 000</span> from Mr Gideon
+                <span className="Money RedColor">#10, 000</span> to Mr Gideon
               </p>
             </div>
           </div>
         </div>
         <div className="ProfileCard">
           <div className="CardItems">
-            <h4 className="UserName">Daniel Bemsen</h4>
-            <h2 className="RepifyId">REP4285883022543</h2>
+            <h3 className="UserName">Daniel Bemsen</h3>
+            <h1 className="RepifyId">REP4285883022543</h1>
             <p className="AccountType">Person</p>
           </div>
         </div>
