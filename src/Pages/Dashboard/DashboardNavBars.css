@@ -1,0 +1,86 @@
+:root {
+    --nav-color: rgba(118, 234, 215, 0.08);
+    --link-size: 1.2rem;
+    --icon-size: 2rem;
+    --active-color: #eb5757;
+}
+
+/* Top Nav Bar */
+
+.TopNav {
+    background: var(--nav-color);
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+    position: sticky;
+    top: 0;
+}
+
+.DashboardNav {
+    width: 93%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.NavItem {
+    padding-left: 1rem;
+}
+
+.UserProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserProfile img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Side Bar */
+.SideNav {
+    --side-width: 18%;
+
+    background: var(--nav-color);
+    width: var(--side-width);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.SlideNav {
+    width: 70%;
+    height: 50vh;
+    padding-top: 30%;
+    margin: auto;
+}
+
+.SideList {
+    padding-top: 2.5rem;
+}
+
+.NavLink {
+    font-size: var(--link-size);
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.NavLink:hover {
+    color: var(--primary-color);
+}
+
+.Active {
+    color: red;
+}
+
+.SideIcons {
+    font-size: 1.5rem;
+}
+
+.LinkText {
+    padding-left: 0.5rem;
+}

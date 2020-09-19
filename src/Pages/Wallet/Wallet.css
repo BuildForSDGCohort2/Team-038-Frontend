@@ -1,3 +1,22 @@
 body {
     background: var(--body-color);
 }
+
+.Wallet {
+    width: calc(100% - 10rem);
+    margin: auto;
+}
+
+.WalletHero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.WalletBody {
+    margin-top: 8%;
+}
+
+.WalletCard {
+    background: var(--nav-color);
+}

@@ -1,4 +1,4 @@
-/* Declearing Variables */
+/* Declaring Variables */
 :root {
     --primary-color: #32e0c4;
     --text-color: #2e2626;
@@ -8,7 +8,7 @@
 
 /* NavBar */
 
-nav {
+.navBar {
     width: 80%;
     margin: auto;
     display: flex;
@@ -33,6 +33,10 @@ nav {
 
 .links:nth-child(1) {
     padding-right: 4.5rem;
+}
+
+.links:hover {
+    color: #fff;
 }
 
 /* Media Queries */

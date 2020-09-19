@@ -52,3 +52,6 @@
   line-height: 24px;
   font-size: 1em;
 }
+body {
+    background: var(--body-color);
+}
