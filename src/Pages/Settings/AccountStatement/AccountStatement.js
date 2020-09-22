@@ -16,10 +16,10 @@ class AccountStatement extends React.Component{
   }
   
   handleStartDateChange = (date) => {
-    let sDate = date;
+    //let sDate = date;
     let condition = true;
     this.setState({
-      startDate: sDate,
+      startDate: date,
       setStartDateFilter: condition
     });
   }
