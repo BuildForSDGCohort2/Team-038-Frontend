@@ -1,27 +1,11 @@
 .filter-option {
+  margin-top: 15px;
   display: flex;
 }
 
-.to input {
-  margin-left: 3px;
-}
-
-.filter-option div > input {
-  width: 150px;
-}
-
-.filter-option div {
-  margin: 5px;
-  padding: 5px;
-}
-
-.to label {
-  margin-left: 3px;
-}
-
-.to {
-  padding-left: 10px;
-  border-left: 2px solid #0f0f0f4b;
+.seperatorLines {
+  border-left: 2px solid #525252ad;
+  margin: 0 4%;
 }
 
 #stmtEmail {

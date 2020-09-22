@@ -5,7 +5,9 @@
 
 .main-container {
   margin-left: auto;
-  width: 70%;
+  width: 100%;
+  margin: 5px 5%;
+  height: 100%;
 }
 
 .optContainer {
@@ -54,4 +56,12 @@
 }
 body {
     background: var(--body-color);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 980px) {
+  .main-container {
+    width: 70%;
+  }
 }

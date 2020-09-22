@@ -1,31 +1,87 @@
 import React from "react";
 import "./AccountStatement.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import calendarToday from "../../Transactions/img/calendar_today.png";
 
-const AccountStatement = () => {
+class AccountStatement extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      startDate : new Date(),
+      endDate : new Date(),
+      setStartDateFilter: false,
+      setEndtDateFilter: false,
+    }
+  }
   
-  return(
-    <div>
-      <h4>Account Settings</h4>
-        <p>You can only change your account number and account type</p>
-        <form className="setForm">
-          <div>
-            <h5>Filter</h5>
-            <div className="filter-option">
-              <div>
-                <label htmlFor="from">From:</label><br/>
-                <input type="date" name="from" required/>
-              </div>
-              <div className="to">
-                <label htmlFor="to">To: </label><br/>
-                <input type="date" name="to" required/>
-              </div>
-            </div>
-          </div>
-          <input id="stmtEmail" type="email" name="email" placeholder="Email" required/>
-        </form>
-        <button className="setBtn">Save Changes</button>
+  handleStartDateChange = (date) => {
+    this.setState({
+      startDate: date,
+      setStartDateFilter: true
+    });
+  }
+  handleEndDateChange = (date) => {
+    this.setState({
+      endDate: date,
+      setEndDateFilter: true
+    });
+  }
+  customDate = ({onClick}) => (
+    <div className="calendarDiv">
+      <img src={calendarToday} alt="today_calendar" onClick={onClick} />
     </div>
   );
+
+  render () {
+    
+    return(
+      <div>
+        <h4>Account Settings</h4>
+          <p>You can only change your account number and account type</p>
+          <form className="setForm">
+            <div>
+              <h5>Filter</h5>
+              <div className="filter-option">
+                <div className="start-date-pick">
+                  From:
+                  <div className="datePick">
+                    <DatePicker
+                      selected={this.state.startDate}
+                      onChange={this.handleStartDateChange}
+                      customInput={<this.customDate />}
+                      dateFormat="yyyy/MM/dd"
+                    />
+                  </div><br/>
+                  <div className="displayStartDate">
+                    {this.state.setStartDateFilter ? this.state.startDate.toLocaleDateString("fr-CA") : null}
+                  </div>
+                </div>
+              
+                <div className="seperatorLines">
+                </div>
+                <div className="end-date-pick">
+                  To:
+                  <div className="datePicker">
+                    <DatePicker
+                      selected={this.state.endDate}
+                      onChange={this.handleEndDateChange}
+                      customInput={<this.customDate />}
+                      dateFormat="yyyy/MM/dd"
+                    />
+                  </div><br/>
+                  <div className="displayEndDate">
+                    {this.state.setEndDateFilter ? this.state.endDate.toLocaleDateString("fr-CA") : null}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input id="stmtEmail" type="email" name="email" placeholder="Email" required/>
+          </form>
+          <button className="setBtn">Save Changes</button>
+      </div>
+    );
+  }
 };
 
 export default AccountStatement;

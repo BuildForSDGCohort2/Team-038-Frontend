@@ -24,7 +24,6 @@ const App = () => {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={SignUp} />
           <Route path="/about" exact component={AboutServices} />
-          <Route path="/settings" exact component={Settings}/>
           <Route path="/404" component={NotFound} />
           <Redirect to="/404" />
         </Switch>
