@@ -6,25 +6,29 @@ import calendarToday from "../../Transactions/img/calendar_today.png";
 
 class AccountStatement extends React.Component{
   constructor(){
-    super()
+    super();
     this.state = {
       startDate : new Date(),
       endDate : new Date(),
       setStartDateFilter: false,
       setEndtDateFilter: false,
-    }
+    };
   }
   
   handleStartDateChange = (date) => {
+    var startDate = date;
+    var condition = true;
     this.setState({
-      startDate: date,
-      setStartDateFilter: true
+      startDate: startDate,
+      setStartDateFilter: condition
     });
   }
   handleEndDateChange = (date) => {
+    var endDate = date;
+    var condition = true;
     this.setState({
       endDate: date,
-      setEndDateFilter: true
+      setEndDateFilter: condition
     });
   }
   customDate = ({onClick}) => (
@@ -82,6 +86,6 @@ class AccountStatement extends React.Component{
       </div>
     );
   }
-};
+}
 
 export default AccountStatement;
