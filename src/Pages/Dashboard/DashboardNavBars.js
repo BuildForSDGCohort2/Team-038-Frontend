@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DashboardNavBars.css";
 import Logo from "./img/Repify.png";
 import Bell from "./img/Notification.svg";
@@ -9,17 +9,36 @@ import {
   RiDonutChartLine,
   RiInboxArchiveLine,
   RiSettings2Line,
+  RiMenu4Fill,
+  RiCloseFill,
 } from "react-icons/ri";
 import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
 
+// let status;
+let sliding;
+
 const TopNav = () => {
+  const [showSlide, setSlowSIde] = useState(false);
+  const makeSlide = () => {
+    setSlowSIde(true);
+    sliding = showSlide;
+  };
+
+  // if (showSlide) {
+  //   SlideClass.push('Action');
+  //   console.log(SlideClass);
+  // }
+
   return (
     <div className="TopNav">
       <nav className="DashboardNav">
         <div className="BrandLogo">
           <NavLink to="/">
-          <img src={Logo} className="Brand" alt="Repify" />
+            <img src={Logo} className="Brand" alt="Repify" />
           </NavLink>
+        </div>
+        <div className="MenuLogo">
+          <RiMenu4Fill className="SideIcons" onClick={makeSlide} />
         </div>
         <div className="UserProfile">
           <img src={Bell} alt="Notification" className="Notify NavItem" />
@@ -32,26 +51,31 @@ const TopNav = () => {
 };
 
 const SideNav = () => {
+  const [hideSlide, setHideSlide] = useState(true);
+  const closeSlide = () => {
+    setHideSlide(false);
+    sliding = hideSlide;
+  };
   return (
-    <aside className="SideNav">
+    <aside className={sliding ? "SideNav Action" : "SideNav"}>
       <div className="SlideNav">
+        <div className="CloseSlide">
+          <RiCloseFill className="SideIcons SlideClose" onClick={closeSlide} />
+        </div>
+        <div className="SlideLogo">
+          <NavLink to="/">
+            <img src={Logo} className="Brand" alt="Repify" />
+          </NavLink>
+        </div>
         <ul className="SideItems">
           <li className="SideList">
-            <NavLink
-              to="/wallet"
-              activeClassName="Active"
-              className="NavLink"
-            >
+            <NavLink to="/wallet" activeClassName="Active" className="NavLink">
               <MdAttachMoney className="SideIcons" />
               <span className="LinkText">Wallet</span>
             </NavLink>
           </li>
           <li className="SideList">
-            <NavLink
-              to="/profile"
-              activeClassName="Active"
-              className="NavLink"
-            >
+            <NavLink to="/profile" activeClassName="Active" className="NavLink">
               <RiUserLine className="SideIcons" />
               <span className="LinkText">Profile</span>
             </NavLink>
@@ -97,11 +121,7 @@ const SideNav = () => {
             </NavLink>
           </li>
           <li className="SideList">
-            <NavLink
-              to="/logout"
-              activeClassName="Active"
-              className="NavLink"
-            >
+            <NavLink to="/logout" activeClassName="Active" className="NavLink">
               <MdExitToApp className="SideIcons" />
               <span className="LinkText">Log Out</span>
             </NavLink>

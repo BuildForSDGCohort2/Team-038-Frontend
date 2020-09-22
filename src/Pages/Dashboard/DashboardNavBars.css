@@ -5,6 +5,12 @@
     --active-color: #eb5757;
 }
 
+.SlideClose,
+.SlideLogo,
+.MenuLogo {
+    display: none;
+}
+
 /* Top Nav Bar */
 
 .TopNav {
@@ -13,6 +19,7 @@
     padding-bottom: 0.8rem;
     position: sticky;
     top: 0;
+    z-index: 3;
 }
 
 .DashboardNav {
@@ -46,7 +53,7 @@
 
     background: var(--nav-color);
     width: var(--side-width);
-    min-height: 100vh;
+    min-height: 100%;
     overflow: hidden;
 }
 
@@ -83,4 +90,66 @@
 
 .LinkText {
     padding-left: 0.5rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+
+    .SlideLogo,
+    .MenuLogo,
+    .SlideClose {
+        display: block;
+    }
+
+    .UserName,
+    .UserImg,
+    .BrandLogo
+     {
+        display: none;
+    }
+
+    .Notify.NavItem {
+        width: 30px;
+        height: 30px;
+    }
+
+    .DashboardNav {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .SideNav {
+        --side-width: 70%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        transition: 840ms;
+        background: #fff;
+        z-index: 8;
+    }
+
+    .SideNav.Action {
+        left: 0;
+        transition: 600ms;
+    }
+
+    .SlideNav {
+        width: 80%;
+        padding-top: 1rem;
+    }
+
+    .SideIcons.SlideClose,
+    .SideIcons.MenuLogo {
+        font-size: 2.2rem;
+    }
+
+    .SlideClose {
+        padding-top: 10px;
+    }
+
+    .SlideLogo {
+        padding-top: 30%;
+    }
+
 }
