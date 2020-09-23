@@ -74,6 +74,6 @@ const RenderBeneficiariesTable = (props) => {
         </div>
     );
 
-}
+};
 
 export default RenderBeneficiariesTable;
