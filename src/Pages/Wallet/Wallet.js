@@ -2,14 +2,29 @@ import React from "react";
 import "./Wallet.css";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
+import { userData, transactions } from "./data.js";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const Wallet = (props) => {
+const Wallet = ( props ) => {
+  const [ details, getDetails ] = useState({});
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  const getUserData = () => {
+    const profile = userData[0]
+    getDetails(profile);
+    console.log(profile);
+  };
+
   return (
     <div className="Wallet">
       <div className="WalletHero">
         <div className="HeroTexts">
           <h1 className="HeroHeading">Wallet</h1>
-          <p className="SmallText">Hello Daniel, Welcome Back</p>
+          <p className="SmallText">{`Hello, ${details.firstName} Welcome Back`}</p>
         </div>
         <div className="HeroBtn">
           <Button Title="Fund Wallet" />
@@ -19,9 +34,11 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance"># 23, 000</h3>
+            <h3 className="WalletBalance"># {details.balance}</h3>
             <p className="WalletLink">
-              <Link className="BlueColor CardLink" to="/found">Fund Account</Link>
+              <Link className="BlueColor CardLink" to="/found">
+                Fund Account
+              </Link>
             </p>
           </div>
         </div>
@@ -44,9 +61,9 @@ const Wallet = (props) => {
         </div>
         <div className="ProfileCard">
           <div className="CardItems">
-            <h3 className="UserName">Daniel Bemsen</h3>
-            <h1 className="RepifyId">REP4285883022543</h1>
-            <p className="AccountType">Person</p>
+            <h3 className="UserName">{details.firstName}  {details.SecondName}</h3>
+            <h1 className="RepifyId">{details.userId}</h1>
+            <p className="AccountType">{details.accountType}</p>
           </div>
         </div>
       </div>

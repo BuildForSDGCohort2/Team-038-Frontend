@@ -8,6 +8,7 @@ body {
 
 .MainBody {
     width: 100%;
-    margin: 5% auto 2%;
+    margin: auto;
+    padding-top: 2rem;
     overflow-x: hidden;
 }
