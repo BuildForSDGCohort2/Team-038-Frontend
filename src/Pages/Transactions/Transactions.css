@@ -175,7 +175,6 @@ thead tr th {
 @media screen and (max-width: 1040px) {
     .Transactions {
         padding: 5px;
-        background-color: yellow;
     }
 
     .gridContainer {
@@ -184,8 +183,6 @@ thead tr th {
         padding: 5px;
         grid-column-gap: 5px;
         grid-row-gap: 5px;
-        background-color: yellow;
-
     }
 
     .grid-col1,
