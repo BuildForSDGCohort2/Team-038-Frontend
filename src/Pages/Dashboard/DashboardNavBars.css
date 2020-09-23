@@ -67,16 +67,16 @@
     padding-top: 2rem;
 }
 
-.SideList .NavLink {
-    font-size: 1rem;
-}
-
 .NavLink {
     font-size: var(--link-size);
     text-decoration: none;
     color: var(--text-color);
     display: flex;
     align-items: center;
+}
+
+.SideList .NavLink {
+    font-size: 1rem;
 }
 
 .NavLink:hover {
@@ -153,5 +153,4 @@
     .SlideLogo {
         padding-top: 20%;
     }
-
 }
