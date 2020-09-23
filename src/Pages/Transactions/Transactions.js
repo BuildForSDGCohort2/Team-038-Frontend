@@ -37,10 +37,10 @@ class Transactions extends Component {
 
   //called when a user picks a filter end date
   handlesEndDateChange = (date) => {
-    var start = date;
+    var end = date;
     var condition = true;
     this.setState({
-      endDate: start,
+      endDate: end,
       setEndDateFilter: condition,
     });
   };
