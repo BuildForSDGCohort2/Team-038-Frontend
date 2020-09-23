@@ -6,7 +6,7 @@ const userData = [
     userId: "REP4285883022543",
     accountType: "Personal",
     }
-]
+];
 
 const transactions = [
     {

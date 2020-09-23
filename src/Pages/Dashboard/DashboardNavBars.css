@@ -98,7 +98,6 @@
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
-
     .SlideLogo,
     .MenuLogo,
     .SlideClose {
@@ -123,7 +122,7 @@
 
     .SideNav {
         --side-width: 70%;
-        
+
         position: fixed;
         top: 0;
         left: -100%;

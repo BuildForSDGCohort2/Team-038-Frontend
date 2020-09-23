@@ -33,7 +33,7 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance"># {details.balance} </h3>
+            <h3 className="WalletBalance">{`# ${details.balance}`} </h3>
             <p className="WalletLink">
               <Link className="BlueColor CardLink" to="/found">
                 Fund Account

@@ -11,7 +11,7 @@ body {
 }
 
 .RedColor {
-    color: var(--active-color)
+    color: var(--active-color);
 }
 
 .Wallet {
@@ -114,7 +114,6 @@ body {
 /* Media Queries */
 
 @media screen and (max-width: 1050px) {
-
     .WalletBalance {
         font-size: 1.5rem;
     }
@@ -162,7 +161,6 @@ body {
         line-height: 2.5;
         font-size: 1.5rem;
     }
-
 }
 
 @media screen and (max-width: 870px) {
