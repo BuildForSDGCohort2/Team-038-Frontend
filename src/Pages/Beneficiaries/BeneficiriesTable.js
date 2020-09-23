@@ -72,7 +72,7 @@ const RenderBeneficiariesTable = (props) => {
                 </tbody>
             </table>
         </div>
-    )
+    );
 
 }
 
