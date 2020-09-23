@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import empty from "./img/empty.png";
 
 const NoBeneficiariesFound = () => {
@@ -25,13 +25,13 @@ const RenderTableRows = (props) => {
             case "pending":
                 return (<div className="indicator" style={{ background: "yellow" }}></div>);
             case "failed":
-                return (<div className="indicator" style={{ background: "red" }}></div>);;
+                return (<div className="indicator" style={{ background: "red" }}></div>);
             case "successful":
-                return (<div className="indicator" style={{ background: "green" }}></div>);;
+                return (<div className="indicator" style={{ background: "green" }}></div>);
             default:
-                return (<div className="indicator" style={{ background: "yellow" }}></div>);;
+                return (<div className="indicator" style={{ background: "yellow" }}></div>);
         }
-    }
+    };
     return (
         <tr className="beneficiariesTableRows">
             <td>{beneficiary.name}</td>
@@ -40,21 +40,21 @@ const RenderTableRows = (props) => {
             <td>{beneficiary.date}</td>
             <td>{(statusIndicator())}</td>
         </tr>
-    )
-}
+    );
+};
 
 const RenderBeneficiariesTable = (props) => {
     const rows = [];
-    var TableRows = () => {
+    var tableRows = () => {
         if (!props.beneficiaries) {
             return <NoBeneficiariesFound />;
 
         } else {
-            props.beneficiaries.forEach(beneficiary => {
+            props.beneficiaries.forEach((beneficiary) => {
                 rows.push(<RenderTableRows beneficiary={beneficiary} />);
             });
             return rows;
-        };
+        }
     };
     return (
         <div className="beneficiariesTableWrapper">
@@ -68,7 +68,7 @@ const RenderBeneficiariesTable = (props) => {
                     </tr>
                 </thead>
                 <tbody className="beneficiariesTableBody">
-                    {TableRows()}
+                    {tableRows()}
                 </tbody>
             </table>
         </div>

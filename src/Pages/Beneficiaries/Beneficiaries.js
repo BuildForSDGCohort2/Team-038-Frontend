@@ -12,7 +12,8 @@ const Beneficiaries = () => {
     } else {
       return data;
     }
-  }
+  };
+  
   return (
     <div className="Beneficiaries">
       <div className="grid-Container">
