@@ -14,21 +14,8 @@ import {
 } from "react-icons/ri";
 import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
 
-// let status;
-let sliding;
 
 const TopNav = () => {
-  const [showSlide, setSlowSIde] = useState(false);
-  const makeSlide = () => {
-    setSlowSIde(true);
-    sliding = showSlide;
-  };
-
-  // if (showSlide) {
-  //   SlideClass.push('Action');
-  //   console.log(SlideClass);
-  // }
-
   return (
     <div className="TopNav">
       <nav className="DashboardNav">
@@ -36,9 +23,6 @@ const TopNav = () => {
           <NavLink to="/">
             <img src={Logo} className="Brand" alt="Repify" />
           </NavLink>
-        </div>
-        <div className="MenuLogo">
-          <RiMenu4Fill className="SideIcons" onClick={makeSlide} />
         </div>
         <div className="UserProfile">
           <img src={Bell} alt="Notification" className="Notify NavItem" />
@@ -51,17 +35,19 @@ const TopNav = () => {
 };
 
 const SideNav = () => {
-  const [hideSlide, setHideSlide] = useState(true);
-  const closeSlide = () => {
-    setHideSlide(false);
-    sliding = hideSlide;
-  };
+  // const [hideSlide, setHideSlide] = useState(true);
+  // const closeSlide = () => {
+  //   setHideSlide(false);
+  // };
   return (
-    <aside className={sliding ? "SideNav Action" : "SideNav"}>
+    <aside className= "SideNav">
       <div className="SlideNav">
-        <div className="CloseSlide">
-          <RiCloseFill className="SideIcons SlideClose" onClick={closeSlide} />
+        <div className="MenuLogo">
+          <RiMenu4Fill className="SideIcons"  />
         </div>
+        {/* <div className="CloseSlide">
+          <RiCloseFill className="SideIcons SlideClose" />
+        </div> */}
         <div className="SlideLogo">
           <NavLink to="/">
             <img src={Logo} className="Brand" alt="Repify" />
