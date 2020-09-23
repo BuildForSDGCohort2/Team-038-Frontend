@@ -48,9 +48,7 @@ body {
     margin-top: 8%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: minmax(160px, auto); */
     grid-gap: 1.2rem;
-    /* grid-template-areas:"WalletAccount" "WalletTrans" "ProfileCard""ProfileCard" ; */
 }
 
 .WalletCard {
@@ -233,7 +231,7 @@ body {
     }
 
     .ProfileCard {
-      height: 150px;
+        height: 150px;
     }
 
     .CardItems {
@@ -248,6 +246,7 @@ body {
     .RepifyId {
         font-size: 1rem;
     }
+
     .AccountType {
         bottom: -50px;
     }

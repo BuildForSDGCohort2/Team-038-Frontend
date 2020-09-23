@@ -22,6 +22,6 @@ const transactions = [
         vendor: "Mr Gideon"
 
     }
-]
+];
 
 export  {userData, transactions};

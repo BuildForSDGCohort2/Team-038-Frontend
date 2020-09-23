@@ -59,7 +59,6 @@
 
 .SlideNav {
     width: 70%;
-    /* height: 50vh; */
     padding-top: 50%;
     margin: auto;
 }
@@ -85,7 +84,7 @@
 }
 
 .Active {
-    color: var(--active-color)
+    color: var(--active-color);
 }
 
 .SideIcons {
@@ -108,8 +107,7 @@
 
     .UserName,
     .UserImg,
-    .BrandLogo
-     {
+    .BrandLogo {
         display: none;
     }
 
@@ -125,6 +123,7 @@
 
     .SideNav {
         --side-width: 70%;
+        
         position: fixed;
         top: 0;
         left: -100%;
