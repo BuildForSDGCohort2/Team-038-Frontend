@@ -33,7 +33,7 @@ body {
 
 .addBenefactors-btn button {
     padding: 7px;
-    background:white;
+    background: white;
     border: 2px solid white;
     box-sizing: border-box;
     width: 160px;
@@ -93,7 +93,7 @@ body {
 
 .flex-wrapper {
     display: flex;
-    justify-content:space-around ;
+    justify-content: space-around;
     align-content: center;
     padding: 10px;
 }
@@ -142,9 +142,7 @@ body {
         width: 300px;
     }
 
-    .flex-wrapper div img{
+    .flex-wrapper div img {
         width: 290px;
     }
-
-   
 }
