@@ -1,3 +1,148 @@
 body {
     background: var(--body-color);
 }
+
+.Benefactors {
+    padding: 40px;
+    font-family: Trebuchet, sans-serif;
+    font-style: normal;
+    width: calc(100% - 10rem);
+    margin: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 20% 20% 50%;
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pageTitle {
+    grid-column: 1 / span 2;
+    justify-self: start;
+    padding: 5px;
+    color: #4f4f4f;
+}
+
+.addBenefactors-btn {
+    justify-self: end;
+}
+
+.addBenefactors-btn button {
+    padding: 7px;
+    background: white;
+    border: 2px solid white;
+    box-sizing: border-box;
+    width: 160px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #4f4f4f;
+}
+
+.totalBenefactors,
+.awaitingRequest,
+.earnings {
+    align-self: center;
+    padding: 20px;
+    background: rgba(118, 234, 215, 0.05);
+    border-radius: 8px;
+    color: #4f4f4f;
+}
+
+.benefactorsTableWrapper {
+    grid-column: 1 / span 3;
+    background: rgba(118, 234, 215, 0.08);
+    border-radius: 5px;
+    height: auto;
+}
+
+.benefactorsTable {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    font-weight: 12px;
+    font-size: 14px;
+    color: #4f4f4f;
+}
+
+.benefactorsTable thead th {
+    padding: 15px;
+}
+
+.benefactorsTableBody {
+    text-align: left;
+}
+
+.benefactorsTableRows {
+    border: 1px solid #e7eaec;
+    box-shadow: 0 0 0 1px rgb(243, 244, 247);
+}
+
+.benefactorsTableRows td {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.flex-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 10px;
+}
+
+.flex-wrapper div {
+    padding-top: 80px;
+    width: 20%;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1040px) {
+    .Benefactors {
+        width: auto;
+        justify-items: left;
+        justify-content: left;
+        padding-left: 3px;
+    }
+
+    .grid-container {
+        column-gap: 15px;
+        row-gap: 35px;
+        width: 340px;
+    }
+
+    .benefactorsTable {
+        font-weight: 11px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .benefactorsTable thead th {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .benefactorsTableRows td {
+        padding: 5px;
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .flex-wrapper {
+        padding: 5px;
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .flex-wrapper div img {
+        width: 290px;
+    }
+}
