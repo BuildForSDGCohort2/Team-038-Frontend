@@ -12,14 +12,16 @@ const transactions = [
     {
         type: "Received",
         amount: "10, 000",
-        vendor: "Mr Gideon"
+        vendor: "Mr Gideon",
+        id: 1
 
     },
 
     {
         type: "Sent",
         amount: "30, 000",
-        vendor: "Mr Majeed"
+        vendor: "Mr Majeed",
+        id: 2
 
     }
 ];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
 import "./DashboardNavBars.css";
 import { Route, HashRouter, NavLink } from "react-router-dom";
@@ -20,7 +20,7 @@ import {
   RiCloseFill,
 } from "react-icons/ri";
 import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
-import { useState } from "react";
+import { profileData as data } from "../Profile/data.js";
 
 const Normal = () => {
 
@@ -45,7 +45,7 @@ const Normal = () => {
           <div className="UserProfile">
             <img src={Bell} alt="Notification" className="Notify NavItem" />
             <img src={User} alt="Profile" className="UserImg NavItem" />
-            <p className="UserName NavItem">UserName</p>
+            <p className="UserName NavItem">{data[0].firstName} {data[0].SecondName}</p>
           </div>
         </nav>
       </div>

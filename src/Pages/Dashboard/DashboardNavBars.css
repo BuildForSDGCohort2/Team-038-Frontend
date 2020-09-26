@@ -54,6 +54,8 @@
     background: var(--nav-color);
     width: var(--side-width);
     height: 100vh;
+    position: sticky;
+    left: 0;
     overflow: hidden;
 }
 

@@ -1,10 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Wallet.css";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
 import { userData, transactions } from "./data.js";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const Wallet = (props) => {
   const [details, getDetails] = useState({});
@@ -45,7 +43,7 @@ const Wallet = (props) => {
           <div className="CardItems">
             <h5 className="CardHeading">Last Transactions</h5>
             {transactions.map((transaction) => (
-              <div className="LastTransact">
+              <div className="LastTransact" key={transaction.id}>
                 <div className="CardHeading Bold"> {transaction.type} </div>
                 {transaction.type === "Sent" ? (
                   <p className="Transact">
@@ -54,6 +52,7 @@ const Wallet = (props) => {
                   </p>
                 ) : (
                   <p className="Transact">
+                  
                     <span className="Money BlueColor p1">
                     &#8358; {transaction.amount} 
                     </span>
