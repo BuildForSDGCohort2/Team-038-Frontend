@@ -44,18 +44,24 @@ const Wallet = (props) => {
         <div className="WalletCard WalletTrans">
           <div className="CardItems">
             <h5 className="CardHeading">Last Transactions</h5>
-            <div className="LastTransact Received">
-              <div className="CardHeading Bold">Received</div>
-              <p className="Transact">
-                <span className="Money BlueColor">#10, 000</span> from Mr Gideon
-              </p>
-            </div>
-            <div className="LastTransact Sent">
-              <div className="CardHeading Bold">Sent</div>
-              <p className="Transact">
-                <span className="Money RedColor">#10, 000</span> to Mr Gideon
-              </p>
-            </div>
+            {transactions.map((transaction) => (
+              <div className="LastTransact">
+                <div className="CardHeading Bold"> {transaction.type} </div>
+                {transaction.type === "Sent" ? (
+                  <p className="Transact">
+                    <span className="Money RedColor">{transaction.amount}</span>{" "}
+                    from {transaction.vendor}
+                  </p>
+                ) : (
+                  <p className="Transact">
+                    <span className="Money BlueColor">
+                      {transaction.amount}
+                    </span>{" "}
+                    to {transaction.vendor}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <div className="ProfileCard">
