@@ -11,14 +11,14 @@ const userData = [
 const transactions = [
     {
         type: "Received",
-        amount: "#10, 000",
+        amount: "10, 000",
         vendor: "Mr Gideon"
 
     },
 
     {
         type: "Sent",
-        amount: "#30, 000",
+        amount: "30, 000",
         vendor: "Mr Majeed"
 
     }

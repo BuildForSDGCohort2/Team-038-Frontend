@@ -33,7 +33,7 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance">{`# ${details.balance}`} </h3>
+            <h3 className="WalletBalance">&#8358; {details.balance} </h3>
             <p className="WalletLink">
               <Link className="BlueColor CardLink" to="/found">
                 Fund Account
@@ -49,15 +49,15 @@ const Wallet = (props) => {
                 <div className="CardHeading Bold"> {transaction.type} </div>
                 {transaction.type === "Sent" ? (
                   <p className="Transact">
-                    <span className="Money RedColor">{transaction.amount}</span>{" "}
-                    from {transaction.vendor}
+                    <span className="Money RedColor p1">&#x20A6; {transaction.amount}</span>
+                    to {transaction.vendor}
                   </p>
                 ) : (
                   <p className="Transact">
-                    <span className="Money BlueColor">
-                      {transaction.amount}
-                    </span>{" "}
-                    to {transaction.vendor}
+                    <span className="Money BlueColor p1">
+                    &#8358; {transaction.amount} 
+                    </span>
+                     from {transaction.vendor}
                   </p>
                 )}
               </div>

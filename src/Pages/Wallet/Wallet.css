@@ -2,6 +2,10 @@ body {
     background: var(--body-color);
 }
 
+.p1 {
+    padding-right: .3rem;
+}
+
 .Bold {
     font-weight: bolder;
 }
