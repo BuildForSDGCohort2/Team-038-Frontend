@@ -10,5 +10,5 @@ body {
     width: 100%;
     margin: auto;
     padding-top: 2rem;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
