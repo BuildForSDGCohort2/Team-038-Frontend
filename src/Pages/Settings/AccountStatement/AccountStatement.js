@@ -16,17 +16,19 @@ class AccountStatement extends React.Component{
   }
   
   handleStartDateChange = (date) => {
-    //let sDate = date;
+    var sDate = date;
+    var conditions = true;
     this.setState({
-      startDate: date,
-      setStartDateFilter: !setStartDateFilter
+      startDate: sDate,
+      setStartDateFilter: conditions,
     });
   }
   handleEndDateChange = (date) => {
-    let eDate = date;
+    var eDate = date;
+    var conditions = true;
     this.setState({
       endDate: eDate,
-      setEndDateFilter: !setEndDateFilter
+      setEndDateFilter: conditions,
     });
   }
   customDate = ({onClick}) => (
@@ -40,7 +42,7 @@ class AccountStatement extends React.Component{
     return(
       <div>
         <h4>Account Settings</h4>
-          <p>You can only change your account number and account type</p>
+          <p>Get your account statement sent to your mail in few minutes.</p>
           <form className="setForm">
             <div>
               <h5>Filter</h5>
@@ -80,7 +82,7 @@ class AccountStatement extends React.Component{
             </div>
             <input id="stmtEmail" type="email" name="email" placeholder="Email" required/>
           </form>
-          <button className="setBtn">Save Changes</button>
+          <button className="setBtn">Submit</button>
       </div>
     );
   }

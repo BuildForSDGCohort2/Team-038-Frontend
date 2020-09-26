@@ -8,7 +8,6 @@ import {
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import { Normal, Organisation } from "./Pages/Dashboard/Dashboard";
-import { Login, SignUp } from "./Components/Login-SignUp/Login-SignUp";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutServices from "./Pages/Help/AboutServices";
 
@@ -21,8 +20,8 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/dashboard/user"  component={Normal} />
           <Route path="/dashboard/organisation" exact component={Organisation} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/register" exact component={SignUp} />
+          <Route path="/login" exact component={Home} />
+          <Route path="/register" exact component={Home} />
           <Route path="/about" exact component={AboutServices} />
           <Route path="/404" component={NotFound} />
           <Redirect to="/404" />

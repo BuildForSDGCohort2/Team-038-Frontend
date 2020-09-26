@@ -37,7 +37,7 @@ const HelpSupport = () => {
             </div>
           </div>
         </form>
-        <button className="setBtn">Save Changes</button>
+        <button className="setBtn">Submit</button>
     </div>
   );
 };
