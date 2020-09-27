@@ -7,7 +7,8 @@ const profileData = [
         accountType: "Personal",
         phone: "+2347037030402",
         location: "Abuja, Nigeria",
-        url: "https://res.cloudinary.com/repify/image/upload/v1601137880/0_yppal3.jpg"
+        url: "https://res.cloudinary.com/repify/image/upload/v1601137880/0_yppal3.jpg",
+        balance: 23000
     }
 ];
 
@@ -29,4 +30,22 @@ const earnings = [
     }
 ];
 
-export { profileData, earnings };
+const transactions = [
+    {
+        type: "Received",
+        amount: "10, 000",
+        vendor: "Mr Gideon",
+        id: 1
+
+    },
+
+    {
+        type: "Sent",
+        amount: "30, 000",
+        vendor: "Mr Majeed",
+        id: 2
+
+    }
+];
+
+export { profileData, earnings, transactions };

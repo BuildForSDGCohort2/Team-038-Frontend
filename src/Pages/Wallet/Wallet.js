@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./Wallet.css";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
-import { userData, transactions } from "./data.js";
+import { profileData as userData, transactions } from "../Profile/data.js";
 
 const Wallet = (props) => {
   const [details, getDetails] = useState({});

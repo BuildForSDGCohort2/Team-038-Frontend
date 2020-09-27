@@ -31,6 +31,10 @@
     justify-content: space-between;
 }
 
+.Notify.NavItem {
+    padding-right: 1rem;
+}
+
 .NavItem {
     padding-left: 1rem;
 }
@@ -42,9 +46,11 @@
     justify-content: center;
 }
 
-.UserProfile img {
+.UserProfile img.UserImg {
     width: 35px;
     height: 35px;
+    border-radius: 100%;
+    padding: 0;
 }
 
 /* Side Bar */
@@ -113,6 +119,7 @@
     }
 
     .Notify.NavItem {
+        padding: 0;
         width: 30px;
         height: 30px;
     }

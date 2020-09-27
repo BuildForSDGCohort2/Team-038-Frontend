@@ -10,7 +10,6 @@ import Beneficiaries from "../Beneficiaries/Beneficiaries";
 import Settings from "../Settings/Settings";
 import Logo from "./img/Repify.png";
 import Bell from "./img/Notification.svg";
-import User from "./img/Profile.png";
 import {
   RiUserLine,
   RiDonutChartLine,
@@ -44,7 +43,7 @@ const Normal = () => {
           </div>
           <div className="UserProfile">
             <img src={Bell} alt="Notification" className="Notify NavItem" />
-            <img src={User} alt="Profile" className="UserImg NavItem" />
+            <img src={data[0].url} alt="Profile" className="UserImg NavItem" />
             <p className="UserName NavItem">{data[0].firstName} {data[0].SecondName}</p>
           </div>
         </nav>

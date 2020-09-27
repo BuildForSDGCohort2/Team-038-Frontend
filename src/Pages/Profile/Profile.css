@@ -151,3 +151,8 @@ body {
     border-radius: 3px;
     text-align: center;
 }
+
+.ProfileBody .Edit:hover, .ProfileBody .See:hover {
+    background: var(--primary-color);
+    opacity: 0.4;
+}

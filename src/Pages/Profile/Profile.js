@@ -11,7 +11,7 @@ const Normal = () => {
     <div className="Profile">
       <div className="ProfileHero">
         <div className="HeroTexts">
-          <h2 className="HeroHeading">Profile</h2>
+          <h1 className="HeroHeading">Profile</h1>
         </div>
       </div>
       <div className="ProfileBody">
