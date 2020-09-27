@@ -1,0 +1,29 @@
+.setForm {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px 5px;
+}
+
+.setForm input {
+  padding: 15px;
+  margin: 5px 0;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-top-style: hidden;
+  border-bottom: 1px groove #000;
+  width: 80%;
+}
+
+.setForm input:focus {
+  outline: none;
+}
+
+.setBtn {
+  border-style: none;
+  padding: 10px;
+  line-height: 14px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  background: #32e0c4;
+  color: #fff;
+}

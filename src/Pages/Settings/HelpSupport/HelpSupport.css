@@ -1,0 +1,46 @@
+.formItem {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.msg {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  padding: 5px;
+}
+
+textarea {
+  max-width: 350px;
+}
+
+.inputData {
+  border-left-style: none;
+  border-right-style: hidden;
+  border-top-style: hidden;
+  padding: 15px;
+  margin: 2px;
+}
+
+.inputData:focus {
+  outline: none;
+}
+
+.support-link-items {
+  margin: 35px 5px 10px 8px;
+}
+
+.support-link {
+  color: #242323;
+}
+
+.support-link:hover {
+  color: #04edf5;
+  text-decoration: none;
+}
+
+.sicon {
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+}
