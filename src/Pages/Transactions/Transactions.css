@@ -175,10 +175,11 @@ thead tr th {
 @media screen and (max-width: 1040px) {
     .Transactions {
         padding: 5px;
+        width: auto;
     }
 
     .gridContainer {
-        grid-template-columns: 200px;
+        grid-template-columns: 270px;
         grid-template-rows: 10% 15% 35% 40%;
         padding: 5px;
         grid-column-gap: 5px;

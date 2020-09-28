@@ -48,7 +48,7 @@ let howToSchedulePayment = String.raw`Lorem ipsum dolor sit amet, consectetur ad
 
 const data = {
     about: {
-        title: "How repify beneficiry service work? like pzza slices",
+        title: "How repify beneficiry service work",
         image: aboutImg,
         content: aboutService
     },
