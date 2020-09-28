@@ -13,7 +13,7 @@ class Hero extends React.Component {
       login: false,
       signup: false,
     };
-  }
+  };
 
   handleLogin = () => {
     this.setState({ login: true });
@@ -57,6 +57,6 @@ class Hero extends React.Component {
       </div>
     );
   };
-}
+};
 
 export default Hero;

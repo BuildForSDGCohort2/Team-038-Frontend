@@ -49,11 +49,11 @@ const Normal = () => {
           </Link>
         </div>
         <div className="ProfileGrid">
-          <div className="UserIDCard">
+          <div className="UserIDCard" onClick={copyToClipboard}>
             <div className="Tags">
               <h5>User Id</h5>
               <CopyToClipboard text={data.userId}>
-                <p className="CopyText" onClick={copyToClipboard}>
+                <p className="CopyText" >
                   {copyID}
                 </p>
               </CopyToClipboard>
