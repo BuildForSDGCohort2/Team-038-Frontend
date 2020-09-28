@@ -48,7 +48,7 @@ body {
     width: 85%;
     margin: 1rem auto;
     border: none;
-    border-top: 1px solid #E7EAEC;
+    border-top: 1px solid #e7eaec;
 }
 
 .ProfileContact {
@@ -58,7 +58,7 @@ body {
 
 .ProfileContact p {
     font-size: 13px;
-    color: #4C5059;
+    color: #4c5059;
     text-align: left;
     margin: 0.3rem auto;
 }
@@ -67,7 +67,7 @@ body {
     padding-left: 0.6rem;
 }
 
-.ProfileBody .Edit {
+.Edit {
     width: 200px;
     height: 30px;
     background: var(--primary-color);
@@ -127,7 +127,7 @@ body {
     justify-content: space-between;
 }
 
-.ProfileBody .Edit {
+.Edit {
     background: var(--primary-color);
     padding: 0.4rem 0.8rem;
     color: #fff;
@@ -144,9 +144,7 @@ body {
     justify-content: flex-start;
 }
 
-.ProfileBody .See {
-    /* width: 70px;
-    height: 20px; */
+.See {
     background: var(--primary-color);
     padding: 0.4rem 0.8rem;
     color: #fff;
@@ -154,8 +152,8 @@ body {
     text-align: center;
 }
 
-.ProfileBody .Edit:hover,
-.ProfileBody .See:hover {
+.Edit:hover,
+.See:hover {
     background: var(--primary-color);
     opacity: 0.4;
 }
@@ -180,16 +178,9 @@ body {
     .EarnTitle {
         font-size: 0.9rem;
     }
-
 }
 
 @media screen and (max-width: 923px) {
-
-    .Profile {
-        width: calc(100% - 5rem);
-        margin: auto;
-    }
-
     .Profile {
         width: calc(100% - 5rem);
         margin: auto;
@@ -215,7 +206,6 @@ body {
 }
 
 @media screen and (max-width: 612px) {
-
     .Profile {
         width: calc(100% - 3rem);
         margin: auto;
@@ -258,7 +248,6 @@ body {
 
     .gridCards {
         display: block;
-        /* width: 100%; */
     }
 
     .EarningsCard {
