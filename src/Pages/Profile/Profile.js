@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Profile.css";
 import { Link } from "react-router-dom";
 import { profileData, earnings } from "./data.js";
 import { GoLocation, GoMail } from "react-icons/go";
 import { FiPhone, FiPlus } from "react-icons/fi";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Normal = () => {
   const data = { ...profileData[0] };
+  const [copyID, setCopyID] = useState("Copy");
+
+  const copyToClipboard = (e) => {
+    setCopyID("Copied!");
+  };
+
   return (
     <div className="Profile">
       <div className="ProfileHero">
@@ -45,9 +52,15 @@ const Normal = () => {
           <div className="UserIDCard">
             <div className="Tags">
               <h5>User Id</h5>
-              <p className="CopyText">Copy</p>
+              <CopyToClipboard text={data.userId}>
+                <p className="CopyText" onClick={copyToClipboard}>
+                  {copyID}
+                </p>
+              </CopyToClipboard>
             </div>
-            <h1 className="RepifyId">{data.userId}</h1>
+            <h1 className="RepifyId" defaultValue={data.userId}>
+              {data.userId}
+            </h1>
             <p className="UserType">{data.accountType}</p>
           </div>
           <div className="gridCards">

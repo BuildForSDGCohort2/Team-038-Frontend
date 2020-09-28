@@ -1,5 +1,5 @@
 #footer {
-  background: #f1faf9dc;
+  background: var(--about-bg);
   padding: 15px;
 }
 
