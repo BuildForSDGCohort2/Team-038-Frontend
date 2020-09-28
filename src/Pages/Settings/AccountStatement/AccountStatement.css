@@ -1,0 +1,13 @@
+.filter-option {
+  margin-top: 15px;
+  display: flex;
+}
+
+.seperatorLines {
+  border-left: 2px solid #525252ad;
+  margin: 0 4%;
+}
+
+#stmtEmail {
+  width: 366px;
+}

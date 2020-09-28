@@ -1,3 +1,66 @@
+.title-header {
+  margin-top: 3%;
+  text-transform: uppercase;
+}
+
+.main-container {
+  width: 100%;
+  margin: 5px auto 5px 5%;
+  height: 100%;
+}
+
+.optContainer {
+  margin-top: 3%;
+  display: grid;
+  grid-template: (1fr)/(4, 1fr);
+  grid-gap: 1px;
+  grid-template-areas: "op set1 set1 set1";
+}
+
+.options {
+  grid-area: op;
+  padding: 5px 0;
+}
+
+.settingList {
+  padding: 5px;
+}
+
+.settingList li {
+  padding: 5px 0;
+  width: 90%;
+}
+
+.settingList li:hover {
+  background: #32e0c4;
+  cursor: pointer;
+  color: #fff;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.displayed {
+  grid-area: set1;
+  border-left: 2px groove rgba(0, 0, 0, 0.555);
+  padding: 10px;
+  margin-right: 0%;
+}
+
+.activeOpt {
+  color: #fc0101;
+  border-radius: 3px;
+  padding: 3px;
+  line-height: 24px;
+  font-size: 1em;
+}
 body {
     background: var(--body-color);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 980px) {
+  .main-container {
+    width: 70%;
+  }
 }

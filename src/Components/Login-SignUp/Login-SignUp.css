@@ -40,6 +40,8 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px #a8a7a7;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
 .linkWrap {

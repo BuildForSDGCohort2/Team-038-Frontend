@@ -1,9 +1,8 @@
 import React from "react";
 import "./Login-SignUp.css";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Login = ({ close, handleSignup }) => {
-  // const showLogin = 'modal display-block';
   return (
     <div className="modal login">
       <form className="loginForm">
@@ -12,7 +11,7 @@ const Login = ({ close, handleSignup }) => {
         <label htmlFor="password">Password </label>
         <input type="password" name="password" placeholder="password" required/>
         <span className="linkWrap">Don't have an Account? <Link className="link" onClick={handleSignup} to="/register">SignUp</Link></span>
-        <button id="loginBtn" type="submit">Login</button>
+        <Link id="loginBtn" to="/dashboard/user#/wallet">Login</Link>
         <span className="policy">Terms Policy</span>
       </form> 
       <Link className="btnClose" onClick={close} to="/" >Close</Link>

@@ -1,0 +1,55 @@
+#editwrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  width: 75%;
+}
+
+#editwrap form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.form-input {
+  padding: 8px;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-style: groove;
+  background: #e5e5e544;
+  margin: 5px;
+  width: 100%;
+  line-height: 14px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.img-container {
+  padding: 5px;
+  margin-left: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#profileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10% 0 25% 0;
+}
+
+#saveChangeBtn {
+  border-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background: #32e0c4;
+  font-size: 1.2em;
+  line-height: 14px;
+  margin: 3px auto;
+}
