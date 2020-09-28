@@ -27,6 +27,7 @@ body {
     background: var(--nav-color);
     width: 40%;
     padding: 1.5rem;
+    border-radius: 10px;
 }
 
 .ProfileImg img {
@@ -114,7 +115,8 @@ body {
     padding: 1rem 1rem 0.4rem;
 }
 
-.EarnTotal, .EarningIncome {
+.EarnTotal,
+.EarningIncome {
     margin: 0.7rem 0;
 }
 
@@ -152,7 +154,116 @@ body {
     text-align: center;
 }
 
-.ProfileBody .Edit:hover, .ProfileBody .See:hover {
+.ProfileBody .Edit:hover,
+.ProfileBody .See:hover {
     background: var(--primary-color);
     opacity: 0.4;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1112px) {
+    .ProfileContact {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileContact p {
+        font-size: 12px;
+    }
+
+    .RepifyId,
+    .EarnTitle {
+        font-size: 1.3rem;
+    }
+
+    .EarnTitle {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media screen and (max-width: 923px) {
+
+    .Profile {
+        width: calc(100% - 5rem);
+        margin: auto;
+    }
+
+    .Profile {
+        width: calc(100% - 5rem);
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: calc(100% - 1rem);
+        margin: auto;
+    }
+
+    .RepifyId,
+    .EarnTitle {
+        font-size: 1.2rem;
+    }
+
+    .EarningsCard {
+        width: 35%;
+    }
+
+    .EarnTitle {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 612px) {
+
+    .Profile {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileBody {
+        display: block;
+        margin-top: 1.5rem;
+    }
+
+    .ProfileSection {
+        width: 80%;
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: calc(100% - 6rem);
+    }
+
+    .ProfileGrid {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .ProfileSection {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: calc(100% - 2rem);
+    }
+
+    .ProfileGrid {
+        width: 100%;
+        margin: 1.5rem auto;
+    }
+
+    .gridCards {
+        display: block;
+        /* width: 100%; */
+    }
+
+    .EarningsCard {
+        width: calc(100% - 2rem);
+        margin: auto;
+        margin-top: 1.5rem;
+    }
 }

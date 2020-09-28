@@ -213,16 +213,13 @@ body {
         margin: auto;
     }
 
-    .WalletHero {
+    .WalletHero,
+    .WalletBody {
         display: block;
     }
 
     .HeroTexts {
         margin-bottom: 2rem;
-    }
-
-    .WalletBody {
-        display: block;
     }
 
     .WalletCard,
