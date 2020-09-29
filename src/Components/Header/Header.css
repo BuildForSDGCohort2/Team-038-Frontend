@@ -50,11 +50,11 @@
         width: 60px;
     }
 
-    .links:nth-child(1) {
-        padding-right: 2.5rem;
-    }
-
     .links {
         font-size: 1rem;
+    }
+
+    .links:nth-child(1) {
+        padding-right: 2.5rem;
     }
 }

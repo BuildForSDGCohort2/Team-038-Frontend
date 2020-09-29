@@ -2,6 +2,10 @@ body {
     background: var(--body-color);
 }
 
+.p1 {
+    padding-right: 0.3rem;
+}
+
 .Bold {
     font-weight: bolder;
 }
@@ -209,16 +213,13 @@ body {
         margin: auto;
     }
 
-    .WalletHero {
+    .WalletHero,
+    .WalletBody {
         display: block;
     }
 
     .HeroTexts {
         margin-bottom: 2rem;
-    }
-
-    .WalletBody {
-        display: block;
     }
 
     .WalletCard,

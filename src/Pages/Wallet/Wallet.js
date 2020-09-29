@@ -1,10 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Wallet.css";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
-import { userData, transactions } from "./data.js";
-import { useState } from "react";
-import { useEffect } from "react";
+import { profileData as userData, transactions } from "../Profile/data.js";
 
 const Wallet = (props) => {
   const [details, getDetails] = useState({});
@@ -33,7 +31,7 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance">{`# ${details.balance}`} </h3>
+            <h3 className="WalletBalance">&#8358; {details.balance}</h3>
             <p className="WalletLink">
               <Link className="BlueColor CardLink" to="/found">
                 Fund Account
@@ -44,18 +42,25 @@ const Wallet = (props) => {
         <div className="WalletCard WalletTrans">
           <div className="CardItems">
             <h5 className="CardHeading">Last Transactions</h5>
-            <div className="LastTransact Received">
-              <div className="CardHeading Bold">Received</div>
-              <p className="Transact">
-                <span className="Money BlueColor">#10, 000</span> from Mr Gideon
-              </p>
-            </div>
-            <div className="LastTransact Sent">
-              <div className="CardHeading Bold">Sent</div>
-              <p className="Transact">
-                <span className="Money RedColor">#10, 000</span> to Mr Gideon
-              </p>
-            </div>
+            {transactions.map((transaction) => (
+              <div className="LastTransact" key={transaction.id}>
+                <div className="CardHeading Bold"> {transaction.type} </div>
+                {transaction.type === "Sent" ? (
+                  <p className="Transact">
+                    <span className="Money RedColor p1">&#x20A6; {transaction.amount}</span>
+                    to {transaction.vendor}
+                  </p>
+                ) : (
+                  <p className="Transact">
+                  
+                    <span className="Money BlueColor p1">
+                    &#8358; {transaction.amount} 
+                    </span>
+                     from {transaction.vendor}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <div className="ProfileCard">

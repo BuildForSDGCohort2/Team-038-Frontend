@@ -1,3 +1,251 @@
 body {
     background: var(--body-color);
 }
+
+.Profile {
+    width: calc(100% - 10rem);
+    margin: auto;
+}
+
+.ProfileBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.Link {
+    font-size: var(--link-size);
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfileSection {
+    background: var(--nav-color);
+    width: 40%;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.ProfileImg img {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.ProfileName {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.separator {
+    width: 85%;
+    margin: 1rem auto;
+    border: none;
+    border-top: 1px solid #e7eaec;
+}
+
+.ProfileContact {
+    width: 70%;
+    margin: auto;
+}
+
+.ProfileContact p {
+    font-size: 13px;
+    color: #4c5059;
+    text-align: left;
+    margin: 0.3rem auto;
+}
+
+.innerText {
+    padding-left: 0.6rem;
+}
+
+.Edit {
+    width: 200px;
+    height: 30px;
+    background: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ProfileGrid {
+    width: 47%;
+}
+
+.UserIDCard {
+    background: var(--nav-color);
+    border-radius: 15px;
+    padding: 1.5rem 1.5rem 0.8rem;
+}
+
+.Tags {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CopyText {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.RepifyId {
+    letter-spacing: 2px;
+}
+
+.gridCards {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.EarningsCard {
+    width: 40%;
+    background: var(--nav-color);
+    border-radius: 15px;
+    padding: 1rem 1rem 0.4rem;
+}
+
+.EarnTotal,
+.EarningIncome {
+    margin: 0.7rem 0;
+}
+
+.EarnTitle,
+.EarningIncome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SeeLink {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.See {
+    background: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.Edit:hover,
+.See:hover {
+    background: var(--primary-color);
+    opacity: 0.4;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1112px) {
+    .ProfileContact {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileContact p {
+        font-size: 12px;
+    }
+
+    .RepifyId,
+    .EarnTitle {
+        font-size: 1.3rem;
+    }
+
+    .EarnTitle {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 923px) {
+    .Profile {
+        width: calc(100% - 5rem);
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: calc(100% - 1rem);
+        margin: auto;
+    }
+
+    .RepifyId,
+    .EarnTitle {
+        font-size: 1.2rem;
+    }
+
+    .EarningsCard {
+        width: 35%;
+    }
+
+    .EarnTitle {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    .Profile {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileBody {
+        display: block;
+        margin-top: 1.5rem;
+    }
+
+    .ProfileSection {
+        width: 80%;
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: calc(100% - 6rem);
+    }
+
+    .ProfileGrid {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .ProfileSection {
+        width: calc(100% - 3rem);
+        margin: auto;
+    }
+
+    .ProfileContact {
+        width: 100%;
+    }
+
+    .ProfileGrid {
+        width: 100%;
+        margin: 1.5rem auto;
+    }
+
+    .gridCards {
+        display: block;
+    }
+
+    .EarningsCard {
+        width: calc(100% - 2rem);
+        margin: auto;
+        margin-top: 1.5rem;
+    }
+}

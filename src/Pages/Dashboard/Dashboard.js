@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
 import "./DashboardNavBars.css";
 import { Route, HashRouter, NavLink } from "react-router-dom";
@@ -10,7 +10,6 @@ import Beneficiaries from "../Beneficiaries/Beneficiaries";
 import Settings from "../Settings/Settings";
 import Logo from "./img/Repify.png";
 import Bell from "./img/Notification.svg";
-import User from "./img/Profile.png";
 import {
   RiUserLine,
   RiDonutChartLine,
@@ -20,7 +19,7 @@ import {
   RiCloseFill,
 } from "react-icons/ri";
 import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
-import { useState } from "react";
+import { profileData as data } from "../Profile/data.js";
 
 const Normal = () => {
 
@@ -44,8 +43,8 @@ const Normal = () => {
           </div>
           <div className="UserProfile">
             <img src={Bell} alt="Notification" className="Notify NavItem" />
-            <img src={User} alt="Profile" className="UserImg NavItem" />
-            <p className="UserName NavItem">UserName</p>
+            <img src={data[0].url} alt="Profile" className="UserImg NavItem" />
+            <p className="UserName NavItem">{data[0].firstName} {data[0].SecondName}</p>
           </div>
         </nav>
       </div>
