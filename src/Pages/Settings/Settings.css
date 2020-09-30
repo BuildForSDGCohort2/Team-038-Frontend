@@ -53,8 +53,9 @@
   line-height: 24px;
   font-size: 1em;
 }
+
 body {
-    background: var(--body-color);
+  background: var(--body-color);
 }
 
 /* Media Query */

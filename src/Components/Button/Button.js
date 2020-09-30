@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Button = (props) => {
   return (
     <div className="Button">
-      <Link className="BtnLink" to="/register">
+      <Link className="BtnLink" to={props.to}>
         {props.Title}
       </Link>
     </div>
