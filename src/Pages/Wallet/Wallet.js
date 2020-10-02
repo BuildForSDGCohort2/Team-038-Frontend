@@ -1,13 +1,39 @@
 import React, { useState, useEffect } from "react";
 import "./Wallet.css";
-import Button from "../../Components/Button/Button";
 import { profileData as userData, transactions } from "../Profile/data.js";
+import { RiCloseFill } from "react-icons/ri";
+import Fund from "./FundWallet/Fund";
+import { usePaystackPayment, PaystackButton, PaystackConsumer } from 'react-paystack';
 
 const Wallet = (props) => {
+  // Declaring States
+
   const [details, getDetails] = useState({});
   const [hideBalance, setHideBalance] = useState(false);
   const [fundWallet, setFundWallet] = useState(false);
+  const [amount, setAmount] = useState();
 
+  const config = {
+    reference: (new Date()).getTime(),
+    email: userData[0].email,
+    amount: amount,
+    publicKey: 'pk_test_dsdfghuytfd2345678gvxxxxxxxxxx',
+};
+
+  // State Handlers
+
+  const setAmountHandler = (e) => {
+    e.preventDefault();
+    const formatMoney = new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+    }).format(e.target.value);
+    console.log(formatMoney);
+    setAmount(formatMoney);
+  };
+  const showHideClassName = fundWallet
+    ? "Fund DisplayBlock"
+    : "Fund DisplayNone";
   const getUserData = () => {
     const profile = userData[0];
     getDetails(profile);
@@ -21,19 +47,59 @@ const Wallet = (props) => {
     setFundWallet(!fundWallet);
   };
 
+  //  ComponentDIdMount Alternative;
+
   useEffect(() => {
     getUserData();
   }, []);
 
   return (
     <div className="Wallet">
+      {/* Fund Modal */}
+
+      <Fund
+        children={
+          <div className={showHideClassName}>
+            <div className="Box">
+              <div className="FundHero">
+                <h2 className="FundHeading">Fund Repify Wallet</h2>
+                <div className="CloseModal">
+                  <RiCloseFill
+                    className="CloseIcon"
+                    onClick={fundWalletHandler}
+                  />
+                </div>
+              </div>
+              <div className="FundInput">
+                <p className="PlaceHolder">How much do you want to fund?</p>
+                <form>
+                  <input
+                    type="number"
+                    onChange={setAmountHandler}
+                    className="FundAmount"
+                    // value={amount}
+                  />
+                </form>
+                <button type="submit" className="FundBtn">
+                  Fund
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      />
+
+      {/* Main Body Starts Here */}
+
       <div className="WalletHero">
         <div className="HeroTexts">
           <h1 className="HeroHeading">Wallet</h1>
           <p className="SmallText">{`Hello, ${details.firstName} Welcome Back`}</p>
         </div>
         <div className="HeroBtn">
-            <Button Title="Fund Wallet" onClick={fundWalletHandler} />
+          <p className="FundWallet" onClick={fundWalletHandler}>
+            FundWallet
+          </p>
         </div>
       </div>
       <div className="WalletBody">
