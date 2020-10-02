@@ -17,7 +17,7 @@ const Wallet = (props) => {
     reference: (new Date()).getTime(),
     email: userData[0].email,
     amount: amount,
-    publicKey: 'pk_test_dsdfghuytfd2345678gvxxxxxxxxxx',
+    publicKey: process.env.REACT_APP_API_KEY,
 };
 
   // State Handlers
