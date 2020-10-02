@@ -40,8 +40,10 @@ body {
     line-height: 2;
 }
 
-.WalletLink {
+.HideIt {
     margin-top: 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .CardLink {
