@@ -15,7 +15,7 @@ const TransactionsCategoryRows = (props) => {
     if (category === "fail") {
         return (
             <tr className="transactionFail">
-                <th colSpan="3">{category}</th>
+                <th colSpan="3" style={{"fontWeight":"15px"}}>{category}</th>
             </tr>
         );
     } else {
@@ -39,22 +39,22 @@ const TransactionsRows = (props) => {
     if (category === "sent") {
         return (
             <tr>
-                <td className="transactionSent">#{amount}</td>
-                <td className="userName">to {user}</td>
+                <td className="transactionSent">&#x20A6; {amount}</td>
+                <td className="userName">to<span style={{padding:"3px"}}> {user} </span></td>
                 <td className="date">{date}</td>
             </tr>);
     } else if (category === "fail") {
         return (
             <tr className="transactionFail">
-                <td className="transactionFail">#{amount}</td>
-                <td className="userName">{user}</td>
+                <td className="transactionFail">&#x20A6; {amount}</td>
+                <td className="userName"><span style={{padding:"3px"}}>{user} </span></td>
                 <td className="date">{date}</td>
             </tr>);
     } else {
         return (
             <tr>
-                <td className="transactionRecieved">#{amount}</td>
-                <td className="userName">from {user}</td>
+                <td className="transactionRecieved">&#x20A6; {amount}</td>
+                <td className="userName">from <span style={{padding:"3px"}}> {user} </span></td>
                 <td className="date">{date}</td>
             </tr>);
     }

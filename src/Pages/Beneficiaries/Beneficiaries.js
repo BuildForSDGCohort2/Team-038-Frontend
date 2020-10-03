@@ -24,6 +24,7 @@ const Beneficiaries = () => {
         <div className="addBeneficiries-btn col-2">
           <button>Add Beneficiaries</button>
         </div>
+        <div className="beneficiariesDetails">
         <div className="totalBeneficiaries col-3">
           <div> Total Beneficiaries</div>
           <div>17</div>
@@ -34,7 +35,8 @@ const Beneficiaries = () => {
         </div>
         <div className="scheduledExpenses col-5">
           <div> Scheduled Expenses </div>
-          <div>#42,000</div>
+          <div>&#x20A6; 42,000</div>
+        </div>
         </div>
         <RenderBeneficiariesTable beneficiaries={fetchAllbeneficiaries()} />
       </div>

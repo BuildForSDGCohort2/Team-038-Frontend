@@ -3,11 +3,6 @@ body {
 }
 
 .Transactions {
-    display: flex;
-    align-content: center;
-    padding: 5px;
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
     width: calc(100% - 10rem);
     margin: auto;
 }
@@ -15,9 +10,8 @@ body {
 .gridContainer {
     display: grid;
     height: 460px;
-    grid-template-columns: 370px 370px;
+    grid-template-columns: 50% 40%;
     grid-template-rows: 30% auto;
-    padding: 5px;
     grid-gap: 40px;
     column-gap: 50px;
 }
@@ -28,18 +22,13 @@ body {
 }
 
 .grid-col1 h3 {
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 30px;
-    color: #04172a;
 }
 
 .grid-col1 .todayDate {
-    font-weight: normal;
     font-size: 15px;
     line-height: 22px;
-    color: #000;
 }
 
 .grid-col2 {
@@ -52,7 +41,6 @@ body {
     height: 40px;
     background: #32e0c4;
     border: 1px solid #32e0c4;
-    font-style: normal;
     font-weight: bold;
     font-size: 15px;
     line-height: 23px;
@@ -62,10 +50,10 @@ body {
 
 .grid-col3 .gridBox {
     display: grid;
-    grid-template-columns: 45% 10% 45%;
+    grid-template-columns: 40% 10% 40%;
     grid-auto-rows: 50px 100px;
-    width: 345px;
-    height: 191px;
+    height: 190px;
+    width: 90%;
     background: rgba(118, 234, 215, 0.1);
     border-radius: 10px;
     padding: 5px;
@@ -118,47 +106,41 @@ body {
 
 .transactionsTable {
     border-collapse: separate;
-    width: 335px;
+    width: 100%;
 }
 
-th {
+.transactionsTable th {
     text-align: left;
     font-size: 12px;
-    padding: 3px;
-}
-
-thead tr th {
-    font-size: 16px;
-}
-
-.transactionSent {
-    color: #eb5757;
     padding: 2px;
-    font-size: 12px;
+}
+
+.transactionSent,
+.transactionRecieved,
+.transactionFail,
+.userName,
+.date {
+    font-size: 11px;
+}
+
+.transactionSent,
+.transactionFail {
+    color: #eb5757;
+    width: 20%;
 }
 
 .transactionRecieved {
     color: #219653;
-    padding: 2px;
-    font-size: 12px;
-}
-
-.transactionFail {
-    color: #eb5757;
-    padding: 2px;
-    font-size: 12px;
+    width: 20%;
 }
 
 .userName {
-    width: 100%;
-    padding: 2px;
-    font-size: 12px;
+    width: 55%;
 }
 
 .date {
     text-align: right;
-    padding: 1px;
-    font-size: 11px;
+    width: 20%;
 }
 
 .noTransactions {
@@ -174,11 +156,12 @@ thead tr th {
 
 @media screen and (max-width: 1040px) {
     .Transactions {
-        padding: 5px;
+        width: calc(100% - 3rem);
+        margin: auto;
     }
 
     .gridContainer {
-        grid-template-columns: 200px;
+        grid-template-columns: 300px;
         grid-template-rows: 10% 15% 35% 40%;
         padding: 5px;
         grid-column-gap: 5px;
@@ -187,9 +170,9 @@ thead tr th {
 
     .grid-col1,
     .grid-col2 {
-        place-self: center;
-        justify-self: center;
-        text-align: center;
+        place-self: left;
+        justify-self: left;
+        text-align: left;
     }
 
     .grid-col2 button {
@@ -201,7 +184,6 @@ thead tr th {
         display: grid;
         grid-template-columns: 35% 10% 35%;
         grid-auto-rows: 40px 110px;
-        width: 260px;
         height: 130px;
         background: rgba(118, 234, 215, 0.1);
         border-radius: 10px;
@@ -231,11 +213,7 @@ thead tr th {
         height: 70px;
     }
 
-    .grid-col4 {
-        width: 260px;
-    }
-
-    .grid-col4 .transactionsTable {
-        width: 250px;
+    .userName {
+        width: 45%;
     }
 }

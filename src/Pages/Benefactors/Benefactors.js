@@ -24,17 +24,19 @@ const Benefactors = () => {
         <div className="addBenefactors-btn col-2">
           <button>Send Request</button>
         </div>
+        <div className="benefactorsDetails">
         <div className="totalBenefactors col-3">
           <div> Total Benefactors</div>
           <div>17</div>
         </div>
-        <div className="awaitingRequest col-4">
+        <div className="pendingRequest col-4">
           <div> Pending Request </div>
           <div>3</div>
         </div>
         <div className="earnings col-5">
           <div> Expected Earning </div>
-          <div>#42,000</div>
+          <div>&#x20A6; 42,000</div>
+        </div>
         </div>
         <RenderBenefactorsTable benefactors={fetchAllbenefactors()} />
       </div>

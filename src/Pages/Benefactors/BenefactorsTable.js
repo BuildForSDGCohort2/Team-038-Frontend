@@ -62,7 +62,7 @@ const RenderBenefactorsTable = (props) => {
                 <thead>
                     <tr>
                         <th> Name </th>
-                        <th> Transaction ID </th>
+                        <th> User ID </th>
                         <th> Amount </th>
                         <th> Date </th>
                     </tr>
