@@ -10,7 +10,6 @@ import Home from "./Pages/Home/Home";
 import { Normal, Organisation } from "./Pages/Dashboard/Dashboard";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutServices from "./Pages/Help/AboutServices";
-import Fund from "./Pages/Wallet/FundWallet/Fund";
 
 const App = () => {
   return (

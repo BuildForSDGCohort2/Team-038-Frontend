@@ -50,9 +50,15 @@ body {
     line-height: 2;
 }
 
+.WalletTextGrouped {
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .HideIt {
-    margin-top: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     cursor: pointer;
 }
 
@@ -131,10 +137,11 @@ body {
 
 @media screen and (max-width: 1050px) {
     .WalletBalance {
+        margin-top: 1rem;
         font-size: 1.5rem;
     }
 
-    .WalletLink {
+    .WalletTextGrouped {
         margin-top: 0.8rem;
     }
 

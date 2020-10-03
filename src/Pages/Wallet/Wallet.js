@@ -43,22 +43,20 @@ const Wallet = (props) => {
   }, []);
 
   const reference = new Date().getTime();
+  const apiKey = process.env.REACT_APP_ID;
+
   // Paystack Config
   const config = {
     reference: reference,
     email: userData[0].email,
     amount: amount * 100,
-    publicKey: process.env.REACT_APP_ID,
+    publicKey: apiKey,
     metadata: {
       name: userData[0].firstName,
       phone: userData[0].phone,
     },
     text: "Fund",
-    onSuccess: () => {
-      fetch(`https://api.paystack.co/transaction/verify/:${reference}`)
-        .then((res) => res.json())
-        .catch((err) => console.log(err));
-    },
+    onSuccess: () => null,
     onClose: () => null,
   };
 
@@ -128,9 +126,14 @@ const Wallet = (props) => {
             ) : (
               <h3 className="WalletBalance">&#8358; X X X </h3>
             )}
-            <p className="HideIt" onClick={hideBalanceHandler}>
-              Hide Balance
-            </p>
+            <div className="WalletTextGrouped">
+              <p className="WalletLink BlueColor" onClick={fundWalletHandler}>
+                Fund Account
+              </p>
+              <p className="HideIt" onClick={hideBalanceHandler}>
+                Hide Balance
+              </p>
+            </div>
           </div>
         </div>
         <div className="WalletCard WalletTrans">
