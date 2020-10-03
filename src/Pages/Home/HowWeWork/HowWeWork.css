@@ -2,18 +2,12 @@
     width: 100%;
     padding-bottom: 90px;
     background: var(--about-bg);
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
-    font-weight: normal;
 }
 
 .how-we-work-section h2 {
-    font-weight: bold;
     font-size: 45px;
-    line-height: 132.4%;
     text-align: center;
     text-transform: capitalize;
-    color: rgb(90, 89, 89);
     padding-top: 65px;
     padding-bottom: 60px;
 }
@@ -45,10 +39,8 @@
 }
 
 .column .title {
-    font-style: normal;
     font-weight: bold;
     font-size: 23px;
-    line-height: 132.4%;
     text-transform: uppercase;
     color: rgb(90, 89, 89);
     text-align: left;

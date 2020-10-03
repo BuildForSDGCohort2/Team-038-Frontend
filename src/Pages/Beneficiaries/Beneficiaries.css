@@ -3,8 +3,6 @@ body {
 }
 
 .Beneficiaries {
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
     width: calc(100% - 10rem);
     margin: auto;
 }
@@ -22,7 +20,6 @@ body {
 .pageTitle {
     justify-self: start;
     padding: 5px;
-    color: #4f4f4f;
 }
 
 .addBeneficiries-btn {
@@ -55,7 +52,6 @@ body {
     padding: 10px;
     background: rgba(118, 234, 215, 0.05);
     border-radius: 8px;
-    color: #4f4f4f;
 }
 
 .beneficiariesTableWrapper {
@@ -71,7 +67,6 @@ body {
     text-align: left;
     font-weight: 12px;
     font-size: 14px;
-    color: #4f4f4f;
 }
 
 .beneficiariesTable thead th {
@@ -153,7 +148,7 @@ body {
         width: 115px;
         height: 33px;
     }
-    
+
     .beneficiariesDetails {
         flex-direction: column;
         }
