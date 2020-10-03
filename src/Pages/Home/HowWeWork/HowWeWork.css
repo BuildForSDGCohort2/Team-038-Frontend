@@ -1,7 +1,7 @@
 .how-we-work-section {
     width: 100%;
     padding-bottom: 90px;
-    background: rgb(248, 253, 255);
+    background: var(--about-bg);
 }
 
 .how-we-work-section h2 {
