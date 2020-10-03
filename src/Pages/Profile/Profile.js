@@ -95,7 +95,7 @@ const Normal = () => {
             <div className="EarningsCard">
               <div className="EarnTitle">
                 <h3 className="EarnType RedColor">{earnings[1].type}</h3>
-                <h3 className="EarnTypeIcon">
+                <h3 className="EarnTypeIcon" onClick={addBenefactorsHandler}>
                   <FiPlus />
                 </h3>
               </div>
