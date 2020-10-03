@@ -130,7 +130,7 @@ body {
     .benefactorsDetails {
         flex-direction: column;
     }
-    
+
     .totalBenefactors,
     .pendingRequest,
     .earnings {

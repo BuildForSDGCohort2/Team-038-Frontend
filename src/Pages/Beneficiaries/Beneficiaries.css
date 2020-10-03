@@ -45,7 +45,7 @@ body {
 
 .beneficiariesDetails {
     grid-column: 1 / span 2;
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -140,7 +140,7 @@ body {
        width: calc(100% - 3rem);
         margin: auto;
     }
-    
+
     .grid-Container {
         grid-template-rows: 10% 28% 65%;
         column-gap: 15px;
@@ -182,11 +182,11 @@ body {
         text-align: left;
     }
 
-    .beneficiariesTable thead tr th:nth-child(2){
+    .beneficiariesTable thead tr th:nth-child(2) {
         display: none;
     }
     
-    .beneficiariesTableRows td:nth-child(2){
+    .beneficiariesTableRows td:nth-child(2) {
             display: none;
     }
 

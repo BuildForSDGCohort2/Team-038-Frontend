@@ -52,7 +52,6 @@
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1040px) {
-
     .section p {
         padding: 5px 5px;
         text-align: justify;
