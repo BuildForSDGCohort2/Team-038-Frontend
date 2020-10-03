@@ -6,7 +6,7 @@ const Login = ({ close, handleSignup }) => {
   return (
     <div className="modal login">
       <form className="loginForm">
-        <label htmlFor="userName">Username</label>
+        <label htmlFor="userName">Username/Email</label>
         <input type="text" name="userName" placeholder="username" required/>
         <label htmlFor="password">Password </label>
         <input type="password" name="password" placeholder="password" required/>
@@ -44,8 +44,20 @@ const SignUp = ({close, handleLogin}) => {
           <input type="text" name="username" placeholder="UserName" required/>
         </div>
         <div>
+          <label htmlFor="accountType">Account Type:</label><br/>
+          <select name="accountType">
+            <option>Select Account Type</option>
+            <option>Individual</option>
+            <option>Organization</option>
+          </select>
+        </div>
+        <div>
           <label htmlFor="password">Password</label><br/>
           <input type="password" name="password" placeholder="Password" required/>
+        </div>
+        <div>
+          <label htmlFor="confirmpassword">Password</label><br/>
+          <input type="password" name="confirmpassword" placeholder="ConfirmPassword" required/>
         </div>
         <span>Got an Account? <Link className="link" onClick={handleLogin} to="/login">SignIn</Link></span><br/>
         <button id="signupBtn" type="submit">Create Account</button><br/>
