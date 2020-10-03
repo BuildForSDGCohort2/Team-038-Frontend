@@ -3,7 +3,6 @@ body {
 }
 
 .Benefactors {
-    padding: 40px;
     font-family: Trebuchet, sans-serif;
     font-style: normal;
     width: calc(100% - 10rem);
@@ -12,16 +11,15 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 20% 20% 50%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% 70%;
     grid-column-gap: 50px;
-    grid-row-gap: 40px;
+    grid-row-gap: 50px;
     justify-content: center;
     padding: 10px;
 }
 
 .pageTitle {
-    grid-column: 1 / span 2;
     justify-self: start;
     padding: 5px;
     color: #4f4f4f;
@@ -44,18 +42,23 @@ body {
     color: #4f4f4f;
 }
 
+.benefactorsDetails{
+    grid-column: 1 / span 2;
+    display:flex;
+    justify-content: space-between;
+}
+
 .totalBenefactors,
-.awaitingRequest,
+.pendingRequest,
 .earnings {
-    align-self: center;
-    padding: 20px;
+    padding: 10px;
     background: rgba(118, 234, 215, 0.05);
     border-radius: 8px;
     color: #4f4f4f;
 }
 
-.benefactorsTableWrapper {
-    grid-column: 1 / span 3;
+.benefactorsTableWrapper{
+    grid-column: 1 / span 2;
     background: rgba(118, 234, 215, 0.08);
     border-radius: 5px;
     height: auto;
@@ -107,16 +110,32 @@ body {
 
 @media screen and (max-width: 1040px) {
     .Benefactors {
-        width: auto;
-        justify-items: left;
-        justify-content: left;
-        padding-left: 3px;
+        width: calc(100% - 3rem);
+        margin: auto;
     }
 
     .grid-container {
+        grid-template-rows: 10% 28% 65%;
         column-gap: 15px;
-        row-gap: 35px;
-        width: 340px;
+        row-gap: 30px;
+    }
+    
+    .addBenefactors-btn button {
+        padding: 2px;
+        font-size: 12px;
+        width: 115px;
+        height: 33px;
+    }
+
+    .benefactorsDetails {
+        flex-direction: column;
+    }
+    
+    .totalBenefactors,
+    .pendingRequest,
+    .earnings {
+        display: flex;
+        justify-content: space-between;
     }
 
     .benefactorsTable {
@@ -124,18 +143,26 @@ body {
         font-size: 10px;
         padding: 5px;
     }
-
+    
     .benefactorsTable thead th {
         padding: 5px;
         font-size: 11px;
     }
 
+    .benefactorsTable thead tr th:nth-child(2){
+        display: none;
+    }
+    
     .benefactorsTableRows td {
         padding: 5px;
         font-size: 11px;
         text-align: left;
     }
 
+    .benefactorsTableRows td:nth-child(2){
+        display: none;
+    }
+    
     .flex-wrapper {
         padding: 5px;
         flex-direction: column;

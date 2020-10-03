@@ -2,10 +2,12 @@
     width: 100%;
     padding-bottom: 90px;
     background: var(--about-bg);
+    font-family: Trebuchet, sans-serif;
+    font-style: normal;
+    font-weight: normal;
 }
 
 .how-we-work-section h2 {
-    font-family: Trebuchet, sans-serif;
     font-weight: bold;
     font-size: 45px;
     line-height: 132.4%;
@@ -43,7 +45,6 @@
 }
 
 .column .title {
-    font-family: Trebuchet, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 23px;
@@ -60,9 +61,6 @@
 
 .column p {
     padding: 20px 20px;
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 132.4%;
     text-transform: uppercase;

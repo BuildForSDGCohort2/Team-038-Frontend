@@ -4,8 +4,6 @@ body {
 
 .Transactions {
     display: flex;
-    align-content: center;
-    padding: 5px;
     font-family: Trebuchet, sans-serif;
     font-style: normal;
     width: calc(100% - 10rem);
@@ -17,9 +15,9 @@ body {
     height: 460px;
     grid-template-columns: 370px 370px;
     grid-template-rows: 30% auto;
-    padding: 5px;
+    padding: 10px;
     grid-gap: 40px;
-    column-gap: 50px;
+    column-gap: 100px;
 }
 
 .grid-col1 {
@@ -64,7 +62,6 @@ body {
     display: grid;
     grid-template-columns: 45% 10% 45%;
     grid-auto-rows: 50px 100px;
-    width: 345px;
     height: 191px;
     background: rgba(118, 234, 215, 0.1);
     border-radius: 10px;
@@ -118,47 +115,39 @@ body {
 
 .transactionsTable {
     border-collapse: separate;
-    width: 335px;
+    width: 100%;
 }
 
-th {
+.transactionsTable th {
     text-align: left;
     font-size: 12px;
-    padding: 3px;
+    padding: 5px;
 }
 
-thead tr th {
-    font-size: 16px;
+.transactionSent,
+.transactionRecieved,
+.transactionFail,
+.userName,
+.date {
+    font-size: 11px;
+    padding: 2;
 }
 
-.transactionSent {
+.transactionSent,
+.transactionFail {
     color: #eb5757;
-    padding: 2px;
-    font-size: 12px;
 }
 
 .transactionRecieved {
     color: #219653;
-    padding: 2px;
-    font-size: 12px;
-}
-
-.transactionFail {
-    color: #eb5757;
-    padding: 2px;
-    font-size: 12px;
 }
 
 .userName {
-    width: 100%;
-    padding: 2px;
-    font-size: 12px;
+    width: 65%;
 }
 
 .date {
     text-align: right;
-    padding: 1px;
-    font-size: 11px;
 }
 
 .noTransactions {
@@ -174,12 +163,12 @@ thead tr th {
 
 @media screen and (max-width: 1040px) {
     .Transactions {
-        padding: 5px;
-        width: auto;
+        width: calc(100% - 3rem);
+        margin: auto;
     }
 
     .gridContainer {
-        grid-template-columns: 270px;
+        grid-template-columns: 300px;
         grid-template-rows: 10% 15% 35% 40%;
         padding: 5px;
         grid-column-gap: 5px;
@@ -188,9 +177,9 @@ thead tr th {
 
     .grid-col1,
     .grid-col2 {
-        place-self: center;
-        justify-self: center;
-        text-align: center;
+        place-self: left;
+        justify-self: left;
+        text-align: left;
     }
 
     .grid-col2 button {
@@ -202,7 +191,6 @@ thead tr th {
         display: grid;
         grid-template-columns: 35% 10% 35%;
         grid-auto-rows: 40px 110px;
-        width: 260px;
         height: 130px;
         background: rgba(118, 234, 215, 0.1);
         border-radius: 10px;
@@ -232,11 +220,7 @@ thead tr th {
         height: 70px;
     }
 
-    .grid-col4 {
-        width: 260px;
-    }
-
-    .grid-col4 .transactionsTable {
-        width: 250px;
-    }
+    .userName {
+        width: 55%;
+    } 
 }

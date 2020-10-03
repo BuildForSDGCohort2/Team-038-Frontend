@@ -3,7 +3,6 @@ body {
 }
 
 .Beneficiaries {
-    padding: 40px;
     font-family: Trebuchet, sans-serif;
     font-style: normal;
     width: calc(100% - 10rem);
@@ -12,16 +11,15 @@ body {
 
 .grid-Container {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 20% 20% 50%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% 70%;
     grid-column-gap: 50px;
-    grid-row-gap: 40px;
+    grid-row-gap: 50px;
     justify-content: center;
     padding: 10px;
 }
 
 .pageTitle {
-    grid-column: 1 / span 2;
     justify-self: start;
     padding: 5px;
     color: #4f4f4f;
@@ -45,18 +43,23 @@ body {
     color: #fff;
 }
 
+.beneficiariesDetails{
+    grid-column: 1 / span 2;
+    display:flex;
+    justify-content: space-between;
+}
+
 .totalBeneficiaries,
 .awaitingRequest,
 .scheduledExpenses {
-    align-self: center;
-    padding: 20px;
+    padding: 10px;
     background: rgba(118, 234, 215, 0.05);
     border-radius: 8px;
     color: #4f4f4f;
 }
 
 .beneficiariesTableWrapper {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
     background: rgba(118, 234, 215, 0.08);
     border-radius: 5px;
     height: auto;
@@ -134,18 +137,34 @@ body {
 
 @media screen and (max-width: 1040px) {
     .Beneficiaries {
-        width: auto;
-        justify-items: left;
-        justify-content: left;
-        padding-left: 3px;
+       width: calc(100% - 3rem);
+        margin: auto;
     }
-
+    
     .grid-Container {
+        grid-template-rows: 10% 28% 65%;
         column-gap: 15px;
-        row-gap: 35px;
-        width: 340px;
+        row-gap: 30px;
     }
+    
+    .addBeneficiries-btn button {
+        padding: 2px;
+        font-size: 12px;
+        width: 115px;
+        height: 33px;
+    }
+    
+    .beneficiariesDetails {
+        flex-direction: column;
+        }
 
+    .totalBeneficiaries,
+    .awaitingRequest,
+    .scheduledExpenses {
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .beneficiariesTable {
         font-weight: 11px;
         font-size: 10px;
@@ -161,6 +180,14 @@ body {
         padding: 5px;
         font-size: 11px;
         text-align: left;
+    }
+
+    .beneficiariesTable thead tr th:nth-child(2){
+        display: none;
+    }
+    
+    .beneficiariesTableRows td:nth-child(2){
+            display: none;
     }
 
     .indicator {
