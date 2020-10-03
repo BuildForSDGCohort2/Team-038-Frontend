@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Wallet.css";
 import { profileData as userData, transactions } from "../Profile/data.js";
 import { RiCloseFill } from "react-icons/ri";
-import Fund from "./FundWallet/Fund";
 import Button from "../../Components/Button/Button";
 import { usePaystackPayment } from "react-paystack";
+import Modal from "../../Components/Modals/Modal";
 
 const Wallet = (props) => {
   // Declaring States
 
   const [details, getDetails] = useState({});
-  const [hideBalance, setHideBalance] = useState(false);
+  const [hideBalance, setHideBalance] = useState(true);
   const [fundWallet, setFundWallet] = useState(false);
   const [amount, setAmount] = useState();
 
@@ -21,9 +21,6 @@ const Wallet = (props) => {
     setAmount(e.target.value);
   };
 
-  const showHideClassName = fundWallet
-    ? "Fund DisplayBlock openFound"
-    : "Fund DisplayNone closeFound";
   const getUserData = () => {
     const profile = userData[0];
     getDetails(profile);
@@ -66,44 +63,38 @@ const Wallet = (props) => {
     <div className="Wallet">
       {/* Fund Modal */}
 
-      <Fund
-        children={
-          <div className={showHideClassName}>
-            <div className={fundWallet ? "Box OpenFound" : "Box CloseFound"}>
-              <div className="FundHero">
-                <h2 className="FundHeading">Fund Repify Wallet</h2>
-                <div className="CloseModal">
-                  <RiCloseFill
-                    className="CloseIcon"
-                    onClick={fundWalletHandler}
-                  />
-                </div>
-              </div>
-              <div className="FundInput">
-                <p className="PlaceHolder">How much do you want to fund?</p>
-                <form>
-                  <input
-                    type="number"
-                    onChange={setAmountHandler}
-                    className="FundAmount"
-                    // value={amount}
-                  />
-                </form>
-                <button
-                  onClick={() => {
-                    initializePayment();
-                    fundWalletHandler();
-                  }}
-                  type="submit"
-                  className="FundBtn"
-                >
-                  Fund
-                </button>
-              </div>
-            </div>
+      <Modal
+        modalClassName={fundWallet}
+        boxClassName={fundWallet}
+      >
+        <div className="FundHero">
+          <h2 className="FundHeading">Fund Repify Wallet</h2>
+          <div className="CloseModal">
+            <RiCloseFill className="CloseIcon" onClick={fundWalletHandler} />
           </div>
-        }
-      />
+        </div>
+        <div className="FundInput">
+          <p className="PlaceHolder">How much do you want to fund?</p>
+          <form>
+            <input
+              type="number"
+              onChange={setAmountHandler}
+              className="FundAmount"
+              // value={amount}
+            />
+          </form>
+          <button
+            onClick={() => {
+              initializePayment();
+              fundWalletHandler();
+            }}
+            type="submit"
+            className="FundBtn"
+          >
+            Fund
+          </button>
+        </div>
+      </Modal>
 
       {/* Main Body Starts Here */}
 
@@ -120,7 +111,10 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance">  &#8358; { hideBalance ? details.balance : " X X X"} </h3>
+            <h3 className="WalletBalance">
+              {" "}
+              &#8358; {hideBalance ? details.balance : " X X X"}{" "}
+            </h3>
             <div className="WalletTextGrouped">
               <p className="WalletLink BlueColor" onClick={fundWalletHandler}>
                 Fund Account

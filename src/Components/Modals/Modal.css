@@ -23,7 +23,7 @@ input:focus {
     display: none;
 }
 
-.Fund {
+.Modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,11 +44,11 @@ input:focus {
     padding: 1.5rem;
 }
 
-.Box.OpenFound {
+.Box.OpenBox {
     animation: fadeIn 0.4s forwards;
 }
 
-.Box.CloseFound {
+.Box.CloseBox {
     animation: fadeOut 0.2s forwards;
 }
 
