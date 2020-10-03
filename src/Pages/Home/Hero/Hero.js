@@ -34,7 +34,6 @@ class Hero extends React.Component {
             handleLogin={this.handleLogin}
             handleSignup={this.handleSignup}
           />
-          <SideLink/>
           <div className="Hero">
             <div className="HeroContent">
               <h1 className="HeroHeading"> Automate your payments </h1>
