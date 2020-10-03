@@ -1,0 +1,134 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.DisplayBlock {
+    display: block;
+}
+
+.DisplayNone {
+    display: none;
+}
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 3000000;
+}
+
+.Box {
+    position: fixed;
+    background: white;
+    width: 30%;
+    height: auto;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+}
+
+.Box.OpenBox {
+    animation: fadeIn 0.4s forwards;
+}
+
+.Box.CloseBox {
+    animation: fadeOut 0.2s forwards;
+}
+
+.ModalHero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ModalHeading {
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+.CloseIcon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media screen and (max-width: 787px) {
+    .Box {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .Box {
+        width: 70%;
+    }
+
+    .ModalHeading {
+        font-size: 1rem;
+    }
+
+    .CloseIcon {
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+}

@@ -1,10 +1,8 @@
 import React from "react";
 import "./Hero.css";
 import Header from "../../../Components/Header/Header";
-import SideLink from "../../../Components/SideLinks/SideLinks";
 import Button from "../../../Components/Button/Button";
 import { Login, SignUp } from "../../../Components/Login-SignUp/Login-SignUp";
-import { Link } from "react-router-dom";
 
 class Hero extends React.Component {
   constructor() {
@@ -36,7 +34,6 @@ class Hero extends React.Component {
             handleLogin={this.handleLogin}
             handleSignup={this.handleSignup}
           />
-          <SideLink/>
           <div className="Hero">
             <div className="HeroContent">
               <h1 className="HeroHeading"> Automate your payments </h1>
