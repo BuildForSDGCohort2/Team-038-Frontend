@@ -6,9 +6,9 @@ const howWeWork = () => {
     return (
         <div className="how-we-work-section">
             <h2> Three Steps To Less Worries </h2>
-            <div className="container row" >
+            <div className="container " >
                 <Link to="/about/#howToSetUpAccount" className="btn-flat">
-                    <div className="signup column">
+                    <div className="signUp column">
                         <div className="title"> SIGN <br /> UP </div>
                         <p>
                             signup for a personal  or business account to get started...

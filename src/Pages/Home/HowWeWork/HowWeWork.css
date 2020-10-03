@@ -5,13 +5,9 @@
 }
 
 .how-we-work-section h2 {
-    font-family: Trebuchet, sans-serif;
-    font-weight: bold;
     font-size: 45px;
-    line-height: 132.4%;
     text-align: center;
     text-transform: capitalize;
-    color: rgb(90, 89, 89);
     padding-top: 65px;
     padding-bottom: 60px;
 }
@@ -43,11 +39,8 @@
 }
 
 .column .title {
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 23px;
-    line-height: 132.4%;
     text-transform: uppercase;
     color: rgb(90, 89, 89);
     text-align: left;
@@ -59,10 +52,7 @@
 }
 
 .column p {
-    padding: 25px 25px;
-    font-family: Trebuchet, sans-serif;
-    font-style: normal;
-    font-weight: normal;
+    padding: 20px 20px;
     font-size: 16px;
     line-height: 132.4%;
     text-transform: uppercase;
