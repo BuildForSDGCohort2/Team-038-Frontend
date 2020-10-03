@@ -127,6 +127,61 @@ body {
     bottom: -70px;
 }
 
+
+.FundInput {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.PlaceHolder {
+    font-size: 0.75rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.FundAmount {
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem auto 1.2rem;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.FundBtn,
+.paystack-button {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 2.2rem;
+    background: var(--primary-color);
+    padding: 0.6rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 0.96rem;
+}
+
+.FundBtn:focus,
+.FundBtn:active,
+.paystack-button:focus,
+.paystack-button:active {
+    border: none;
+    outline: none;
+}
+
+.FundBtn:hover,
+.paystack-button:hover {
+    background: var(--primary-color);
+    opacity: 0.5;
+}
+
+
 /* Media Queries */
 
 @media screen and (max-width: 1050px) {

@@ -44,7 +44,7 @@ const Wallet = (props) => {
 
   // Paystack Config
   const config = {
-    reference: reference,
+    reference,
     email: userData[0].email,
     amount: amount * 100,
     publicKey: apiKey,

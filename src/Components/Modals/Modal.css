@@ -52,14 +52,13 @@ input:focus {
     animation: fadeOut 0.2s forwards;
 }
 
-
-.FundHero {
+.ModalHero {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.FundHeading {
+.ModalHeading {
     margin: auto;
     font-size: 1.2rem;
 }
@@ -67,59 +66,6 @@ input:focus {
 .CloseIcon {
     font-size: 1.5rem;
     cursor: pointer;
-}
-
-.FundInput {
-    width: 100%;
-    margin-top: 2rem;
-}
-
-.PlaceHolder {
-    font-size: 0.75rem;
-    font-weight: bolder;
-    text-transform: uppercase;
-    opacity: 0.6;
-}
-
-.FundAmount {
-    width: 100%;
-    height: 2rem;
-    margin: 0.5rem auto 1.2rem;
-    border: none;
-    border-bottom: 1px solid var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-.FundBtn,
-.paystack-button {
-    display: block;
-    width: 90%;
-    margin: auto;
-    height: 2.2rem;
-    background: var(--primary-color);
-    padding: 0.6rem;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 0.5rem;
-    color: #fff;
-    font-weight: bolder;
-    font-size: 0.96rem;
-}
-
-.FundBtn:focus,
-.FundBtn:active,
-.paystack-button:focus,
-.paystack-button:active {
-    border: none;
-    outline: none;
-}
-
-.FundBtn:hover,
-.paystack-button:hover {
-    background: var(--primary-color);
-    opacity: 0.5;
 }
 
 @keyframes fadeIn {
@@ -167,19 +113,17 @@ input:focus {
 }
 
 @media screen and (max-width: 787px) {
-
     .Box {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 499px) {
-
     .Box {
         width: 70%;
     }
 
-    .FundHeading {
+    .ModalHeading {
         font-size: 1rem;
     }
 

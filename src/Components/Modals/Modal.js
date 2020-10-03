@@ -12,8 +12,8 @@ const Modal = (props) => {
       }
     >
       <div className={props.boxClassName ? "Box OpenBox" : "Box CloseBox"}>
-        <div className="FundHero">
-          <h2 className="FundHeading">{props.heading}</h2>
+        <div className="ModalHero">
+          <h2 className="ModalHeading">{props.heading}</h2>
           <div className="CloseModal">
             <RiCloseFill className="CloseIcon" onClick={props.closeModalFunction} />
           </div>
