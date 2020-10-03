@@ -20,10 +20,10 @@
   },
   "scripts": {
     "dev": "react-scripts start env-cmd -f .env.development",
-    "build": "react-scripts build env-cmd -f .env.production",
+    "build": "react-scripts build",
     "test": "react-scripts test env-cmd -f .env.development",
     "eject": "react-scripts eject",
-    "start": "serve -s build env-cmd -f .env.production",
+    "start": "serve -s build",
     "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
