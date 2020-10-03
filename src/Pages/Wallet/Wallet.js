@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Wallet.css";
 import { profileData as userData, transactions } from "../Profile/data.js";
-import { RiCloseFill } from "react-icons/ri";
 import Button from "../../Components/Button/Button";
 import { usePaystackPayment } from "react-paystack";
 import Modal from "../../Components/Modals/Modal";
@@ -66,13 +65,9 @@ const Wallet = (props) => {
       <Modal
         modalClassName={fundWallet}
         boxClassName={fundWallet}
+        closeModalFunction={fundWalletHandler}
+        heading={"Fund Repify Wallet"}
       >
-        <div className="FundHero">
-          <h2 className="FundHeading">Fund Repify Wallet</h2>
-          <div className="CloseModal">
-            <RiCloseFill className="CloseIcon" onClick={fundWalletHandler} />
-          </div>
-        </div>
         <div className="FundInput">
           <p className="PlaceHolder">How much do you want to fund?</p>
           <form>
