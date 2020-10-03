@@ -43,7 +43,7 @@ body {
     color: #fff;
 }
 
-.beneficiariesDetails{
+.beneficiariesDetails {
     grid-column: 1 / span 2;
     display:flex;
     justify-content: space-between;
