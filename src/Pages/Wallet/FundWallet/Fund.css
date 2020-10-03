@@ -165,3 +165,27 @@ input:focus {
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
+@media screen and (max-width: 787px) {
+
+    .Box {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 499px) {
+
+    .Box {
+        width: 70%;
+    }
+
+    .FundHeading {
+        font-size: 1rem;
+    }
+
+    .CloseIcon {
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+}

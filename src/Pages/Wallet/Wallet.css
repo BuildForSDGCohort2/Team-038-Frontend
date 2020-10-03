@@ -29,16 +29,6 @@ body {
     justify-content: space-between;
 }
 
-.FundWallet {
-    background: var(--primary-color);
-    cursor: pointer;
-    border-radius: 0.5rem;
-    color: #fff;
-    font-weight: bolder;
-    font-size: 0.96rem;
-    padding: 0.7rem 0.9rem;
-}
-
 .WalletHero .SmallText {
     line-height: 2;
     font-size: 0.9rem;
@@ -55,6 +45,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.WalletLink {
+    cursor: pointer;
 }
 
 .HideIt {
@@ -202,6 +196,10 @@ body {
 
     .WalletBalance {
         font-size: 1rem;
+    }
+
+    .WalletLink {
+        font-size: 0.8rem;
     }
 
     .WalletCard {

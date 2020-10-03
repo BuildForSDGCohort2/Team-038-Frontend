@@ -3,6 +3,7 @@ import "./Wallet.css";
 import { profileData as userData, transactions } from "../Profile/data.js";
 import { RiCloseFill } from "react-icons/ri";
 import Fund from "./FundWallet/Fund";
+import Button from "../../Components/Button/Button";
 import { usePaystackPayment } from "react-paystack";
 
 const Wallet = (props) => {
@@ -111,27 +112,21 @@ const Wallet = (props) => {
           <h1 className="HeroHeading">Wallet</h1>
           <p className="SmallText">{`Hello, ${details.firstName} Welcome Back`}</p>
         </div>
-        <div className="HeroBtn">
-          <p className="FundWallet" onClick={fundWalletHandler}>
-            FundWallet
-          </p>
+        <div className="HeroBtn" onClick={fundWalletHandler}>
+          <Button Title="Fund Wallet" to="#" />
         </div>
       </div>
       <div className="WalletBody">
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            {hideBalance ? (
-              <h3 className="WalletBalance">&#8358; {details.balance} </h3>
-            ) : (
-              <h3 className="WalletBalance">&#8358; X X X </h3>
-            )}
+            <h3 className="WalletBalance">  &#8358; { hideBalance ? details.balance : " X X X"} </h3>
             <div className="WalletTextGrouped">
               <p className="WalletLink BlueColor" onClick={fundWalletHandler}>
                 Fund Account
               </p>
               <p className="HideIt" onClick={hideBalanceHandler}>
-                Hide Balance
+                {hideBalance ? "Hide Balance" : "Show Balance"}
               </p>
             </div>
           </div>
