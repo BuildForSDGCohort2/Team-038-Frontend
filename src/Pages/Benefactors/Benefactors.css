@@ -156,7 +156,7 @@ body {
     .benefactorsTableRows td:nth-child(2) {
         display: none;
     }
-    
+
     .flex-wrapper {
         padding: 5px;
         flex-direction: column;
