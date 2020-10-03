@@ -10,7 +10,8 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
     outline: none;
 }
 
@@ -42,6 +43,15 @@ textarea:focus, input:focus{
     transform: translate(-50%, -50%);
     padding: 1.5rem;
 }
+
+.Box.OpenFound {
+    animation: fadeIn 0.4s forwards;
+}
+
+.Box.CloseFound {
+    animation: fadeOut 0.2s forwards;
+}
+
 
 .FundHero {
     display: flex;
@@ -81,7 +91,8 @@ textarea:focus, input:focus{
     font-weight: bold;
 }
 
-.FundBtn {
+.FundBtn,
+.paystack-button {
     display: block;
     width: 90%;
     margin: auto;
@@ -97,12 +108,60 @@ textarea:focus, input:focus{
     font-size: 0.96rem;
 }
 
-.FundBtn:focus, .FundBtn:active {
+.FundBtn:focus,
+.FundBtn:active,
+.paystack-button:focus,
+.paystack-button:active {
     border: none;
     outline: none;
 }
 
-.FundBtn:hover {
+.FundBtn:hover,
+.paystack-button:hover {
     background: var(--primary-color);
     opacity: 0.5;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

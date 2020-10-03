@@ -3,7 +3,7 @@ import "./Wallet.css";
 import { profileData as userData, transactions } from "../Profile/data.js";
 import { RiCloseFill } from "react-icons/ri";
 import Fund from "./FundWallet/Fund";
-import { usePaystackPayment, PaystackButton, PaystackConsumer } from 'react-paystack';
+import { usePaystackPayment } from "react-paystack";
 
 const Wallet = (props) => {
   // Declaring States
@@ -13,27 +13,16 @@ const Wallet = (props) => {
   const [fundWallet, setFundWallet] = useState(false);
   const [amount, setAmount] = useState();
 
-  const config = {
-    reference: (new Date()).getTime(),
-    email: userData[0].email,
-    amount: amount,
-    publicKey: process.env.REACT_APP_API_KEY,
-};
-
   // State Handlers
 
   const setAmountHandler = (e) => {
     e.preventDefault();
-    const formatMoney = new Intl.NumberFormat("en-NG", {
-      style: "currency",
-      currency: "NGN",
-    }).format(e.target.value);
-    console.log(formatMoney);
-    setAmount(formatMoney);
+    setAmount(e.target.value);
   };
+
   const showHideClassName = fundWallet
-    ? "Fund DisplayBlock"
-    : "Fund DisplayNone";
+    ? "Fund DisplayBlock openFound"
+    : "Fund DisplayNone closeFound";
   const getUserData = () => {
     const profile = userData[0];
     getDetails(profile);
@@ -53,6 +42,27 @@ const Wallet = (props) => {
     getUserData();
   }, []);
 
+  const reference = new Date().getTime();
+  // Paystack Config
+  const config = {
+    reference: reference,
+    email: userData[0].email,
+    amount: amount * 100,
+    publicKey: process.env.REACT_APP_ID,
+    metadata: {
+      name: userData[0].firstName,
+      phone: userData[0].phone,
+    },
+    text: "Fund",
+    onSuccess: () => {
+      fetch(`https://api.paystack.co/transaction/verify/:${reference}`)
+        .then((res) => res.json())
+        .catch((err) => console.log(err));
+    },
+    onClose: () => null,
+  };
+
+  const initializePayment = usePaystackPayment(config);
   return (
     <div className="Wallet">
       {/* Fund Modal */}
@@ -60,7 +70,7 @@ const Wallet = (props) => {
       <Fund
         children={
           <div className={showHideClassName}>
-            <div className="Box">
+            <div className={fundWallet ? "Box OpenFound" : "Box CloseFound"}>
               <div className="FundHero">
                 <h2 className="FundHeading">Fund Repify Wallet</h2>
                 <div className="CloseModal">
@@ -80,7 +90,14 @@ const Wallet = (props) => {
                     // value={amount}
                   />
                 </form>
-                <button type="submit" className="FundBtn">
+                <button
+                  onClick={() => {
+                    initializePayment();
+                    fundWalletHandler();
+                  }}
+                  type="submit"
+                  className="FundBtn"
+                >
                   Fund
                 </button>
               </div>
@@ -109,7 +126,7 @@ const Wallet = (props) => {
             {hideBalance ? (
               <h3 className="WalletBalance">&#8358; {details.balance}</h3>
             ) : (
-              <h3 className="WalletBalance">&#8358; X X X</h3>
+              <h3 className="WalletBalance">&#8358; X X X </h3>
             )}
             <p className="HideIt" onClick={hideBalanceHandler}>
               Hide Balance
