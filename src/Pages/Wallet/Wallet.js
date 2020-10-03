@@ -122,7 +122,7 @@ const Wallet = (props) => {
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
             {hideBalance ? (
-              <h3 className="WalletBalance">&#8358; {details.balance}</h3>
+              <h3 className="WalletBalance">&#8358; {details.balance} </h3>
             ) : (
               <h3 className="WalletBalance">&#8358; X X X </h3>
             )}
