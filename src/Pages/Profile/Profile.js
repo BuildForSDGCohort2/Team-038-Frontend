@@ -5,7 +5,6 @@ import { profileData, earnings } from "./data.js";
 import { GoLocation, GoMail } from "react-icons/go";
 import { FiPhone, FiPlus } from "react-icons/fi";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import Modal from "../../Components/Modals/Modal";
 import BeneficiariesModal from "../../Components/BeneficiariesModal/BeneficiariesModal";
 import BenefactorsModal from "../../Components/BenefactorsModal/BenefactorsModal";
 
