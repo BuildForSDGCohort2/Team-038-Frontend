@@ -18,6 +18,7 @@ const Wallet = (props) => {
   const setAmountHandler = (e) => {
     e.preventDefault();
     setAmount(e.target.value);
+    
   };
 
   const getUserData = () => {

@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
 
 const BeneficiariesModal = (props) => {
+  const { register, handleSubmit, errors } = useForm();
+  const [duration, setDuration] = useState("DEFAULT");
+
+  const handleDuration = (e) => {
+    console.log(e.target.value);
+    setDuration(e.target.value);
+  };
+  
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <Modal
       modalClassName={props.isTrue}
@@ -11,31 +24,41 @@ const BeneficiariesModal = (props) => {
       heading={"Add Beneficiaries"}
     >
       <div className="BeneficiaryInput">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <label className="BeneficiaryLabel">
-            Beneficiaries
+            Beneficiaries Id
             <input
+              ref={register({ required: true })}
               type="text"
-              // onChange={setAmountHandler}
               className="BeneficiaryContent"
               name="beneficiary_email"
               placeholder="Users Email or Repify ID"
-              // value={amount}
             />
+            {errors.beneficiary_email && "Email or Id is required."}
           </label>
           <label className="BeneficiaryLabel">
             When should we pay?
             <input
+              ref={register({ required: true, pattern: /\d+/ })}
               type="number"
-              // onChange={setAmountHandler}
               className="BeneficiaryContent"
               placeholder="Day in a month"
-              // value={amount}
+              name="pay_date"
             />
+            {errors.pay_date && "Please enter day between 1 - 28"}
           </label>
           <label className="BeneficiaryLabel">
             Duration
-            <select className="BeneficiarySelect">
+            <select
+              className="BeneficiarySelect"
+              name="duration"
+              ref={register({ required: true })}
+              value={duration}
+              onChange={handleDuration}
+            >
+              <option value="DEFAULT" name="DEFAULT" disabled>
+                Select a duration
+              </option>
               <option value="one_month" name="one_month">
                 One Month
               </option>
@@ -48,37 +71,39 @@ const BeneficiariesModal = (props) => {
               <option value="one_year" name="one_year">
                 One Year
               </option>
+              <option value="recursive" name="recursive">
+                Recursive
+              </option>
             </select>
           </label>
           <label className="BeneficiaryLabel">
             Amount
             <input
+              ref={register({ required: true })}
               type="number"
-              // onChange={setAmountHandler}
               className="BeneficiaryContent"
               placeholder="How much should we send?"
               name="amount"
-              // value={amount}
             />
+            {errors.amount && "An amount is required."}
           </label>
           <label className="BeneficiaryLabel">
             Description
             <input
+              ref={register({ required: true })}
               type="text"
-              // onChange={setAmountHandler}
+              minLength="10"
               className="BeneficiaryContent"
               placeholder="What is it for?"
               name="tag"
-              // value={amount}
             />
+            {errors.tag && "Please enter a minimum of 10 words"}
           </label>
-          <button
+          <input
             onClick={props.clicked}
             type="submit"
             className="BeneficiaryBtn"
-          >
-            Add
-          </button>
+          />
         </form>
       </div>
     </Modal>
@@ -86,3 +111,15 @@ const BeneficiariesModal = (props) => {
 };
 
 export default BeneficiariesModal;
+
+// State Management
+
+//   const [beneficiaryEmail, setBeneficiaryEmail] = useState();
+//   const [amount, setAmount] = useState();
+//   const [payDate, setPayDate] = useState();
+//   const [duration, setDuration] = useState();
+//   const [description, setDescription] = useState();
+
+//   const wordsHandler = (event) => {
+//     setWords(event.target.value);
+//   };
