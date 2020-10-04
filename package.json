@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "react-scripts start env-cmd -f .env.development",
     "build": "react-scripts build",
-    "test": "react-scripts test env-cmd -f .env.development",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "serve -s build",
     "heroku-postbuild": "npm run build"
