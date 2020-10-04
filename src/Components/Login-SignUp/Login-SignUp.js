@@ -3,6 +3,7 @@ import "./Login-SignUp.css";
 import { Link} from "react-router-dom";
 import {useForm, } from "react-hook-form";
 import Axios from "../../lib/client";
+import getTokenDetails from "../../lib/jwt";
 
 
 const Login = ({ close, handleSignup }) => {
@@ -13,6 +14,8 @@ const Login = ({ close, handleSignup }) => {
       .then(async(res) => {
         const data = await res.data;
         localStorage.setItem("token", data.token);
+        //data to send to dashboard component
+        const payload = await getTokenDetails(data.token);
       })
       .catch((err) => {
         if(err.response.data.hasOwnProperty("message")) {
@@ -60,14 +63,18 @@ const SignUp = ({close, handleLogin}) => {
     return Axios.post("/user/create", data)
       .then(async(res) => {
         const data = await res.data;
+        //data to send to dashboard component
+        const payload = await getTokenDetails(data["data"].token);
         if(data.message == "user created") {
           window.alert("Registration successful");
-          window.location("/");
+          window.location.href = "/";
         }
       })
       .catch((err) => {
-        if(err.response.data.hasOwnProperty("message")) {
-          return window.alert(err.response.data.message);
+        if(err.hasOwnProperty("response") && err.response.hasOwnProperty("data")) {
+          if(err.response.data.hasOwnProperty("message")) {
+            return window.alert(err.response.data.message);
+          }
         }
         return window.alert(
           "An error occured, please try again later"
