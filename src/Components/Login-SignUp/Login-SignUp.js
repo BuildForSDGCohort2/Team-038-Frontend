@@ -5,7 +5,6 @@ import {useForm, } from "react-hook-form";
 import Axios from "../../lib/client";
 import getTokenDetails from "../../lib/jwt";
 
-
 const Login = ({ close, handleSignup }) => {
   const {register, handleSubmit,} = useForm();
 
@@ -13,7 +12,7 @@ const Login = ({ close, handleSignup }) => {
     return Axios.post("/user/login", data)
       .then(async(res) => {
         const data = await res.data;
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("UserToken", data.token);
         //data to send to dashboard component
         const payload = await getTokenDetails(data.token);
       })
@@ -71,13 +70,14 @@ const SignUp = ({close, handleLogin}) => {
         }
       })
       .catch((err) => {
-        if(err.hasOwnProperty("response")) {
-          if(err.response.hasOwnProperty("data")) {
-            if(err.response.data.hasOwnProperty("message")) {
-              return window.alert(err.response.data.message);
-            }
-          }
-        }
+        // if(err.hasOwnProperty("response")) {
+        //   if(err.response.hasOwnProperty("data")) {
+        //     if(err.response.data.hasOwnProperty("message")) {
+        //       return window.alert(err.response.data.message);
+        //     }
+        //   }
+        // }
+        console.log(err);
         return window.alert(
           "An error occured, please try again later"
         );

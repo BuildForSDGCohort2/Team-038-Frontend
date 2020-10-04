@@ -18,6 +18,7 @@ const Wallet = (props) => {
   const setAmountHandler = (e) => {
     e.preventDefault();
     setAmount(e.target.value);
+    
   };
 
   const getUserData = () => {
@@ -107,8 +108,7 @@ const Wallet = (props) => {
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
             <h3 className="WalletBalance">
-              {" "}
-              &#8358; {hideBalance ? details.balance : " X X X"}{" "}
+              &#8358; {hideBalance ? details.balance : " X X X"}
             </h3>
             <div className="WalletTextGrouped">
               <p className="WalletLink BlueColor" onClick={fundWalletHandler}>

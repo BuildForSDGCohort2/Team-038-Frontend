@@ -1,6 +1,8 @@
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button,
+select::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -11,7 +13,8 @@ input[type=number] {
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
     outline: none;
 }
 
@@ -38,7 +41,7 @@ input:focus {
     background: white;
     width: 30%;
     height: auto;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1.5rem;

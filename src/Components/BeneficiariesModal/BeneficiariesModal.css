@@ -1,0 +1,55 @@
+.BeneficiaryInput {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.BeneficiaryContent {
+    width: 100%;
+    height: 1rem;
+    margin: 0.3rem auto 1.2rem;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+    padding: 0.4rem;
+}
+
+.BeneficiaryLabel {
+    font-size: 0.8rem;
+}
+
+.BeneficiarySelect {
+    width: 100%;
+    border: none;
+    margin: 0.3rem auto 1.2rem;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+    padding: 0.4rem;
+}
+
+.BeneficiaryBtn {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 2.2rem;
+    background: var(--primary-color);
+    padding: 0.6rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 0.96rem;
+}
+
+.BeneficiaryBtn:focus,
+.BeneficiaryBtn:active {
+    border: none;
+    outline: none;
+}
+
+.BeneficiaryBtn:hover,
+.paystack-button:hover {
+    background: var(--primary-color);
+    opacity: 0.5;
+}
