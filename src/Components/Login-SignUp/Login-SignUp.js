@@ -1,25 +1,26 @@
 import React, {useState} from "react";
 import "./Login-SignUp.css";
 import { Link} from "react-router-dom";
-import {useForm, } from 'react-hook-form';
+import {useForm, } from "react-hook-form";
 import Axios from "../../lib/client";
 
 
 const Login = ({ close, handleSignup }) => {
   const {register, handleSubmit,} = useForm();
+
   const onSubmit = (data) => {
     return Axios.post("/user/login", data)
       .then(async(res) => {
         const data = await res.data;
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
       })
       .catch((err) => {
         if(err.response.data.hasOwnProperty("message")) {
           return window.alert(err.response.data.message);
         }
         return window.alert("An error occured, please try again later");
-      })
-  }
+      });
+  };
   
   return (
     <div className="modal login">
@@ -47,7 +48,7 @@ const Login = ({ close, handleSignup }) => {
 };
 
 const SignUp = ({close, handleLogin}) => {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [unmatched, setUnmatched] = useState(false);
 
   const onSubmit = (data) => {
@@ -80,7 +81,7 @@ const SignUp = ({close, handleLogin}) => {
         setUnmatched(false);
       }
       else {
-        setUnmatched(true)
+        setUnmatched(true);
       }
     }
   }
@@ -117,7 +118,6 @@ const SignUp = ({close, handleLogin}) => {
           <label htmlFor="user_type">Account Type:</label><br/>
           <select 
             name="user_type"
-            onChange={(e) => console.log(e)}
             ref={register}
             required
           >
@@ -134,7 +134,7 @@ const SignUp = ({close, handleLogin}) => {
             placeholder="Password" 
             ref={register} 
             required
-            onChange={event => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
           />
         </div>
         <div>
