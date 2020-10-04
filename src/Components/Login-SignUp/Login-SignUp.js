@@ -13,6 +13,7 @@ const Login = ({ close, handleSignup }) => {
     return Axios.post("/user/login", data)
       .then(async(res) => {
         const data = await res.data;
+        console.log(data, "Here")
         localStorage.setItem("token", data.token);
         //data to send to dashboard component
         const payload = await getTokenDetails(data.token);
@@ -71,9 +72,11 @@ const SignUp = ({close, handleLogin}) => {
         }
       })
       .catch((err) => {
-        if(err.hasOwnProperty("response") && err.response.hasOwnProperty("data")) {
-          if(err.response.data.hasOwnProperty("message")) {
-            return window.alert(err.response.data.message);
+        if(err.hasOwnProperty("response")) {
+          if(err.response.hasOwnProperty("data")) {
+            if(err.response.data.hasOwnProperty("message")) {
+              return window.alert(err.response.data.message);
+            }
           }
         }
         return window.alert(
