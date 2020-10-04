@@ -12,47 +12,66 @@ const BeneficiariesModal = (props) => {
     >
       <div className="BeneficiaryInput">
         <form>
-          <input
-            type="text"
-            // onChange={setAmountHandler}
-            className="BeneficiaryContent"
-            name="beneficiary_email"
-            placeholder="Users Email or Repify ID"
-            // value={amount}
-          />
-          <label>
-            When should we pay?
+          <label className="BeneficiaryLabel">
+            Beneficiaries
             <input
-              type="date"
+              type="text"
               // onChange={setAmountHandler}
               className="BeneficiaryContent"
-              placeholder="When should we pay?"
+              name="beneficiary_email"
+              placeholder="Users Email or Repify ID"
               // value={amount}
             />
           </label>
-          <input
-            type="text"
-            // onChange={setAmountHandler}
-            className="BeneficiaryContent"
-            placeholder="Users Email or Repify ID"
-            // value={amount}
-          />
-          <input
-            type="number"
-            // onChange={setAmountHandler}
-            className="BeneficiaryContent"
-            placeholder="How much should we send?"
-            name="amount"
-            // value={amount}
-          />
-          <input
-            type="text"
-            // onChange={setAmountHandler}
-            className="BeneficiaryContent"
-            placeholder="What is it for?"
-            name="tag"
-            // value={amount}
-          />
+          <label className="BeneficiaryLabel">
+            When should we pay?
+            <input
+              type="number"
+              // onChange={setAmountHandler}
+              className="BeneficiaryContent"
+              placeholder="Day in a month"
+              // value={amount}
+            />
+          </label>
+          <label className="BeneficiaryLabel">
+            Duration
+            <select className="BeneficiarySelect">
+              <option value="one_month" name="one_month">
+                One Month
+              </option>
+              <option value="three_months" name="three_months">
+                Three Months
+              </option>
+              <option value="six_months" name="six_months">
+                Six Months
+              </option>
+              <option value="one_year" name="one_year">
+                One Year
+              </option>
+            </select>
+          </label>
+          <label className="BeneficiaryLabel">
+            Amount
+            <input
+              type="number"
+              // onChange={setAmountHandler}
+              className="BeneficiaryContent"
+              placeholder="How much should we send?"
+              name="amount"
+              // value={amount}
+            />
+          </label>
+          <label className="BeneficiaryLabel">
+            Description
+            <input
+              type="text"
+              // onChange={setAmountHandler}
+              className="BeneficiaryContent"
+              placeholder="What is it for?"
+              name="tag"
+              // value={amount}
+            />
+          </label>
           <button
             onClick={props.clicked}
             type="submit"

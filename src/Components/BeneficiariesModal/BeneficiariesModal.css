@@ -1,4 +1,3 @@
-
 .BeneficiaryInput {
     width: 100%;
     margin-top: 1.5rem;
@@ -9,6 +8,19 @@
     height: 1rem;
     margin: 0.3rem auto 1.2rem;
     border: none;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+    padding: 0.4rem;
+}
+
+.BeneficiaryLabel {
+    font-size: 0.8rem;
+}
+
+.BeneficiarySelect {
+    width: 100%;
+    border: none;
+    margin: 0.3rem auto 1.2rem;
     border-bottom: 1px solid var(--primary-color);
     font-size: 0.8rem;
     padding: 0.4rem;
