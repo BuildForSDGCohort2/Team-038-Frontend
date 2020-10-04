@@ -6,6 +6,8 @@ import { GoLocation, GoMail } from "react-icons/go";
 import { FiPhone, FiPlus } from "react-icons/fi";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Modal from "../../Components/Modals/Modal";
+import BeneficiariesModal from "../../Components/BeneficiariesModal/BeneficiariesModal";
+import BenefactorsModal from "../../Components/BenefactorsModal/BenefactorsModal";
 
 const Normal = () => {
   const data = { ...profileData[0] };
@@ -14,6 +16,7 @@ const Normal = () => {
 
   const [copyId, setCopyId] = useState("Copy");
   const [addBenefactors, setAddBenefactors] = useState(false);
+  const [addBeneficiaries, setAddBeneficiaries] = useState(true);
 
   //  State Handlers
 
@@ -25,9 +28,16 @@ const Normal = () => {
     setAddBenefactors(!addBenefactors);
   };
 
+  const addBeneficiariesHandler = () => {
+    setAddBeneficiaries(!addBeneficiaries);
+  };
   return (
     <div className="Profile">
-      <Modal></Modal>
+      {/* Add Benefactors and Beneficiaries Modal */}
+
+      <BeneficiariesModal clicked={addBeneficiariesHandler} isTrue={addBeneficiaries} />
+      <BenefactorsModal clicked={addBenefactorsHandler} isTrue={addBenefactors} />
+
       <div className="ProfileHero">
         <div className="HeroTexts">
           <h1 className="HeroHeading">Profile</h1>
@@ -76,8 +86,8 @@ const Normal = () => {
           <div className="gridCards">
             <div className="EarningsCard">
               <div className="EarnTitle">
-                <h3 className="EarnType BlueColor">{earnings[0].type}</h3>
-                <h3 className="EarnTypeIcon">
+                <h3 className="EarnType BlueColor">Benefactors</h3>
+                <h3 className="EarnTypeIcon" onClick={addBenefactorsHandler}>
                   <FiPlus />
                 </h3>
               </div>
@@ -94,8 +104,8 @@ const Normal = () => {
             </div>
             <div className="EarningsCard">
               <div className="EarnTitle">
-                <h3 className="EarnType RedColor">{earnings[1].type}</h3>
-                <h3 className="EarnTypeIcon" onClick={addBenefactorsHandler}>
+                <h3 className="EarnType RedColor">Beneficiaries</h3>
+                <h3 className="EarnTypeIcon" onClick={addBeneficiariesHandler}>
                   <FiPlus />
                 </h3>
               </div>
