@@ -25,7 +25,7 @@ const About = () => {
             to subscribe to say Spectranet or data on a regs or even DSTV or
             Netflix.
           </p>
-          <Button Title = "Ease The Stress" />
+          <Button Title = "Ease The Stress" to="/login" />
         </div>
         <div className="AboutGif">
             <img src={AboutGif} className="PaymentGif" alt="ReplifyGif"/>

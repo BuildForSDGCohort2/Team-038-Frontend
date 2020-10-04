@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
+import Axios from "../../lib/client"
 
 const BeneficiariesModal = (props) => {
   const { register, handleSubmit, errors } = useForm();
@@ -11,7 +12,7 @@ const BeneficiariesModal = (props) => {
     console.log(e.target.value);
     setDuration(e.target.value);
   };
-  
+
   const onSubmit = (data) => {
     console.log(data);
   };
