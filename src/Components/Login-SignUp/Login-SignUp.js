@@ -71,9 +71,11 @@ const SignUp = ({close, handleLogin}) => {
         }
       })
       .catch((err) => {
-        if(err.hasOwnProperty("response") && err.response.hasOwnProperty("data")) {
-          if(err.response.data.hasOwnProperty("message")) {
-            return window.alert(err.response.data.message);
+        if(err.hasOwnProperty("response")) {
+          if(err.response.hasOwnProperty("data")) {
+            if(err.response.data.hasOwnProperty("message")) {
+              return window.alert(err.response.data.message);
+            }
           }
         }
         return window.alert(
