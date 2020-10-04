@@ -75,7 +75,7 @@ const Wallet = (props) => {
               type="number"
               onChange={setAmountHandler}
               className="FundAmount"
-              // value={amount}
+              value={amount}
             />
           </form>
           <button

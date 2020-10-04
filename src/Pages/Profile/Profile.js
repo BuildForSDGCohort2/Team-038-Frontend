@@ -5,17 +5,29 @@ import { profileData, earnings } from "./data.js";
 import { GoLocation, GoMail } from "react-icons/go";
 import { FiPhone, FiPlus } from "react-icons/fi";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Modal from "../../Components/Modals/Modal";
 
 const Normal = () => {
   const data = { ...profileData[0] };
-  const [copyID, setCopyID] = useState("Copy");
 
-  const copyToClipboard = (e) => {
-    setCopyID("Copied!");
+  // State Managements
+
+  const [copyId, setCopyId] = useState("Copy");
+  const [addBenefactors, setAddBenefactors] = useState(false);
+
+  //  State Handlers
+
+  const copyIdHandler = (e) => {
+    setCopyId("Copied!");
+  };
+
+  const addBenefactorsHandler = () => {
+    setAddBenefactors(!addBenefactors);
   };
 
   return (
     <div className="Profile">
+      <Modal></Modal>
       <div className="ProfileHero">
         <div className="HeroTexts">
           <h1 className="HeroHeading">Profile</h1>
@@ -49,13 +61,11 @@ const Normal = () => {
           </Link>
         </div>
         <div className="ProfileGrid">
-          <div className="UserIDCard" onClick={copyToClipboard}>
+          <div className="UserIdCard" onClick={copyIdHandler}>
             <div className="Tags">
               <h5>User Id</h5>
               <CopyToClipboard text={data.userId}>
-                <p className="CopyText" >
-                  {copyID}
-                </p>
+                <p className="CopyText">{copyId}</p>
               </CopyToClipboard>
             </div>
             <h1 className="RepifyId" defaultValue={data.userId}>
@@ -67,7 +77,7 @@ const Normal = () => {
             <div className="EarningsCard">
               <div className="EarnTitle">
                 <h3 className="EarnType BlueColor">{earnings[0].type}</h3>
-                <h3 className="EarnType">
+                <h3 className="EarnTypeIcon">
                   <FiPlus />
                 </h3>
               </div>
@@ -85,7 +95,7 @@ const Normal = () => {
             <div className="EarningsCard">
               <div className="EarnTitle">
                 <h3 className="EarnType RedColor">{earnings[1].type}</h3>
-                <h3 className="EarnType">
+                <h3 className="EarnTypeIcon" onClick={addBenefactorsHandler}>
                   <FiPlus />
                 </h3>
               </div>

@@ -81,7 +81,7 @@ body {
     width: 47%;
 }
 
-.UserIDCard {
+.UserIdCard {
     background: var(--nav-color);
     border-radius: 15px;
     padding: 1.5rem 1.5rem 0.8rem;
@@ -96,6 +96,7 @@ body {
 .CopyText {
     font-size: 0.8rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .RepifyId {
@@ -126,6 +127,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.EarnTypeIcon {
+    cursor: pointer;
 }
 
 .SeeLink {
