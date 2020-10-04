@@ -13,7 +13,6 @@ const Login = ({ close, handleSignup }) => {
     return Axios.post("/user/login", data)
       .then(async(res) => {
         const data = await res.data;
-        console.log(data, "Here")
         localStorage.setItem("token", data.token);
         //data to send to dashboard component
         const payload = await getTokenDetails(data.token);
