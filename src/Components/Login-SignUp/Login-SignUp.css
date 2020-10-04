@@ -121,6 +121,15 @@ span.policy {
   cursor: pointer;
 }
 
+.password_error_show {
+  color: red;
+}
+
+.password_error_none {
+  display: none;
+}
+
+
 .modal {
   position: fixed;
   top: 0;
