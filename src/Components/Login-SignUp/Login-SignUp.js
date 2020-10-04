@@ -72,8 +72,8 @@ const SignUp = ({close, handleLogin}) => {
         return window.alert(
           "An error occured, please try again later"
         );
-      })
-  }
+      });
+  };
 
   const watcher = (e) => {
     if((e.target.value.length >= password.length)) {
