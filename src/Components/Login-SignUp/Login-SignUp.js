@@ -84,7 +84,7 @@ const SignUp = ({close, handleLogin}) => {
         setUnmatched(true);
       }
     }
-  }
+  };
   
   const {register, handleSubmit,} = useForm();
   return (
