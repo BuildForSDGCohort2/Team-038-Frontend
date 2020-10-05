@@ -1,12 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
 import Axios from "../../lib/client";
+import { FailedModal, SuccessModal } from "../StatusModal/StatusModal";
 
 const BeneficiariesModal = (props) => {
   const { register, handleSubmit, errors } = useForm();
   const [duration, setDuration] = useState("DEFAULT");
+  const [successStatus, setSuccessStatus] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [failedStatus, setFailedStatus] = useState(true);
+  const [failedMessage, setFailedMessage] = useState("");
+
+  const handleSuccess = (message) => {
+    setSuccessStatus(!successStatus);
+    setSuccessMessage(message);
+  };
+
+  const handleFailed = (message) => {
+    setFailedStatus(!failedStatus);
+    setFailedMessage(message);
+  };
 
   const handleDuration = (e) => {
     setDuration(e.target.value);
@@ -16,14 +31,12 @@ const BeneficiariesModal = (props) => {
     const token = localStorage.getItem("UserToken");
     console.log(data);
     return Axios.post(`/beneficiary?access_token=${token}`, data)
-      .then(async (res) => {
-        console.log(res);
-      })
+      .then(async (res) => handleSuccess(res))
       .catch((err) => {
         if (err.response.data.hasOwnProperty("message")) {
-          return window.alert(err.response.data.message);
+          return handleFailed(err.response.data.message);
         }
-        return window.alert("An error occurred, please try again later");
+        return handleFailed("Something Doesn't seem right, try again");
       });
   };
 
@@ -34,6 +47,17 @@ const BeneficiariesModal = (props) => {
       closeModalFunction={props.clicked}
       heading={"Add Beneficiaries"}
     >
+      <SuccessModal
+        isTrue={successStatus}
+        clicked={handleSuccess}
+        text={successMessage}
+      />
+
+      <FailedModal
+        isTrue={failedStatus}
+        clicked={handleFailed}
+        text={failedMessage}
+      />
       <div className="BeneficiaryInput">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="BeneficiaryLabel">
@@ -102,7 +126,7 @@ const BeneficiariesModal = (props) => {
             Description
             <input
               ref={register({ required: true })}
-              type="text"              
+              type="text"
               className="BeneficiaryContent"
               placeholder="What is it for?"
               name="title"
