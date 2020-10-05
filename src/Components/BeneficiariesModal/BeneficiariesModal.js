@@ -2,19 +2,29 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
-import Axios from "../../lib/client"
+import Axios from "../../lib/client";
 
 const BeneficiariesModal = (props) => {
   const { register, handleSubmit, errors } = useForm();
   const [duration, setDuration] = useState("DEFAULT");
 
   const handleDuration = (e) => {
-    console.log(e.target.value);
     setDuration(e.target.value);
   };
 
   const onSubmit = (data) => {
+    const token = localStorage.getItem("UserToken");
     console.log(data);
+    return Axios.post(`/beneficiary?access_token=${token}`, data)
+      .then(async (res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        if (err.response.data.hasOwnProperty("message")) {
+          return window.alert(err.response.data.message);
+        }
+        return window.alert("An error occurred, please try again later");
+      });
   };
 
   return (
@@ -92,13 +102,12 @@ const BeneficiariesModal = (props) => {
             Description
             <input
               ref={register({ required: true })}
-              type="text"
-              minLength="10"
+              type="text"              
               className="BeneficiaryContent"
               placeholder="What is it for?"
-              name="tag"
+              name="title"
             />
-            {errors.tag && "Please enter a minimum of 10 words"}
+            {errors.tag && "Please enter a description"}
           </label>
           <input
             onClick={props.clicked}
