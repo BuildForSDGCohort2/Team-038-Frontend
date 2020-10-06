@@ -42,7 +42,7 @@ class Hero extends React.Component {
                 to on a regular basis. Lets saves you the stress of manually
                 sending them money.
               </p>
-                <Button Title=" Get Started " to="/dashboard/user#/wallet" />             
+                <Button Title=" Get Started " to="/login" />             
               {this.state.login === true ? (
                 <Login close={this.close} handleSignup={this.handleSignup} />
               ) : null}
