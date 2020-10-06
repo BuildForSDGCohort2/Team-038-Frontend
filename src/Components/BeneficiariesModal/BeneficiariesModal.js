@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
@@ -40,10 +40,8 @@ const BeneficiariesModal = (props) => {
 
   const onSubmit = (data) => {
     const token = localStorage.getItem("UserToken");
-    console.log(data);
     return Axios.post(`/beneficiary?access_token=${token}`, data)
       .then((res) => {
-        console.log(res, ".Then log");
         handleSuccessMessage(
           `Successfully added ${data.beneficiary_email} as a beneficiary`
         );
@@ -54,12 +52,12 @@ const BeneficiariesModal = (props) => {
           return (
               handleFailedMessage(err.response.data.message),
                handleFailed()
-          )
+          );
         }
         return (
             handleFailedMessage("Something Doesn't seem right, try again"),
              handleFailed()
-        )
+        );
       });
   };
 

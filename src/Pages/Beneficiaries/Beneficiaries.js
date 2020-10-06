@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
+import BeneficiariesModal from "../../Components/BeneficiariesModal/BeneficiariesModal";
 import "./Beneficiaries.css";
 import RenderBeneficiariesTable from "./BeneficiriesTable";
 import data from "./data";
 
 const Beneficiaries = () => {
+
+  // State management for add beneficiaries
+  const [addBeneficiaries, setAddBeneficiaries] = useState(false);
+
+  const addBeneficiariesHandler = () => {
+    setAddBeneficiaries(!addBeneficiaries);
+  };
 
   // connect to back end and fetch all beneciries data for a user
   const fetchAllbeneficiaries = () => {
@@ -16,13 +24,17 @@ const Beneficiaries = () => {
   
   return (
     <div className="Beneficiaries">
+
+    {/* Add beneficiary modal  */}
+    
+    <BeneficiariesModal clicked={addBeneficiariesHandler} isTrue={addBeneficiaries} />
       <div className="grid-Container">
         <div className="pageTitle col-1">
           <h3>Beneficiaries</h3>
           <div>Personal</div>
         </div>
         <div className="addBeneficiries-btn col-2">
-          <button>Add Beneficiaries</button>
+          <button onClick={addBeneficiariesHandler}>Add Beneficiaries</button>
         </div>
         <div className="beneficiariesDetails">
         <div className="totalBeneficiaries col-3">
