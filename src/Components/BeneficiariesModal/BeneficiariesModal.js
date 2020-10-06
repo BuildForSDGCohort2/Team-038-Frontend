@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../Modals/Modal";
 import "./BeneficiariesModal.css";
@@ -10,16 +10,22 @@ const BeneficiariesModal = (props) => {
   const [duration, setDuration] = useState("DEFAULT");
   const [successStatus, setSuccessStatus] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [failedStatus, setFailedStatus] = useState(true);
+  const [failedStatus, setFailedStatus] = useState(false);
   const [failedMessage, setFailedMessage] = useState("");
 
-  const handleSuccess = (message) => {
+  const handleSuccess = () => {
     setSuccessStatus(!successStatus);
+  };
+
+  const handleSuccessMessage = (message) => {
     setSuccessMessage(message);
   };
 
-  const handleFailed = (message) => {
+  const handleFailed = () => {
     setFailedStatus(!failedStatus);
+  };
+
+  const handleFailedMessage = (message) => {
     setFailedMessage(message);
   };
 
@@ -27,120 +33,139 @@ const BeneficiariesModal = (props) => {
     setDuration(e.target.value);
   };
 
+  //   useEffect(() => {
+  //     setFailedStatus(!failedStatus);
+  //     // eslint-disable-next-line
+  //   }, [setFailedMessage]);
+
   const onSubmit = (data) => {
     const token = localStorage.getItem("UserToken");
     console.log(data);
     return Axios.post(`/beneficiary?access_token=${token}`, data)
-      .then(async (res) => handleSuccess(res))
+      .then((res) => {
+        console.log(res, ".Then log");
+        handleSuccessMessage(
+          `Successfully added ${data.beneficiary_email} as a beneficiary`
+        );
+        handleSuccess();
+      })
       .catch((err) => {
         if (err.response.data.hasOwnProperty("message")) {
-          return handleFailed(err.response.data.message);
+          return (
+              handleFailedMessage(err.response.data.message),
+               handleFailed()
+          )
         }
-        return handleFailed("Something Doesn't seem right, try again");
+        return (
+            handleFailedMessage("Something Doesn't seem right, try again"),
+             handleFailed()
+        )
       });
   };
 
   return (
-    <Modal
-      modalClassName={props.isTrue}
-      boxClassName={props.isTrue}
-      closeModalFunction={props.clicked}
-      heading={"Add Beneficiaries"}
-    >
+    <>
       <SuccessModal
         isTrue={successStatus}
-        clicked={handleSuccess}
         text={successMessage}
+        handleSetCloseModal={handleSuccess}
       />
 
       <FailedModal
         isTrue={failedStatus}
-        clicked={handleFailed}
         text={failedMessage}
+        handleSetCloseModal={handleFailed}
       />
-      <div className="BeneficiaryInput">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label className="BeneficiaryLabel">
-            Beneficiaries Id
+      <Modal
+        modalClassName={props.isTrue}
+        boxClassName={props.isTrue}
+        closeModalFunction={props.clicked}
+        heading={"Add Beneficiaries"}
+      >
+        <div className="BeneficiaryInput">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label className="BeneficiaryLabel">
+              Beneficiaries Id
+              <input
+                ref={register({ required: true })}
+                type="text"
+                className="BeneficiaryContent"
+                name="beneficiary_email"
+                placeholder="Users Email or Repify ID"
+              />
+              {errors.beneficiary_email && "Email or Id is required."}
+            </label>
+            <label className="BeneficiaryLabel">
+              When should we pay?
+              <input
+                ref={register({ required: true, pattern: /\d+/ })}
+                type="number"
+                className="BeneficiaryContent"
+                placeholder="Day in a month"
+                name="pay_date"
+              />
+              {errors.pay_date && "Please enter day between 1 - 28"}
+            </label>
+            <label className="BeneficiaryLabel">
+              Duration
+              <select
+                className="BeneficiarySelect"
+                name="duration"
+                ref={register({ required: true })}
+                value={duration}
+                onChange={handleDuration}
+              >
+                <option value="DEFAULT" name="DEFAULT" disabled>
+                  Select a duration
+                </option>
+                <option value="one_month" name="one_month">
+                  One Month
+                </option>
+                <option value="three_months" name="three_months">
+                  Three Months
+                </option>
+                <option value="six_months" name="six_months">
+                  Six Months
+                </option>
+                <option value="one_year" name="one_year">
+                  One Year
+                </option>
+                <option value="recursive" name="recursive">
+                  Recursive
+                </option>
+              </select>
+            </label>
+            <label className="BeneficiaryLabel">
+              Amount
+              <input
+                ref={register({ required: true })}
+                type="number"
+                className="BeneficiaryContent"
+                placeholder="How much should we send?"
+                name="amount"
+              />
+              {errors.amount && "An amount is required."}
+            </label>
+            <label className="BeneficiaryLabel">
+              Description
+              <input
+                ref={register({ required: true })}
+                type="text"
+                className="BeneficiaryContent"
+                placeholder="What is it for?"
+                name="title"
+              />
+              {errors.tag && "Please enter a description"}
+            </label>
             <input
-              ref={register({ required: true })}
-              type="text"
-              className="BeneficiaryContent"
-              name="beneficiary_email"
-              placeholder="Users Email or Repify ID"
+              onClick={failedStatus ? props.clicked : null}
+              type="submit"
+              className="BeneficiaryBtn"
             />
-            {errors.beneficiary_email && "Email or Id is required."}
-          </label>
-          <label className="BeneficiaryLabel">
-            When should we pay?
-            <input
-              ref={register({ required: true, pattern: /\d+/ })}
-              type="number"
-              className="BeneficiaryContent"
-              placeholder="Day in a month"
-              name="pay_date"
-            />
-            {errors.pay_date && "Please enter day between 1 - 28"}
-          </label>
-          <label className="BeneficiaryLabel">
-            Duration
-            <select
-              className="BeneficiarySelect"
-              name="duration"
-              ref={register({ required: true })}
-              value={duration}
-              onChange={handleDuration}
-            >
-              <option value="DEFAULT" name="DEFAULT" disabled>
-                Select a duration
-              </option>
-              <option value="one_month" name="one_month">
-                One Month
-              </option>
-              <option value="three_months" name="three_months">
-                Three Months
-              </option>
-              <option value="six_months" name="six_months">
-                Six Months
-              </option>
-              <option value="one_year" name="one_year">
-                One Year
-              </option>
-              <option value="recursive" name="recursive">
-                Recursive
-              </option>
-            </select>
-          </label>
-          <label className="BeneficiaryLabel">
-            Amount
-            <input
-              ref={register({ required: true })}
-              type="number"
-              className="BeneficiaryContent"
-              placeholder="How much should we send?"
-              name="amount"
-            />
-            {errors.amount && "An amount is required."}
-          </label>
-          <label className="BeneficiaryLabel">
-            Description
-            <input
-              ref={register({ required: true })}
-              type="text"
-              className="BeneficiaryContent"
-              placeholder="What is it for?"
-              name="title"
-            />
-            {errors.tag && "Please enter a description"}
-          </label>
-          <input
-            onClick={props.clicked}
-            type="submit"
-            className="BeneficiaryBtn"
-          />
-        </form>
-      </div>
-    </Modal>
+          </form>
+        </div>
+      </Modal>
+    </>
   );
 };
 
