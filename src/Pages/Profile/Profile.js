@@ -15,7 +15,7 @@ const Normal = () => {
 
   const [copyId, setCopyId] = useState("Copy");
   const [addBenefactors, setAddBenefactors] = useState(false);
-  const [addBeneficiaries, setAddBeneficiaries] = useState(true);
+  const [addBeneficiaries, setAddBeneficiaries] = useState(false);
 
   //  State Handlers
 

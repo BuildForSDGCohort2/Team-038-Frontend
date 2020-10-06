@@ -1,0 +1,21 @@
+.StatusDiv {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.StatusText {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.SuccessImg,
+.FailedImg {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.FailedImg {
+    width: 70%;
+}
