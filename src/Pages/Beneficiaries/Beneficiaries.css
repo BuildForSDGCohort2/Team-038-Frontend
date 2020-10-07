@@ -54,6 +54,13 @@ body {
     border-radius: 8px;
 }
 
+.totalBeneficiaries,
+.awaitingRequest,
+.scheduledExpenses,
+ div {
+    padding: 5px;
+}
+
 .beneficiariesTableWrapper {
     grid-column: 1 / span 2;
     background: rgba(118, 234, 215, 0.08);
