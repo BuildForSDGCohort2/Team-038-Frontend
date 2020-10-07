@@ -100,6 +100,23 @@ body {
     line-height: 1.5;
 }
 
+.NoSpend {
+    width: 80%;
+    margin: auto;
+    padding: 0.8rem;
+}
+
+.NoSpendText {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.NoSpendImg {
+    display: block;
+    width: 34%;
+    margin: auto;
+}
+
 .ProfileCard {
     background: var(--nav-color);
     grid-column: 4/13;

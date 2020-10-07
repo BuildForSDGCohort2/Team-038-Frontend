@@ -168,15 +168,3 @@ const BeneficiariesModal = (props) => {
 };
 
 export default BeneficiariesModal;
-
-// State Management
-
-//   const [beneficiaryEmail, setBeneficiaryEmail] = useState();
-//   const [amount, setAmount] = useState();
-//   const [payDate, setPayDate] = useState();
-//   const [duration, setDuration] = useState();
-//   const [description, setDescription] = useState();
-
-//   const wordsHandler = (event) => {
-//     setWords(event.target.value);
-//   };
