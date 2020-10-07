@@ -22,6 +22,10 @@ body {
     padding: 5px;
 }
 
+.space-div {
+    padding: 5px;
+}
+
 .addBenefactors-btn {
     justify-self: end;
 }
@@ -50,13 +54,6 @@ body {
     padding: 10px;
     background: rgba(118, 234, 215, 0.05);
     border-radius: 8px;
-}
-
-.totalBenefactors,
-.pendingRequest,
-.earnings,
- div {
-    padding: 5px;
 }
 
 .benefactorsTableWrapper {

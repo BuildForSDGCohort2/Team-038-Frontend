@@ -10,4 +10,7 @@ const PrivateRoute = () => {
         return (<Redirect to={{ pathname: "/" }} />);
     }
 };
+
+/**let tokenValue = await getTokenDetails(localStorage.getItem("UserToken"))
+if(localStorage.UserToken && tokenValue) {};*/
 export default PrivateRoute;

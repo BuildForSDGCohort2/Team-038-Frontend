@@ -22,6 +22,10 @@ body {
     padding: 5px;
 }
 
+.space-div {
+    padding: 5px;
+}
+
 .addBeneficiries-btn {
     justify-self: end;
 }
@@ -52,13 +56,6 @@ body {
     padding: 10px;
     background: rgba(118, 234, 215, 0.05);
     border-radius: 8px;
-}
-
-.totalBeneficiaries,
-.awaitingRequest,
-.scheduledExpenses,
- div {
-    padding: 5px;
 }
 
 .beneficiariesTableWrapper {
