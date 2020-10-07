@@ -28,7 +28,6 @@ const Normal = () => {
       .then(async (res) => {
         const api = await res.data.data[0];
         setGetData(api);
-        console.log(api);
       })
       .catch((err) => err);
   };
