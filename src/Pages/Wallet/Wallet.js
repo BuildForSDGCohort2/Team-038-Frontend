@@ -29,9 +29,7 @@ const Wallet = (props) => {
         const wallet = await res.data.data[0];
         const main = await res.data.data[0].Wallet;
         setGetWallet(main);
-        console.log(main);
         setAboutUser(wallet);
-        console.log(wallet);
       })
       .catch((err) => err);
   };
