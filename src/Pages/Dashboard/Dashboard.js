@@ -26,25 +26,25 @@ const Normal = () => {
 
   const [sliding, setSliding] = useState(false);
   const showLeftBar = () => setSliding(!sliding);
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     getTokenDetails(localStorage.getItem("UserToken"))
-      .then(data => {
+      .then( (data) => {
         setUser(data.payload[0]);
         //make a backend call to get user wallet
       })
-      .catch(err => {
-        console.log(err);
-      })
-  }, [])
+      .catch( (err) => {
+        window.alert(err);
+      });
+  }, []);
 
   //logout user
   const onLogOut = () => {
     // Remove token from local storage
     localStorage.removeItem("UserToken");
-    window.location.href = "/"
-  }
+    window.location.href = "/";
+  };
   return (
     <div className="User">
       {/* <TopNav /> */}

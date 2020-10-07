@@ -10,7 +10,7 @@ const getTokenDetails = async(token) => {
                 return resolve(decoded);
             }
         });     
-    })
+    });
 };
 
 

@@ -21,7 +21,7 @@ const Login = ({ close, handleSignup }) => {
           return window.alert(err.response.data.message);
         }*/
         return window.alert("ERROR: " + err);
-      })
+      });
   };
   
   return (

@@ -7,7 +7,7 @@ const PrivateRoute = () => {
     if (localStorage.UserToken) {
         return (<Normal />);
     } else {
-        return (<Redirect to={{ pathname: '/' }} />);
+        return (<Redirect to={{ pathname: "/" }} />);
     }
-}
+};
 export default PrivateRoute;
