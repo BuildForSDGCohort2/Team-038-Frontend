@@ -30,24 +30,24 @@ const Beneficiaries = () => {
     <BeneficiariesModal clicked={addBeneficiariesHandler} isTrue={addBeneficiaries} />
       <div className="grid-Container">
         <div className="pageTitle col-1">
-          <h3>Beneficiaries</h3>
-          <div>Personal</div>
+          <div className="space-div"><h3>Beneficiaries</h3></div>
+          <div className="space-div">Personal</div>
         </div>
         <div className="addBeneficiries-btn col-2">
           <button onClick={addBeneficiariesHandler}>Add Beneficiaries</button>
         </div>
         <div className="beneficiariesDetails">
         <div className="totalBeneficiaries col-3">
-          <div> Total Beneficiaries</div>
-          <div>17</div>
+          <div className="space-div"> Total Beneficiaries</div>
+          <div className="space-div">17</div>
         </div>
         <div className="awaitingRequest col-4">
-          <div> Awaiting Request </div>
-          <div>3</div>
+          <div className="space-div"> Awaiting Request </div>
+          <div className="space-div">3</div>
         </div>
         <div className="scheduledExpenses col-5">
-          <div> Scheduled Expenses </div>
-          <div>&#x20A6; 42,000</div>
+          <div className="space-div"> Scheduled Expenses </div>
+          <div className="space-div">&#x20A6; 42,000</div>
         </div>
         </div>
         <RenderBeneficiariesTable beneficiaries={fetchAllbeneficiaries()} />

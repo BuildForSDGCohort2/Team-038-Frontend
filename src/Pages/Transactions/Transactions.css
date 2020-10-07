@@ -29,6 +29,7 @@ body {
 .grid-col1 .todayDate {
     font-size: 15px;
     line-height: 22px;
+    padding: 5px;
 }
 
 .grid-col2 {
@@ -165,7 +166,7 @@ body {
         grid-template-rows: 10% 15% 35% 40%;
         padding: 5px;
         grid-column-gap: 5px;
-        grid-row-gap: 5px;
+        grid-row-gap: 20px;
     }
 
     .grid-col1,
