@@ -52,6 +52,13 @@ body {
     border-radius: 8px;
 }
 
+.totalBenefactors,
+.pendingRequest,
+.earnings,
+ div {
+    padding: 5px;
+}
+
 .benefactorsTableWrapper {
     grid-column: 1 / span 2;
     background: rgba(118, 234, 215, 0.08);
@@ -130,6 +137,8 @@ body {
     .earnings {
         display: flex;
         justify-content: space-between;
+        padding: 10px;
+
     }
 
     .benefactorsTable {

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import "./DashboardNavBars.css";
-import { Route, HashRouter, NavLink } from "react-router-dom";
+import { Route, HashRouter, NavLink, } from "react-router-dom";
 import Wallet from "../Wallet/Wallet";
 import { Normal as Profile } from "../Profile/Profile";
 import Transaction from "../Transactions/Transactions";
@@ -20,13 +20,31 @@ import {
 } from "react-icons/ri";
 import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
 import { profileData as data } from "../Profile/data.js";
+import getTokenDetails from "../../lib/jwt";
 
 const Normal = () => {
 
   const [sliding, setSliding] = useState(false);
-
   const showLeftBar = () => setSliding(!sliding);
+  const [user, setUser] = useState({});
 
+  useEffect(() => {
+    getTokenDetails(localStorage.getItem("UserToken"))
+      .then( (data) => {
+        setUser(data.payload[0]);
+        //make a backend call to get user wallet
+      })
+      .catch( (err) => {
+        window.alert(err);
+      });
+  }, []);
+
+  //logout user
+  const onLogOut = () => {
+    // Remove token from local storage
+    localStorage.removeItem("UserToken");
+    window.location.href = "/";
+  };
   return (
     <div className="User">
       {/* <TopNav /> */}
@@ -37,14 +55,14 @@ const Normal = () => {
             <RiMenu4Fill className="SideIcons" onClick={showLeftBar} />
           </div>
           <div className="BrandLogo">
-            <NavLink to="/">
+            <div className="NavLink" activeClassName="Active" onClick={() => window.location.href = "/"} >
               <img src={Logo} className="Brand" alt="Repify" />
-            </NavLink>
+            </div>
           </div>
           <div className="UserProfile">
             <img src={Bell} alt="Notification" className="Notify NavItem" />
             <img src={data[0].url} alt="Profile" className="UserImg NavItem" />
-            <p className="UserName NavItem">{data[0].firstName} {data[0].SecondName}</p>
+            <p className="UserName NavItem">{user.name}</p>
           </div>
         </nav>
       </div>
@@ -61,9 +79,9 @@ const Normal = () => {
                 <RiCloseFill className="SideIcons SlideClose" onClick={showLeftBar} />
               </div>
               <div className="SlideLogo">
-                <NavLink to="/">
+                <div className="NavLink" onClick={() => window.location.href = "/"}>
                   <img src={Logo} className="Brand" alt="Repify" onClick={showLeftBar} />
-                </NavLink>
+                </div>
               </div>
               <ul className="SideItems" onClick={showLeftBar}>
                 <li className="SideList">
@@ -127,14 +145,14 @@ const Normal = () => {
                   </NavLink>
                 </li>
                 <li className="SideList">
-                  <NavLink
-                    to="/logout"
+                  <div
+                    onClick={onLogOut}
                     activeClassName="Active"
                     className="NavLink"
                   >
                     <MdExitToApp className="SideIcons" />
                     <span className="LinkText">Log Out</span>
-                  </NavLink>
+                  </div>
                 </li>
               </ul>
             </div>

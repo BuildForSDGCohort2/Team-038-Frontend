@@ -83,6 +83,7 @@
     color: var(--text-color);
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .SideList .NavLink {
