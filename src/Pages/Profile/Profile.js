@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import { Link } from "react-router-dom";
 import { profileData, earnings } from "./data.js";
@@ -7,6 +7,8 @@ import { FiPhone, FiPlus } from "react-icons/fi";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import BeneficiariesModal from "../../Components/BeneficiariesModal/BeneficiariesModal";
 import BenefactorsModal from "../../Components/BenefactorsModal/BenefactorsModal";
+import getTokenDetails from "../../lib/jwt";
+import Axios from "../../lib/client";
 
 const Normal = () => {
   const data = { ...profileData[0] };
@@ -16,6 +18,24 @@ const Normal = () => {
   const [copyId, setCopyId] = useState("Copy");
   const [addBenefactors, setAddBenefactors] = useState(false);
   const [addBeneficiaries, setAddBeneficiaries] = useState(false);
+  const [getData, setGetData] = useState("");
+
+  const getUserId = async () => {
+    const token = localStorage.getItem("UserToken");
+    const userInfo = await getTokenDetails(token);
+    const userId = userInfo.payload[0].id;
+    await Axios.get(`/user?access_token=${token}&user_id=${userId}`)
+      .then(async (res) => {
+        const api = await res.data.data[0];
+        setGetData(api);
+      })
+      .catch((err) => err);
+  };
+
+  useEffect(() => {
+    getUserId();
+    // eslint-disable-next-line
+  }, []);
 
   //  State Handlers
 
@@ -33,9 +53,14 @@ const Normal = () => {
   return (
     <div className="Profile">
       {/* Add Benefactors and Beneficiaries Modal */}
-
-      <BeneficiariesModal clicked={addBeneficiariesHandler} isTrue={addBeneficiaries} />
-      <BenefactorsModal clicked={addBenefactorsHandler} isTrue={addBenefactors} />
+      <BeneficiariesModal
+        clicked={addBeneficiariesHandler}
+        isTrue={addBeneficiaries}
+      />
+      <BenefactorsModal
+        clicked={addBenefactorsHandler}
+        isTrue={addBenefactors}
+      />
 
       <div className="ProfileHero">
         <div className="HeroTexts">
@@ -46,10 +71,10 @@ const Normal = () => {
         <div className="ProfileSection">
           <div className="ProfileDetails">
             <div className="ProfileImg">
-              <img src={data.url} alt={data.firstName} />
+              <img src={data.url} alt={getData.name} />
             </div>
             <h2 className="ProfileName">
-              {data.firstName} {data.SecondName}
+              {getData.name}
             </h2>
           </div>
           <hr className="separator" />
@@ -58,10 +83,10 @@ const Normal = () => {
               <GoLocation /> <span className="innerText">{data.location}</span>
             </p>
             <p>
-              <GoMail /> <span className="innerText">{data.email}</span>
+              <GoMail /> <span className="innerText">{getData.email}</span>
             </p>
             <p>
-              <FiPhone /> <span className="innerText">{data.phone}</span>
+              <FiPhone /> <span className="innerText">{getData.phone_number}</span>
             </p>
           </div>
           <hr className="separator" />
@@ -73,12 +98,12 @@ const Normal = () => {
           <div className="UserIdCard" onClick={copyIdHandler}>
             <div className="Tags">
               <h5>User Id</h5>
-              <CopyToClipboard text={data.userId}>
+              <CopyToClipboard text={getData.reference ? getData.reference : getData.email}>
                 <p className="CopyText">{copyId}</p>
               </CopyToClipboard>
             </div>
-            <h1 className="RepifyId" defaultValue={data.userId}>
-              {data.userId}
+            <h1 className="RepifyId" defaultValue={getData.reference ? getData.reference : getData.email}>
+              {getData.reference ? getData.reference : getData.email}
             </h1>
             <p className="UserType">{data.accountType}</p>
           </div>
