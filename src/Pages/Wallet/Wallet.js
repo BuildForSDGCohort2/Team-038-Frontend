@@ -10,7 +10,6 @@ import Axios from "../../lib/client";
 const Wallet = (props) => {
   // Declaring States
 
-  const [details, getDetails] = useState({});
   const [hideBalance, setHideBalance] = useState(true);
   const [fundWallet, setFundWallet] = useState(false);
   const [amount, setAmount] = useState();
@@ -20,7 +19,7 @@ const Wallet = (props) => {
 
   const showTrans = false;
 
-  const getUserId = async () => {
+  const getUserData = async () => {
     const token = localStorage.getItem("UserToken");
     const userInfo = await getTokenDetails(token);
     const userId = userInfo.payload[0].id;
@@ -41,11 +40,6 @@ const Wallet = (props) => {
     setAmount(e.target.value);
   };
 
-  const getUserData = () => {
-    const profile = userData[0];
-    getDetails(profile);
-  };
-
   const hideBalanceHandler = () => {
     setHideBalance(!hideBalance);
   };
@@ -57,7 +51,6 @@ const Wallet = (props) => {
   //  ComponentDIdMount Alternative;
 
   useEffect(() => {
-    getUserId();
     getUserData();
   }, []);
 
@@ -144,7 +137,6 @@ const Wallet = (props) => {
         <div className="WalletCard WalletTrans">
           <div className="CardItems">
             <h5 className="CardHeading">
-              
               {showTrans ? "Last Transactions" : "No Spendings Yet"}
             </h5>
             {showTrans ? (
@@ -170,9 +162,9 @@ const Wallet = (props) => {
               ))
             ) : (
               <div className="NoSpend">
-              <p className="NoSpendText">
-                Your last transactions will show here
-              </p>                
+                <p className="NoSpendText">
+                  Your last transactions will show here
+                </p>
                 <img
                   src="https://res.cloudinary.com/repify/image/upload/v1601862897/empty_state.svg"
                   alt="nothing here"
@@ -189,7 +181,7 @@ const Wallet = (props) => {
             <h1 className="RepifyId">
               {aboutUser.reference ? aboutUser.reference : aboutUser.email}
             </h1>
-            <p className="AccountType">{details.accountType}</p>
+            <p className="AccountType">Personal</p>
           </div>
         </div>
       </div>
