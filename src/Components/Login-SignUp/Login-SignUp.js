@@ -135,7 +135,9 @@ const SignUp = () => {
           alt="Repify"
           className="LoginLogo"
         />
-        <p className="HeroSmallText">Welcome, Lets get you started with your Repify Account</p>
+        <p className="HeroSmallText">
+          Welcome, Lets get you started with your Repify Account
+        </p>
       </div>
       <div className="FormWrapper">
         <form
@@ -143,63 +145,59 @@ const SignUp = () => {
           method="POST"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div>
+          <div className="FormGroup">
             <label className="LoginLabel" htmlFor="fName">
               First Name
+              <input
+                className="LoginInputs"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                ref={register}
+                required
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              ref={register}
-              required
-            />
-          </div>
-          <div>
             <label className="LoginLabel" htmlFor="lName">
               Last Name
+              <input
+                className="LoginInputs"
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                ref={register}
+                required
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              ref={register}
-              required
-            />
           </div>
           <div>
             <label className="LoginLabel" htmlFor="phone_number">
               Phone No.
+              <input
+                className="LoginInputs"
+                type="text"
+                name="phone_number"
+                placeholder="Phone Number"
+                ref={register}
+                required
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="text"
-              name="phone_number"
-              placeholder="Phone Number"
-              ref={register}
-              required
-            />
-          </div>
-          <div>
             <label className="LoginLabel" htmlFor="email">
               Email
+              <input
+                className="LoginInputs"
+                type="email"
+                name="email"
+                placeholder="Email"
+                ref={register}
+                required
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="email"
-              name="email"
-              placeholder="Email"
-              ref={register}
-              required
-            />
           </div>
+
           <div>
             <label className="LoginLabel" htmlFor="username">
-              Username
-            </label>
-            <input
+              Username            
+              <input
               className="LoginInputs"
               type="text"
               name="username"
@@ -207,16 +205,36 @@ const SignUp = () => {
               ref={register}
               required
             />
+            </label>
+
           </div>
           <div>
             <label className="LoginLabel" htmlFor="user_type">
               Account Type:
             </label>
-            <select name="user_type" className="LoginSelect" ref={register} required>
+            <select
+              name="user_type"
+              className="LoginSelect"
+              ref={register}
+              required
+            >
               <option>Select Account Type</option>
               <option>Individual</option>
               <option>Organization</option>
             </select>
+          </div>
+          <div>
+            <label className="LoginLabel" htmlFor="location">
+              Location
+            </label>
+            <input
+              className="LoginInputs"
+              type="text"
+              name="location"
+              placeholder="Lagos, Nigeria"
+              ref={register}
+              required
+            />
           </div>
           <div>
             <label className="LoginLabel" htmlFor="password">
@@ -246,11 +264,7 @@ const SignUp = () => {
               onChange={watcher}
             />
           </div>
-          <p
-            className={
-              !unmatched ? "PasswordNone" : "PasswordShow"
-            }
-          >
+          <p className={!unmatched ? "PasswordNone" : "PasswordShow"}>
             password does not match
           </p>
           <button className="RegBtn" type="submit">
