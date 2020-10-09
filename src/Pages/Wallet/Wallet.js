@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Wallet.css";
-import { profileData as userData, transactions } from "../Profile/data.js";
+import { transactions } from "../Profile/data.js";
 import Button from "../../Components/Button/Button";
 import { usePaystackPayment } from "react-paystack";
 import Modal from "../../Components/Modals/Modal";

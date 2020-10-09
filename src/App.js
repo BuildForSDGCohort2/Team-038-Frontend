@@ -11,6 +11,7 @@ import { Organisation } from "./Pages/Dashboard/Dashboard";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutServices from "./Pages/Help/AboutServices";
 import PrivateRoute from "./lib/privateRoute";
+import { Login, SignUp } from "./Components/Login-SignUp/Login-SignUp";
 
 const App = () => {
   return (
@@ -21,8 +22,8 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/dashboard/user" component={PrivateRoute} />
           <Route path="/dashboard/organisation" exact component={Organisation} />
-          <Route path="/login" exact component={Home} />
-          <Route path="/register" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={SignUp} />
           <Route path="/about" exact component={AboutServices} />
           <Route path="/404" component={NotFound} />
           <Redirect to="/404" />
