@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Normal } from "../Pages/Dashboard/Dashboard";
 import getTokenDetails from "../lib/jwt";
 
-const PrivateRoute = () => {
-    if (localStorage.UserToken) {
+/**const PrivateRoute = () => {
+    const token = localStorage.getItem("UserToken");
+    const [tokenIsValid, settokenIsValid] = useState(true);
+
+    const verifyToken = async () => {
+        const result = await getTokenDetails(token);
+        settokenIsValid(result);
+    }
+
+    if (token && tokenIsValid) {
         return (<Normal />);
-    } else {
+    }
+
+    // Redirect to homepage 
+
+    return (<Redirect to={{ pathname: "/" }} />);
+
+};*/
+
+const PrivateRoute = () => {
+    const token = localStorage.getItem("UserToken");
+
+        if (token) {
+            return (<Normal />);
+        }
+        
+        // Redirect to homepage 
         return (<Redirect to={{ pathname: "/" }} />);
     }
-};
-
-/**let tokenValue = await getTokenDetails(localStorage.getItem("UserToken"))
-if(localStorage.UserToken && tokenValue) {};*/
-export default PrivateRoute;
+    export default PrivateRoute;
