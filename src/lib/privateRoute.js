@@ -31,5 +31,6 @@ const PrivateRoute = () => {
         
         // Redirect to homepage 
         return (<Redirect to={{ pathname: "/" }} />);
-    }
+    };
+    
     export default PrivateRoute;

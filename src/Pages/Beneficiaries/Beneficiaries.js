@@ -29,8 +29,8 @@ const Beneficiaries = () => {
         const beneficiaries = await res.data;
         if (beneficiaries.data.length !== 0) {
           setBeneficiaries(beneficiaries);
-          setuserHasBeneficiaries(true)
-        };
+          setuserHasBeneficiaries(true);
+        }
       })
       .catch((err) => {
         window.alert(err + " No internet connection");
