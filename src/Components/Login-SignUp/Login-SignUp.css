@@ -1,4 +1,5 @@
-.Login, .SignUP {
+.Login,
+.SignUP {
   background: var(--about-bg);
   width: 100%;
   height: 100vh;
@@ -30,7 +31,8 @@
   margin: 1rem auto;
 }
 
-.HeroSmallText, .ForgetLink {
+.HeroSmallText,
+.ForgetLink {
   font-size: 0.9rem;
   text-align: center;
   font-weight: 900;
@@ -113,4 +115,25 @@
 
 .PasswordNone {
   display: none;
+}
+
+@media screen and (max-width: 700px) {
+
+  .Login,
+  .SignUP {
+    padding-top: 3rem;
+  }
+
+  .FormWrapper {
+    width: 70%;
+  }
+
+  .LoginHero {
+    width: 50%;
+  }
+
+  .HeroSmallText,
+  .ForgetLink {
+    font-size: 0.8rem;
+  }
 }
