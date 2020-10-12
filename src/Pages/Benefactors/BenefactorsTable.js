@@ -28,7 +28,7 @@ const RenderTableRows = (props) => {
                 return (<img src={vector} alt="vector"></img>);
             case "not-verified":
                 return (<img src={vector2} alt="vector"></img>);
-            
+
             default:
                 return (<img src={vector} alt="vector"></img>);
         }
@@ -45,16 +45,18 @@ const RenderTableRows = (props) => {
 
 const RenderBenefactorsTable = (props) => {
     const rows = [];
-    var tableRows = () => {
-        if (!props.benefactors) {
-            return <NoBenefactorFound />;
 
-        } else {
-            props.benefactors.forEach((benefactor) => {
-                rows.push(<RenderTableRows benefactor={benefactor} />);
-            });
-            return rows;
-        }
+    var tableRows = () => {
+        return <NoBenefactorFound />;
+        /** if (!props.benefactors) {
+              return <NoBenefactorFound />;
+  
+          } else {
+              props.benefactors.forEach((benefactor) => {
+                  rows.push(<RenderTableRows benefactor={benefactor} />);
+              });
+              return rows;
+          }*/
     };
     return (
         <div className="benefactorsTableWrapper">
