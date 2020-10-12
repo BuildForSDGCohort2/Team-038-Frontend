@@ -22,14 +22,14 @@ const RenderTableRows = (props) => {
     const beneficiary = props.beneficiary;
     let statusIndicator = () => {
         switch (beneficiary.status) {
-            case "pending":
+            case "inactive":
                 return (<div className="indicator" style={{ background: "yellow" }}></div>);
             case "failed":
                 return (<div className="indicator" style={{ background: "red" }}></div>);
-            case "successful":
+            case "active":
                 return (<div className="indicator" style={{ background: "green" }}></div>);
             default:
-                return (<div className="indicator" style={{ background: "yellow" }}></div>);
+                return (<div className="indicator" style={{ background: "green" }}></div>);
         }
     };
     return (
@@ -46,7 +46,8 @@ const RenderTableRows = (props) => {
 const RenderBeneficiariesTable = (props) => {
     const rows = [];
     var tableRows = () => {
-        if (!props.beneficiaries) {
+        return <NoBeneficiariesFound />;
+       /**  if (!props.beneficiaries) {
             return <NoBeneficiariesFound />;
 
         } else {
@@ -54,7 +55,7 @@ const RenderBeneficiariesTable = (props) => {
                 rows.push(<RenderTableRows beneficiary={beneficiary} />);
             });
             return rows;
-        }
+        }*/
     };
     return (
         <div className="beneficiariesTableWrapper">

@@ -22,11 +22,18 @@ import { MdAttachMoney, MdDeviceHub, MdExitToApp } from "react-icons/md";
 import { profileData as data } from "../Profile/data.js";
 import getTokenDetails from "../../lib/jwt";
 
-const Normal = () => {
+const Normal =  () => {
 
   const [sliding, setSliding] = useState(false);
   const showLeftBar = () => setSliding(!sliding);
   const [user, setUser] = useState({});
+
+  //logout user
+  const onLogOut = () => {
+    // Remove token from local storage
+    localStorage.removeItem("UserToken");
+    window.location.href = "/";
+  };
 
   useEffect(() => {
     getTokenDetails(localStorage.getItem("UserToken"))
@@ -35,16 +42,10 @@ const Normal = () => {
         //make a backend call to get user wallet
       })
       .catch( (err) => {
-        window.alert(err);
+        // logout user if token has expired
+        onLogOut();
       });
   }, []);
-
-  //logout user
-  const onLogOut = () => {
-    // Remove token from local storage
-    localStorage.removeItem("UserToken");
-    window.location.href = "/";
-  };
   return (
     <div className="User">
       {/* <TopNav /> */}
