@@ -28,11 +28,13 @@ const Login = () => {
   return (
     <div className="Login">
       <div className="LoginHero">
-        <img
-          src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
-          alt="Repify"
-          className="LoginLogo"
-        />
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+            alt="Repify"
+            className="LoginLogo"
+          />
+        </Link>
         <p className="HeroSmallText">Welcome, Login to your Repify Account</p>
       </div>
       <div className="FormWrapper">
@@ -135,11 +137,13 @@ const SignUp = () => {
   return (
     <div className="SignUP">
       <div className="LoginHero">
-        <img
-          src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
-          alt="Repify"
-          className="LoginLogo"
-        />
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+            alt="Repify"
+            className="LoginLogo"
+          />
+        </Link>
         <p className="HeroSmallText">
           Welcome, Lets get you started with your Repify Account
         </p>
@@ -221,13 +225,22 @@ const SignUp = () => {
                   name="user_type"
                   className="LoginSelect"
                   ref={register({ required: true })}
-                value={accountType}
-                onChange={setAccountTypeHandler}
+                  value={accountType}
+                  onChange={setAccountTypeHandler}
                   required
                 >
-                  <option value="Select Account Type..." name="Select Account Type...">Select Account Type... </option>
-                  <option value="personal" name="personal">Individual</option>
-                  <option value="company" name="company">Organization</option>
+                  <option
+                    value="Select Account Type..."
+                    name="Select Account Type..."
+                  >
+                    Select Account Type...{" "}
+                  </option>
+                  <option value="personal" name="personal">
+                    Individual
+                  </option>
+                  <option value="company" name="company">
+                    Organization
+                  </option>
                 </select>
               </label>
             </div>
