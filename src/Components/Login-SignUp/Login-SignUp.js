@@ -86,6 +86,11 @@ const Login = () => {
 const SignUp = () => {
   const [password, setPassword] = useState("");
   const [unmatched, setUnmatched] = useState(false);
+  const [accountType, setAccountType] = useState("Individual");
+
+  const setAccountTypeHandler = (e) => {
+    setAccountType(e.target.value);
+  };
 
   const onSubmit = (data) => {
     if (data.user_type === "Select Account Type") {
@@ -215,12 +220,14 @@ const SignUp = () => {
                 <select
                   name="user_type"
                   className="LoginSelect"
-                  ref={register}
+                  ref={register({ required: true })}
+                value={accountType}
+                onChange={setAccountTypeHandler}
                   required
                 >
-                  <option>Select Account Type... </option>
-                  <option>Individual</option>
-                  <option>Organization</option>
+                  <option value="Select Account Type..." name="Select Account Type...">Select Account Type... </option>
+                  <option value="personal" name="personal">Individual</option>
+                  <option value="company" name="company">Organization</option>
                 </select>
               </label>
             </div>
