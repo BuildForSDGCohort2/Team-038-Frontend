@@ -157,19 +157,21 @@ const SignUp = () => {
                 required
               />
             </label>
-            <label className="LoginLabel" htmlFor="lName">
-              Last Name
-              <input
-                className="LoginInputs"
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                ref={register}
-                required
-              />
-            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="lName">
+                Last Name
+                <input
+                  className="LoginInputs"
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  ref={register}
+                  required
+                />
+              </label>
+            </div>
           </div>
-          <div>
+          <div className="FormGroup">
             <label className="LoginLabel" htmlFor="phone_number">
               Phone No.
               <input
@@ -181,88 +183,100 @@ const SignUp = () => {
                 required
               />
             </label>
-            <label className="LoginLabel" htmlFor="email">
-              Email
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="email">
+                Email
+                <input
+                  className="LoginInputs"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  ref={register}
+                  required
+                />
+              </label>
+            </div>
+          </div>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="username">
+              Username
               <input
                 className="LoginInputs"
-                type="email"
-                name="email"
-                placeholder="Email"
+                type="text"
+                name="username"
+                placeholder="UserName"
                 ref={register}
                 required
               />
             </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="user_type">
+                Account Type:
+                <select
+                  name="user_type"
+                  className="LoginSelect"
+                  ref={register}
+                  required
+                >
+                  <option>Select Account Type... </option>
+                  <option>Individual</option>
+                  <option>Organization</option>
+                </select>
+              </label>
+            </div>
           </div>
-
-          <div>
-            <label className="LoginLabel" htmlFor="username">
-              Username            
-              <input
-              className="LoginInputs"
-              type="text"
-              name="username"
-              placeholder="UserName"
-              ref={register}
-              required
-            />
-            </label>
-
-          </div>
-          <div>
-            <label className="LoginLabel" htmlFor="user_type">
-              Account Type:
-            </label>
-            <select
-              name="user_type"
-              className="LoginSelect"
-              ref={register}
-              required
-            >
-              <option>Select Account Type</option>
-              <option>Individual</option>
-              <option>Organization</option>
-            </select>
-          </div>
-          <div>
-            <label className="LoginLabel" htmlFor="location">
-              Location
-            </label>
-            <input
-              className="LoginInputs"
-              type="text"
-              name="location"
-              placeholder="Lagos, Nigeria"
-              ref={register}
-              required
-            />
-          </div>
-          <div>
+          <div className="FormGroup">
             <label className="LoginLabel" htmlFor="password">
               Password
+              <input
+                className="LoginInputs"
+                type="password"
+                name="password"
+                placeholder="Password"
+                ref={register}
+                required
+                onChange={(event) => setPassword(event.target.value)}
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="password"
-              name="password"
-              placeholder="Password"
-              ref={register}
-              required
-              onChange={(event) => setPassword(event.target.value)}
-            />
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="confirmpassword">
+                Confirm Password
+                <input
+                  className="LoginInputs"
+                  type="password"
+                  name="confirmpassword"
+                  placeholder="ConfirmPassword"
+                  ref={register}
+                  required
+                  onChange={watcher}
+                />
+              </label>
+            </div>
           </div>
-          <div>
-            <label className="LoginLabel" htmlFor="confirmpassword">
-              Password
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="location">
+              Location
+              <input
+                className="LoginInputs"
+                type="text"
+                name="location"
+                placeholder="Lagos, Nigeria"
+                ref={register}
+                required
+              />
             </label>
-            <input
-              className="LoginInputs"
-              type="password"
-              name="confirmpassword"
-              placeholder="ConfirmPassword"
-              ref={register}
-              required
-              onChange={watcher}
-            />
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="referal">
+                Referral Code
+                <input
+                  className="LoginInputs"
+                  type="text"
+                  name="referral"
+                  placeholder="Coming Soon"
+                  disabled
+                />
+              </label>
+            </div>
           </div>
           <p className={!unmatched ? "PasswordNone" : "PasswordShow"}>
             password does not match
