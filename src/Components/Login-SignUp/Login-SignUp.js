@@ -23,7 +23,6 @@ const Login = () => {
       .catch((err) => {
         //This ERROR CHECK IS FAILING
         if (err.response.data.hasOwnProperty("message")) {
-          // return window.alert(err.response.data.message);
           setErrorMessage(err.response.data.message);
         }
       });
