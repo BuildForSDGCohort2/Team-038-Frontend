@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import "./Login-SignUp.css";
-import { Link, } from "react-router-dom";
-import { useForm, } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import Axios from "../../lib/client";
 import getTokenDetails from "../../lib/jwt";
 
-const Login = ({ close, handleSignup }) => {
-  const { register, handleSubmit, } = useForm();
+const Login = () => {
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     return Axios.post("/user/login", data)
       .then(async (res) => {
         const data = await res.data;
         localStorage.setItem("UserToken", data.token);
-        // redirects the user to the dashboard 
+        // redirects the user to the dashboard
         window.location.href = "/dashboard/user#/wallet";
-      }).catch((err) => {
+      })
+      .catch((err) => {
         //This ERROR CHECK IS FAILING
         /*if (err.response.data.hasOwnProperty("message")) {
           return window.alert(err.response.data.message);
@@ -23,38 +24,78 @@ const Login = ({ close, handleSignup }) => {
         return window.alert("ERROR: " + err);
       });
   };
-  
+
   return (
-    <div className="modal login">
-      <form
-        className="loginForm"
-        method="POST"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" placeholder="username" ref={register} required />
-        <label htmlFor="password">Password </label>
-        <input type="password" name="password" placeholder="password" ref={register} required />
-        <span className="linkWrap">Don't have an Account? <Link className="link" onClick={handleSignup} to="/register">SignUp</Link></span>
-        <button
-          id="signupBtn"
-          type="submit"
+    <div className="Login">
+      <div className="LoginHero">
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+            alt="Repify"
+            className="LoginLogo"
+          />
+        </Link>
+        <p className="HeroSmallText">Welcome, Login to your Repify Account</p>
+      </div>
+      <div className="FormWrapper">
+        <form
+          className="LoginForm"
+          method="POST"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          Login
-        </button>
-        <span className="policy">Terms Policy</span>
-      </form>
-      <Link className="btnClose" onClick={close} to="/" >Close</Link>
+          <label htmlFor="email" className="LoginLabel">
+            Email Address:
+            <input
+              className="LoginInputs"
+              type="email"
+              name="email"
+              placeholder="Username"
+              ref={register}
+              required
+            />
+          </label>
+          <label htmlFor="password" className="LoginLabel">
+            Your Password:
+            <input
+              className="LoginInputs"
+              type="password"
+              name="password"
+              placeholder="Password"
+              ref={register}
+              required
+            />
+          </label>
+          <p className="LoginLabel">
+            <Link className="LoginLabelLink" to="/register">
+              Forgot Password?
+            </Link>
+          </p>
+          <button className="RegBtn" type="submit">
+            Login
+          </button>
+          <p className="ForgetLink">
+            Don't have an Account ?
+            <Link className="LoginLink" to="/register">
+              Sign Up
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
 
-const SignUp = ({ close, handleLogin }) => {
+const SignUp = () => {
   const [password, setPassword] = useState("");
   const [unmatched, setUnmatched] = useState(false);
+  const [accountType, setAccountType] = useState("Individual");
+
+  const setAccountTypeHandler = (e) => {
+    setAccountType(e.target.value);
+  };
 
   const onSubmit = (data) => {
-    if ((data.user_type === "Select Account Type")) {
+    if (data.user_type === "Select Account Type") {
       return window.alert("Please select an Account type");
     }
     delete data.confirmpassword;
@@ -78,102 +119,199 @@ const SignUp = ({ close, handleLogin }) => {
         //   }
         // }
         console.log(err);
-        return window.alert(
-          "An error occured, please try again later"
-        );
+        return window.alert("An error occured, please try again later");
       });
   };
 
   const watcher = (e) => {
-    if ((e.target.value.length >= password.length)) {
-      if ((e.target.value === password)) {
+    if (e.target.value.length >= password.length) {
+      if (e.target.value === password) {
         setUnmatched(false);
-      }
-      else {
+      } else {
         setUnmatched(true);
       }
     }
   };
 
-  const { register, handleSubmit, } = useForm();
+  const { register, handleSubmit } = useForm();
   return (
-    <div className="signup modal">
-      <form
-        className="signupForm"
-        method="POST"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <div>
-          <label htmlFor="fName">First Name</label><br />
-          <input type="text" name="firstName" placeholder="First Name" ref={register} required />
-        </div>
-        <div>
-          <label htmlFor="lName">Last Name</label><br />
-          <input type="text" name="lastName" placeholder="Last Name" ref={register} required />
-        </div>
-        <div>
-          <label htmlFor="phone_number">Phone No.</label><br />
-          <input type="text" name="phone_number" placeholder="Phone Number" ref={register} required />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label><br />
-          <input type="email" name="email" placeholder="Email" ref={register} required />
-        </div>
-        <div>
-          <label htmlFor="username">Username</label><br />
-          <input type="text" name="username" placeholder="UserName" ref={register} required />
-        </div>
-        <div>
-          <label htmlFor="user_type">Account Type:</label><br />
-          <select
-            name="user_type"
-            ref={register}
-            required
-          >
-            <option>Select Account Type</option>
-            <option>Individual</option>
-            <option>Organization</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="password">Password</label><br />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            ref={register}
-            required
-            onChange={(event) => setPassword(event.target.value)}
+    <div className="SignUP">
+      <div className="LoginHero">
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+            alt="Repify"
+            className="LoginLogo"
           />
-        </div>
-        <div>
-          <label htmlFor="confirmpassword">Password</label><br />
-          <input
-            type="password"
-            name="confirmpassword"
-            placeholder="ConfirmPassword"
-            ref={register}
-            required
-            onChange={watcher}
-          />
-        </div>
-        <p
-          className={!(unmatched) ? "password_error_none" : "password_error_show"}
-        >
-          password does not match
+        </Link>
+        <p className="HeroSmallText">
+          Welcome, Lets get you started with your Repify Account
         </p>
-        <span>Got an Account? <Link className="link" onClick={handleLogin} to="/login">SignIn</Link></span><br />
-        <button
-          id="signupBtn"
-          type="submit"
-          disabled={(unmatched) ? true : false}
+      </div>
+      <div className="FormWrapper">
+        <form
+          className="signupForm"
+          method="POST"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          Create Account
-        </button>
-        <br />
-        <div></div><span id="sPolicy" className="policy">Terms Policy</span>
-      </form>
-      <Link className="btnClose" onClick={close} to="/">Close</Link>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="fName">
+              First Name
+              <input
+                className="LoginInputs"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                ref={register}
+                required
+              />
+            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="lName">
+                Last Name
+                <input
+                  className="LoginInputs"
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  ref={register}
+                  required
+                />
+              </label>
+            </div>
+          </div>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="phone_number">
+              Phone No.
+              <input
+                className="LoginInputs"
+                type="text"
+                name="phone_number"
+                placeholder="Phone Number"
+                ref={register}
+                required
+              />
+            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="email">
+                Email
+                <input
+                  className="LoginInputs"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  ref={register}
+                  required
+                />
+              </label>
+            </div>
+          </div>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="username">
+              Username
+              <input
+                className="LoginInputs"
+                type="text"
+                name="username"
+                placeholder="UserName"
+                ref={register}
+                required
+              />
+            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="user_type">
+                Account Type:
+                <select
+                  name="user_type"
+                  className="LoginSelect"
+                  ref={register({ required: true })}
+                  value={accountType}
+                  onChange={setAccountTypeHandler}
+                  required
+                >
+                  <option
+                    value="Select Account Type..."
+                    name="Select Account Type..."
+                  >
+                    Select Account Type...{" "}
+                  </option>
+                  <option value="personal" name="personal">
+                    Individual
+                  </option>
+                  <option value="company" name="company">
+                    Organization
+                  </option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="password">
+              Password
+              <input
+                className="LoginInputs"
+                type="password"
+                name="password"
+                placeholder="Password"
+                ref={register}
+                required
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="confirmpassword">
+                Confirm Password
+                <input
+                  className="LoginInputs"
+                  type="password"
+                  name="confirmpassword"
+                  placeholder="ConfirmPassword"
+                  ref={register}
+                  required
+                  onChange={watcher}
+                />
+              </label>
+            </div>
+          </div>
+          <div className="FormGroup">
+            <label className="LoginLabel" htmlFor="location">
+              Location
+              <input
+                className="LoginInputs"
+                type="text"
+                name="location"
+                placeholder="Lagos, Nigeria"
+                ref={register}
+                required
+              />
+            </label>
+            <div className="FloatRight">
+              <label className="LoginLabel" htmlFor="referal">
+                Referral Code
+                <input
+                  className="LoginInputs"
+                  type="text"
+                  name="referral"
+                  placeholder="Coming Soon"
+                  disabled
+                />
+              </label>
+            </div>
+          </div>
+          <p className={!unmatched ? "PasswordNone" : "PasswordShow"}>
+            password does not match
+          </p>
+          <button className="RegBtn" type="submit">
+            Sign Up
+          </button>
+          <p className="ForgetLink">
+            Got an Account ?
+            <Link className="LoginLink" to="/login">
+              Log In
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
