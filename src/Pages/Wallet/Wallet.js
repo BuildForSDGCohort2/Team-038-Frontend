@@ -55,7 +55,7 @@ const Wallet = (props) => {
   }, []);
 
   const reference = new Date().getTime();
-  const apiKey = process.env.REACT_APP_ID;
+  const apiKey = process.env.REACT_APP_ID || "pk_test_bff251fd2c3e8614d71595ffcbfc4dfd69f70b1f";
 
   // Paystack Config
   const config = {
@@ -68,7 +68,10 @@ const Wallet = (props) => {
       phone: aboutUser.phone_number,
     },
     text: "Fund",
-    onSuccess: () => null,
+    callback: (data) => {
+      let message = 'Payment complete! Reference: ';
+      alert(message);
+    },
     onClose: () => null,
   };
 
