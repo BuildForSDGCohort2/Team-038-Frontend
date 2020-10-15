@@ -55,7 +55,7 @@ const Wallet = (props) => {
   }, []);
 
   const reference = new Date().getTime();
-  const apiKey = process.env.REACT_APP_ID || "pk_test_bff251fd2c3e8614d71595ffcbfc4dfd69f70b1f";
+  const apiKey = process.env.REACT_APP_ID;
 
   // Paystack Config
   const config = {
