@@ -68,7 +68,10 @@ const Wallet = (props) => {
       phone: aboutUser.phone_number,
     },
     text: "Fund",
-    onSuccess: () => null,
+    callback: (data) => {
+      let message = 'Payment complete! Reference: ';
+      alert(message);
+    },
     onClose: () => null,
   };
 
