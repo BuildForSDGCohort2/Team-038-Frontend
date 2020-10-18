@@ -6,7 +6,7 @@ import { usePaystackPayment } from "react-paystack";
 import Modal from "../../Components/Modals/Modal";
 import getTokenDetails from "../../lib/jwt";
 import Axios from "../../lib/client";
-import appConfig from "../../lib/config"
+import appConfig from "../../lib/config";
 const token = localStorage.getItem("UserToken");
 
 const Wallet = (props) => {
@@ -67,7 +67,7 @@ const Wallet = (props) => {
       <h3 className="WalletBalance">
           &#8358; {" X X X"}
       </h3>
-    )
+    );
   }
   else {
     amountData.push(
@@ -99,17 +99,17 @@ const Wallet = (props) => {
   };
 
   const onSuccess = (data) => {
-    const userId = aboutUser.id
+    const userId = aboutUser.id;
     const payload = {
       reference: data.reference,
       amount: amount
-    }
+    };
     //Update API on success
     Axios.post(`/transactions/credit_wallet?access_token=${token}&user_id=${userId}`, payload)
       .then((res) => {
         //implement toast on success
       })
-      .catch((err) => err)
+      .catch((err) => err);
   };
 
   const onClose = () => {
