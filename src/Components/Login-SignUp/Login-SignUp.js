@@ -106,8 +106,8 @@ const SignUp = () => {
     }
     delete data.confirmpassword;
 
-    return Axios.post("/user/create", data)
-      .then(async (res) => {
+    return Axios.post("/user/registration", data)
+      .then(async(res) => {
         const data = await res.data;
         //data to send to dashboard component
         const payload = await getTokenDetails(data["data"].token);
