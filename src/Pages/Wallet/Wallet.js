@@ -74,7 +74,7 @@ const Wallet = (props) => {
       <h3 className="WalletBalance">
           &#8358; {getWallet.current_balance ? getWallet.current_balance : "0.00"}
       </h3>
-    )
+    );
   }
 
   //  ComponentDIdMount Alternative;
@@ -114,7 +114,7 @@ const Wallet = (props) => {
 
   const onClose = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
-  }
+  };
   
 
   const initializePayment = usePaystackPayment(config);
