@@ -4,13 +4,10 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Axios from "../../lib/client";
 import getTokenDetails from "../../lib/jwt";
-import { usePromiseTracker } from "react-promise-tracker";
-import Loader from "react-loader-spinner";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const [errorMessage, setErrorMessage] = useState("");
-  const { promiseInProgress } = usePromiseTracker();
 
   const onSubmit = (data) => {
     return Axios.post("/user/login", data)
@@ -89,7 +86,6 @@ const Login = () => {
             </form>
           </div>
         </div>
-        <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
       </>
     )
 };
@@ -99,7 +95,6 @@ const SignUp = () => {
   const [unmatched, setUnmatched] = useState(false);
   const [accountType, setAccountType] = useState("Individual");
   const [errorMessage, setErrorMessage] = useState("");
-  const { promiseInProgress } = usePromiseTracker();
 
   const setAccountTypeHandler = (e) => {
     setAccountType(e.target.value);
@@ -222,7 +217,7 @@ const SignUp = () => {
                   className="LoginInputs"
                   type="text"
                   name="username"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="UserName"
                   ref={register}
                   required
@@ -243,7 +238,7 @@ const SignUp = () => {
                       value="Select Account Type..."
                       name="Select Account Type..."
                     >
-                      Select Account Type...{" "}
+                      Select Account Type...
                     </option>
                     <option value="personal" name="personal">
                       Individual
@@ -264,7 +259,7 @@ const SignUp = () => {
                   name="password"
                   placeholder="Password"
                   ref={register}
-                  autocomplete="off"
+                  autoComplete="off"
                   required
                   onChange={(event) => setPassword(event.target.value)}
                 />
@@ -275,7 +270,7 @@ const SignUp = () => {
                   <input
                     className="LoginInputs"
                     type="password"
-                    autocomplete="off"
+                    autoComplete="off"
                     name="confirmpassword"
                     placeholder="ConfirmPassword"
                     ref={register}

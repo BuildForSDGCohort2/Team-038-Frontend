@@ -113,7 +113,7 @@ const Wallet = (props) => {
   };
 
   const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
+    // implementation for whatever you want to do when the Paystack dialog closed.
   };
   
 
