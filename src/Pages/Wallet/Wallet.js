@@ -6,6 +6,8 @@ import { usePaystackPayment } from "react-paystack";
 import Modal from "../../Components/Modals/Modal";
 import getTokenDetails from "../../lib/jwt";
 import Axios from "../../lib/client";
+import appConfig from "../../lib/config";
+const token = localStorage.getItem("UserToken");
 
 const Wallet = (props) => {
   // Declaring States
@@ -16,19 +18,29 @@ const Wallet = (props) => {
 
   const [getWallet, setGetWallet] = useState("");
   const [aboutUser, setAboutUser] = useState("");
-
+  const [userAccount, setUserAccount] = useState("");
   const showTrans = false;
 
   const getUserData = async () => {
     const token = localStorage.getItem("UserToken");
     const userInfo = await getTokenDetails(token);
     const userId = userInfo.payload[0].id;
+
     await Axios.get(`/user?access_token=${token}&user_id=${userId}`)
       .then(async (res) => {
-        const wallet = await res.data.data[0];
-        const main = await res.data.data[0].Wallet;
-        setGetWallet(main);
-        setAboutUser(wallet);
+        const main = await res.data.data[0];
+        const wallet = await res.data.data[0].Wallet;
+
+        if(main.user_type_id) {
+          setUserAccount(appConfig.userType.personal);
+        }
+        else {
+          setUserAccount(appConfig.userType.company);
+        }
+        if(wallet) {
+          setGetWallet(wallet);
+        }
+        setAboutUser(main);
       })
       .catch((err) => err);
   };
@@ -48,8 +60,24 @@ const Wallet = (props) => {
     setFundWallet(!fundWallet);
   };
 
-  //  ComponentDIdMount Alternative;
 
+  let amountData = [];
+  if(hideBalance) {
+    amountData.push(
+      <h3 className="WalletBalance">
+          &#8358; {" X X X"}
+      </h3>
+    );
+  }
+  else {
+    amountData.push(
+      <h3 className="WalletBalance">
+          &#8358; {getWallet.current_balance ? getWallet.current_balance : "0.00"}
+      </h3>
+    );
+  }
+
+  //  ComponentDIdMount Alternative;
   useEffect(() => {
     getUserData();
   }, []);
@@ -67,13 +95,27 @@ const Wallet = (props) => {
       name: aboutUser.name,
       phone: aboutUser.phone_number,
     },
-    text: "Fund",
-    callback: (data) => {
-      let message = 'Payment complete! Reference: ';
-      alert(message);
-    },
-    onClose: () => null,
+    text: "Fund"
   };
+
+  const onSuccess = (data) => {
+    const userId = aboutUser.id;
+    const payload = {
+      reference: data.reference,
+      amount: amount
+    };
+    //Update API on success
+    Axios.post(`/transactions/credit_wallet?access_token=${token}&user_id=${userId}`, payload)
+      .then((res) => {
+        //implement toast on success
+      })
+      .catch((err) => err);
+  };
+
+  const onClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+  };
+  
 
   const initializePayment = usePaystackPayment(config);
   return (
@@ -91,14 +133,14 @@ const Wallet = (props) => {
           <form>
             <input
               type="number"
-              onChange={setAmountHandler}
+              onChange={(e) => setAmountHandler(e)}
               className="FundAmount"
               value={amount}
             />
           </form>
           <button
             onClick={() => {
-              initializePayment();
+              initializePayment(onSuccess, onClose);
               fundWalletHandler();
             }}
             type="submit"
@@ -124,15 +166,13 @@ const Wallet = (props) => {
         <div className="WalletCard WalletAccount">
           <div className="CardItems">
             <h5 className="CardHeading">Repify Balance</h5>
-            <h3 className="WalletBalance">
-              &#8358; {hideBalance ? getWallet.current_balance : " X X X"}
-            </h3>
+            {amountData[0]}
             <div className="WalletTextGrouped">
               <p className="WalletLink BlueColor" onClick={fundWalletHandler}>
                 Fund Account
               </p>
               <p className="HideIt" onClick={hideBalanceHandler}>
-                {hideBalance ? "Hide Balance" : "Show Balance"}
+                {hideBalance ? "Show Balance" : "Hide Balance"}
               </p>
             </div>
           </div>
@@ -184,7 +224,7 @@ const Wallet = (props) => {
             <h1 className="RepifyId">
               {aboutUser.reference ? aboutUser.reference : aboutUser.email}
             </h1>
-            <p className="AccountType">Personal</p>
+            <p className="AccountType">{userAccount}</p>
           </div>
         </div>
       </div>
