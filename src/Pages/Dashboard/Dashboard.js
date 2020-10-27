@@ -8,8 +8,7 @@ import Transaction from "../Transactions/Transactions";
 import Benefactors from "../Benefactors/Benefactors";
 import Beneficiaries from "../Beneficiaries/Beneficiaries";
 import Settings from "../Settings/Settings";
-import Logo from "./img/Repify.png";
-import Bell from "./img/Notification.svg";
+import images from "../../images/images";
 import {
   RiUserLine,
   RiDonutChartLine,
@@ -32,7 +31,7 @@ const Normal =  () => {
   const onLogOut = () => {
     // Remove token from local storage
     localStorage.removeItem("UserToken");
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   useEffect(() => {
@@ -44,8 +43,10 @@ const Normal =  () => {
       .catch( (err) => {
         // logout user if token has expired
         onLogOut();
+        window.alert("Session expired! please login again")
       });
   }, []);
+  console.log(user.image_url);
   return (
     <div className="User">
       {/* <TopNav /> */}
@@ -56,13 +57,13 @@ const Normal =  () => {
             <RiMenu4Fill className="SideIcons" onClick={showLeftBar} />
           </div>
           <div className="BrandLogo">
-            <div className="NavLink" activeClassName="Active" onClick={() => window.location.href = "/"} >
-              <img src={Logo} className="Brand" alt="Repify" />
+            <div className="NavLink" activeClassName="Active" onClick={() => window.location.href = "/dashboard/user#/wallet"} >
+              <img src={images.logo} className="Brand" alt="Repify" />
             </div>
           </div>
           <div className="UserProfile">
-            <img src={Bell} alt="Notification" className="Notify NavItem" />
-            <img src={data[0].url} alt="Profile" className="UserImg NavItem" />
+            <img src={images.bell} alt="Notification" className="Notify NavItem" />
+            <img src={user.image_url ? user.image_url : images.profile_picture_placeholder} alt="Profile" className="UserImg NavItem" />
             <p className="UserName NavItem">{user.name}</p>
           </div>
         </nav>
@@ -80,8 +81,8 @@ const Normal =  () => {
                 <RiCloseFill className="SideIcons SlideClose" onClick={showLeftBar} />
               </div>
               <div className="SlideLogo">
-                <div className="NavLink" onClick={() => window.location.href = "/"}>
-                  <img src={Logo} className="Brand" alt="Repify" onClick={showLeftBar} />
+                <div className="NavLink" onClick={() => window.location.href = "/login"}>
+                  <img src={images.logo} className="Brand" alt="Repify" onClick={showLeftBar} />
                 </div>
               </div>
               <ul className="SideItems" onClick={showLeftBar}>

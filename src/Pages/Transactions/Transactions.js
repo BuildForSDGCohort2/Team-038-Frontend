@@ -4,8 +4,7 @@ import "./Transactions.css";
 import TransactionsHistoryTable from "./TransactionsHistoryTable";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import calendarToday from "./img/calendar_today.png";
-
+import  { FiCalendar } from "react-icons/fi";
 // Temporary Dummy Data
 import data from "./data.js";
 
@@ -60,8 +59,8 @@ class Transactions extends Component {
    * replace the default date picker component with with a calendar icon
    */
   DatePickerCustomInput = ({ onClick }) => (
-    <div className="calendar_today">
-      <img src={calendarToday} alt="calendar_today" onClick={onClick}></img>
+    <div >
+      <FiCalendar className="calendar_icon" onClick={onClick} />
     </div>
   );
 

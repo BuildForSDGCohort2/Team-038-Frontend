@@ -30,7 +30,7 @@ const PrivateRoute = () => {
         }
         
         // Redirect to homepage 
-        return (<Redirect to={{ pathname: "/" }} />);
+        return (<Redirect to={{ pathname: "/login" }} />);
     };
     
     export default PrivateRoute;

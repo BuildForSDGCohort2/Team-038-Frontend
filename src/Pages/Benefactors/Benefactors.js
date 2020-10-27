@@ -6,13 +6,15 @@ import Axios from "../../lib/client";
 
 const Benefactors = () => {
 
-   // Beneficiaries State management 
-   const [beneficiaries, setBenefactors] = useState(null);
-   const [userHasBenefactors, setuserHasBenefactors] = useState(false);
+  // Benefactors State management 
+  const [benefactors, setBenefactors] = useState(null);
+  const [totalBenefactors, setTotalBenefactors] = useState(0);
+  const [pendingRequest, setPendingRequest] = useState(0);
+  const [expectedEarnings, setExpectedEarnings] = useState(0);
 
-  // connect to back end and fetch all beneciries data for a user
+  // connect to back end and fetch all benefactors data for a user
   const fetchAllbenefactors = async () => {
-    const token = localStorage.getItem("UserToken");
+    const token = await localStorage.getItem("UserToken");
     const userInfo = await getTokenDetails(token);
     const userId = userInfo.payload[0].id;
 
@@ -20,19 +22,32 @@ const Benefactors = () => {
       .then(async (res) => {
         const benefactors = await res.data;
         if (benefactors.data.length !== 0) {
-          setBenefactors(benefactors);
-          setuserHasBenefactors(true);
+          setBenefactors(benefactors.data);
+          setTotalBenefactors(benefactors.data.length);
+          getExpectedEarnings((benefactors.data));
         }
       })
       .catch((err) => {
-        window.alert(err + " No internet connection");
+        window.alert("Ensure you have secure internet connection and try and again");
       });
-  };
+
+  }
+
+  const getExpectedEarnings = (benefactors) => {
+    let expectedEarnings = 0;
+    benefactors.forEach((benefactor) => {
+      // adds up all amounts if the status is active
+      if (benefactor.details.status === "active") {
+        expectedEarnings += benefactor.details.amount;
+      }
+    })
+    setExpectedEarnings(expectedEarnings);
+  }
 
   useEffect(() => {
     fetchAllbenefactors();
   }, []);
-  
+
   return (
     <div className="Benefactors">
       <div className="grid-container">
@@ -44,20 +59,20 @@ const Benefactors = () => {
           <button>Send Request</button>
         </div>
         <div className="benefactorsDetails">
-        <div className="totalBenefactors col-3">
-          <div className="space-div"> Total Benefactors</div>
-          <div className="space-div">{userHasBenefactors ? "" : 0}</div>
+          <div className="totalBenefactors col-3">
+            <div className="space-div"> Total Benefactors</div>
+            <div className="space-div">{totalBenefactors}</div>
+          </div>
+          <div className="pendingRequest col-4">
+            <div className="space-div"> Pending Request </div>
+            <div className="space-div">{pendingRequest}</div>
+          </div>
+          <div className="earnings col-5">
+            <div className="space-div"> Expected Earning </div>
+            <div className="space-div">&#x20A6; {expectedEarnings}</div>
+          </div>
         </div>
-        <div className="pendingRequest col-4">
-          <div className="space-div"> Pending Request </div>
-          <div className="space-div">{userHasBenefactors ? "" : 0}</div>
-        </div>
-        <div className="earnings col-5">
-          <div className="space-div"> Expected Earning </div>
-          <div className="space-div">&#x20A6; {userHasBenefactors ? "" : 0}</div>
-        </div>
-        </div>
-        <RenderBenefactorsTable benefactors={beneficiaries} />
+        <RenderBenefactorsTable benefactors={benefactors} />
       </div>
     </div>
   );

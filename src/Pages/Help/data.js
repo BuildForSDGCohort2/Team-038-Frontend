@@ -1,7 +1,4 @@
-import aboutImg from "./img/about.jpg";
-import setupAcountImg from "./img/setupAcount.jpg";
-import SchedulePaymentImg from "./img/SchedulePayment.jpg";
-import addBeneficiaryImg from "./img/addBeneficiary.jpg";
+import images from "../../images/images"
 
 let aboutService = String.raw`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula ullamcorper ipsum, vel aliquam justo pretium eget. Sed tempus tellus quis libero hendrerit, vel sagittis orci facilisis. Donec sem ipsum, ultrices vel sodales sit amet, facilisis a diam. Nunc condimentum lorem elit, aliquam iaculis tellus ullamcorper nec. Vestibulum elementum lacus ut ligula dignissim, volutpat tincidunt dui venenatis. Proin luctus mauris ut nisi dignissim, in bibendum justo tempor. Sed vulputate sapien eget leo accumsan, ut tincidunt felis fermentum. Nulla justo lacus, posuere at libero non, varius egestas nulla. Morbi non eros ornare, varius enim vel, venenatis est. Donec vestibulum sapien sit amet odio lobortis mollis. Proin finibus velit eu orci fringilla, eu consectetur turpis rhoncus. Nunc eu est odio.
 <p>Donec hendrerit et mi sed pulvinar. Fusce consequat tincidunt aliquam. Pellentesque ut tincidunt felis. Sed lobortis lectus quis facilisis ultrices. Aliquam ullamcorper convallis blandit. Nullam sed leo at velit varius suscipit vitae vitae elit. In luctus quis erat non sagittis. Ut euismod odio ac ultricies ornare. Nulla facilisi. Donec eros augue, varius a facilisis eget, sollicitudin sit amet est. Fusce mattis luctus molestie.
@@ -29,22 +26,22 @@ let howToSchedulePayment = String.raw`Lorem ipsum dolor sit amet, consectetur ad
 const data = {
     about: {
         title: "How repify beneficiry service work",
-        image: aboutImg,
+        image: images.aboutImg,
         content: aboutService
     },
     howToSetUpAccount: {
         title: "how to create an account",
-        image: setupAcountImg,
+        image: images.setup_acountImg,
         content: howToSetUpAccount
     },
     howToAddBeneficiary: {
         title: "how to add beneficiries",
-        image: addBeneficiaryImg,
+        image: images.add_beneficiaryImg,
         content: howToAddBeneficiary
     },
     howToSchedulePayment: {
         title: "how to add schedule payment",
-        image: SchedulePaymentImg,
+        image: images.schedule_paymentImg,
         content: howToSchedulePayment
     },
 };

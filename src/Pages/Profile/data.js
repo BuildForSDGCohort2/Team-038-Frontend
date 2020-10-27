@@ -7,7 +7,7 @@ const profileData = [
         accountType: "Personal",
         phone: "+2347037030402",
         location: "Abuja, Nigeria",
-        url: "https://res.cloudinary.com/repify/image/upload/v1601137880/0_yppal3.jpg",
+        url: "https://res.cloudinary.com/repify/image/upload/v1603726604/profile-picture-placeholder.png",
         balance: 23000
     }
 ];

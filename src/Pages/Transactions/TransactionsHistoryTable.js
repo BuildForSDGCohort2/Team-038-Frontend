@@ -1,5 +1,5 @@
 import React from "react";
-import emptyImg from "./img/empty.png";
+import images from "../../images/images";
 
 /**
  * Table Component it returns a table 
@@ -40,21 +40,21 @@ const TransactionsRows = (props) => {
         return (
             <tr>
                 <td className="transactionSent">&#x20A6; {amount}</td>
-                <td className="userName">to<span style={{padding:"3px"}}> {user} </span></td>
+                <td className="userName">to {" "} {user} </td>
                 <td className="date">{date}</td>
             </tr>);
     } else if (category === "fail") {
         return (
             <tr className="transactionFail">
                 <td className="transactionFail">&#x20A6; {amount}</td>
-                <td className="userName"><span style={{padding:"3px"}}>{user} </span></td>
+                <td className="userName"> {user} </td>
                 <td className="date">{date}</td>
             </tr>);
     } else {
         return (
             <tr>
                 <td className="transactionRecieved">&#x20A6; {amount}</td>
-                <td className="userName">from <span style={{padding:"3px"}}> {user} </span></td>
+                <td className="userName">from {" "} {user} </td>
                 <td className="date">{date}</td>
             </tr>);
     }
@@ -72,7 +72,7 @@ const TransactionsHistoryTable = (props) => {
     if (transactions.length === 0) {
         rows.push(
             <div className="noTransactions">
-                <img src={emptyImg} alt="no transactions"></img>
+                <img src={images.empty_state} alt="no transactions"></img>
                 <h4>You have no transactions</h4>
                 <p>You haven't made any transactions this month. when you do, they will appear here.</p>
             </div>

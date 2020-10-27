@@ -1,26 +1,38 @@
 import React from "react";
-import empty from "./img/empty.png";
+import images from "../../images/images"
 
-const NoBeneficiariesFound = () => {
+/** 
+ * Renders an empty state if the current user has no beneficiaries to display
+ * This component is returned when the beneficiaries object is empty
+ */
+const NoBeneficiariesFound = (props) => {
     return (
         <tr>
             <td colSpan="4">
                 <div className="flexWrapper">
-                    <div>
+                    <div className="emptyInfo">
                         <h6>You have no Beneficiaries</h6>
-                        <div className="space"></div>
-                        <button>Add them</button>
+                        <div></div>
+                        <button onClick={props.addBeneficiariesHandler}>Add them</button>
                     </div>
-                    <img src={empty} alt="beneficiariesTableEmpty"></img>
+                    <div className="emptyImg">
+                    <img src={images.empty_state} alt="beneficiariesTableEmpty"></img>
+                    </div>
                 </div>
             </td>
         </tr>
     );
 };
 
+/** 
+ * Renders table rows 
+ * This component  recieves beneficiaries object as "props" and creates a table row for each element
+ * creates a table row for each beneficiaries
+ */
 const RenderTableRows = (props) => {
     const beneficiary = props.beneficiary;
     let statusIndicator = () => {
+        //  (NOTE*** this is in anticipation because Im not sure whats coming from the databese**/)
         switch (beneficiary.status) {
             case "inactive":
                 return (<div className="indicator" style={{ background: "yellow" }}></div>);
@@ -46,9 +58,11 @@ const RenderTableRows = (props) => {
 const RenderBeneficiariesTable = (props) => {
     const rows = [];
     var tableRows = () => {
-        return <NoBeneficiariesFound />;
+        //Here Im only returing the empty state componenet until Im sure of the data coming from the database (Note**to be removed)
+        return <NoBeneficiariesFound addBeneficiariesHandler ={props.addBeneficiariesHandler} />; 
+       
        /**  if (!props.beneficiaries) {
-            return <NoBeneficiariesFound />;
+            return <NoBeneficiariesFound addBeneficiariesHandler ={props.addBeneficiariesHandler}/>;
 
         } else {
             props.beneficiaries.forEach((beneficiary) => {
