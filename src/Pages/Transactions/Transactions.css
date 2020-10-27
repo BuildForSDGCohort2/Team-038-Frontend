@@ -11,8 +11,8 @@ body {
     display: grid;
     grid-template-columns: 40% 55%;
     grid-template-rows: 20% auto;
-    grid-column-gap: 2.5em; 
-    grid-row-gap: 1.5em; 
+    grid-column-gap: 2.5em;
+    grid-row-gap: 1.5em;
 }
 
 .grid-col1 {
