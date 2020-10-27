@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Axios from "../../lib/client";
 import getTokenDetails from "../../lib/jwt";
-import images from "../../images/images"
+import images from "../../images/images";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -20,9 +20,10 @@ const Login = () => {
       })
       .catch((err) => {
         //This ERROR CHECK IS FAILING
-        if (err.response.data.hasOwnProperty("message")) {
+       /**  if (err.response.data.hasOwnProperty("message")) {
           setErrorMessage(err.response.data.message);
-        }
+        }*/
+        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" );
       });
   };
 

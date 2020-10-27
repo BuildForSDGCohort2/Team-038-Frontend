@@ -13,6 +13,6 @@ const images = {
     setup_acountImg: "https://res.cloudinary.com/repify/image/upload/v1603718205/setupAcount.jpg",
     schedule_paymentImg: "https://res.cloudinary.com/repify/image/upload/v1603717655/SchedulePayment.jpg",
     add_beneficiaryImg: "https://res.cloudinary.com/repify/image/upload/v1603717655/addBeneficiary.jpg",
-}
+};
 
 export default images;

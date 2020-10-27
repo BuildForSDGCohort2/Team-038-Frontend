@@ -12,6 +12,18 @@ const Benefactors = () => {
   const [pendingRequest, setPendingRequest] = useState(0);
   const [expectedEarnings, setExpectedEarnings] = useState(0);
 
+  // Get expected earnings if the transaction is active
+  const getExpectedEarnings = (benefactors) => {
+    let expectedEarnings = 0;
+    benefactors.forEach((benefactor) => {
+      // adds up all amounts if the status is active
+      if (benefactor.details.status === "active") {
+        expectedEarnings += benefactor.details.amount;
+      }
+    });
+    setExpectedEarnings(expectedEarnings);
+  };
+
   // connect to back end and fetch all benefactors data for a user
   const fetchAllbenefactors = async () => {
     const token = await localStorage.getItem("UserToken");
@@ -28,21 +40,10 @@ const Benefactors = () => {
         }
       })
       .catch((err) => {
-        window.alert("Ensure you have secure internet connection and try and again");
+        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" );
       });
 
-  }
-
-  const getExpectedEarnings = (benefactors) => {
-    let expectedEarnings = 0;
-    benefactors.forEach((benefactor) => {
-      // adds up all amounts if the status is active
-      if (benefactor.details.status === "active") {
-        expectedEarnings += benefactor.details.amount;
-      }
-    })
-    setExpectedEarnings(expectedEarnings);
-  }
+  };
 
   useEffect(() => {
     fetchAllbenefactors();

@@ -43,10 +43,9 @@ const Normal =  () => {
       .catch( (err) => {
         // logout user if token has expired
         onLogOut();
-        window.alert("Session expired! please login again")
+        window.alert("Session expired! please login again");
       });
   }, []);
-  console.log(user.image_url);
   return (
     <div className="User">
       {/* <TopNav /> */}

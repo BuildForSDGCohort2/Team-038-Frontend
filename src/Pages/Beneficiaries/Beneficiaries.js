@@ -22,6 +22,18 @@ const Beneficiaries = () => {
     setAddBeneficiaries(!addBeneficiaries);
   };
 
+  const getScheduledExpenses = (beneficiaries) => {
+    let scheduledExpenses = 0;
+    beneficiaries.forEach((beneficiarie) => {
+
+      // adds up all amounts if the status is active (NOTE*** this is in anticipation because Im not sure whats coming from the databese**/)
+      if (beneficiarie.details.status === "active"){
+        scheduledExpenses += beneficiarie.details.amount;
+      }
+    });
+    setScheduledExpenses(scheduledExpenses);
+  };
+  
   //connect to back end and fetch all beneciries data for a user
   const getBeneficiaries = async () => {
     const token = localStorage.getItem("UserToken");
@@ -38,21 +50,9 @@ const Beneficiaries = () => {
         }
       })
       .catch((err) => {
-        window.alert("Ensure you have secure internet connection and try and again");
+        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" )
       });
   };
-
-  const getScheduledExpenses = (beneficiaries) => {
-    let scheduledExpenses = 0;
-    beneficiaries.forEach((beneficiarie) => {
-
-      // adds up all amounts if the status is active (NOTE*** this is in anticipation because Im not sure whats coming from the databese**/)
-      if (beneficiarie.details.status === "active"){
-        scheduledExpenses += beneficiarie.details.amount;
-      }
-    })
-    setScheduledExpenses(scheduledExpenses);
-  }
 
   /*useEffect(() => {
     getBeneficiaries();

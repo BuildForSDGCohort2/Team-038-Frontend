@@ -1,5 +1,5 @@
 import React from "react";
-import images from "../../images/images"
+import images from "../../images/images";
 
 /** 
  * Renders an empty state if the current user has no benefactor to display

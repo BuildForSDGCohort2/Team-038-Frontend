@@ -7,7 +7,7 @@ import Modal from "../../Components/Modals/Modal";
 import getTokenDetails from "../../lib/jwt";
 import Axios from "../../lib/client";
 import appConfig from "../../lib/config";
-import images from "../../images/images"
+import images from "../../images/images";
 const token = localStorage.getItem("UserToken");
 
 const Wallet = (props) => {
