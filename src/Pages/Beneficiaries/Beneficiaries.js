@@ -50,7 +50,7 @@ const Beneficiaries = () => {
         }
       })
       .catch((err) => {
-        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" )
+        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" );
       });
   };
 
