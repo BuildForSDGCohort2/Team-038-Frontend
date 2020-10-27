@@ -7,6 +7,7 @@ import Modal from "../../Components/Modals/Modal";
 import getTokenDetails from "../../lib/jwt";
 import Axios from "../../lib/client";
 import appConfig from "../../lib/config";
+import images from "../../images/images";
 const token = localStorage.getItem("UserToken");
 
 const Wallet = (props) => {
@@ -209,7 +210,7 @@ const Wallet = (props) => {
                   Your last transactions will show here
                 </p>
                 <img
-                  src="https://res.cloudinary.com/repify/image/upload/v1601862897/empty_state.svg"
+                  src={images.empty_state}
                   alt="nothing here"
                   className="NoSpendImg"
                 />

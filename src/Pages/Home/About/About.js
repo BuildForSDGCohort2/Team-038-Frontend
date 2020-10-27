@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import AboutGif from "../Images/Payment.gif";
+import images from "../../../images/images";
 import Button from "../../../Components/Button/Button";
 // import Header from "../../../Components/Header/Header";
 
@@ -28,7 +28,7 @@ const About = () => {
           <Button Title = "Ease The Stress" to="/login" />
         </div>
         <div className="AboutGif">
-            <img src={AboutGif} className="PaymentGif" alt="ReplifyGif"/>
+            <img src={images.payment} className="PaymentGif" alt="ReplifyGif"/>
         </div>
       </div>
     </div>

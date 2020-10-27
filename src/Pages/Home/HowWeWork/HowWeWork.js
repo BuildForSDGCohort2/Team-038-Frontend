@@ -1,6 +1,7 @@
 import React from "react";
 import "./HowWeWork.css";
 import { Link } from "react-router-dom";
+import images from "../../../images/images";
 
 const howWeWork = () => {
     return (
@@ -13,7 +14,9 @@ const howWeWork = () => {
                         <p>
                             signup for a personal  or business account to get started...
                         </p>
-                        <div className="image"></div>
+                        <div className="image">
+                            <img src={images.learn_more} alt="learn_more"></img>
+                        </div>
                     </div>
                 </Link>
                 <div className="dummy"></div>
@@ -23,7 +26,9 @@ const howWeWork = () => {
                         <p>
                             select and add beneficiaries you want to transfer money to...
                         </p>
-                        <div className="image"></div>
+                        <div className="image">
+                            <img src={images.learn_more} alt="learn_more"></img>
+                        </div>
                     </div>
                 </Link>
                 <div className="dummy"></div>
@@ -33,7 +38,9 @@ const howWeWork = () => {
                         <p>
                             schedule payment to automate transfer to your beneficiaries...
                         </p>
-                        <div className="image"></div>
+                        <div className="image">
+                            <img src={images.learn_more} alt="learn_more"></img>
+                        </div>
                     </div>
                 </Link>
             </div>

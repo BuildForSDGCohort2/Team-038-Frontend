@@ -10,7 +10,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 10% 70%;
+    grid-template-rows: 20% 20% auto;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     justify-content: center;
@@ -58,9 +58,8 @@ body {
 
 .benefactorsTableWrapper {
     grid-column: 1 / span 2;
-    background: rgba(118, 234, 215, 0.08);
+    background: rgba(118, 234, 215, 0.05);
     border-radius: 5px;
-    height: auto;
 }
 
 .benefactorsTable {
@@ -96,12 +95,16 @@ body {
     display: flex;
     justify-content: space-around;
     align-content: center;
-    padding: 10px;
+    width: 60em;
 }
 
-.flex-wrapper div {
-    padding-top: 80px;
-    width: 20%;
+.flex-wrapper .emptyInfo img {
+    height: 4em;
+    margin-top: 3em;
+}
+
+.flex-wrapper .emptyImg img {
+    height: 10em;
 }
 
 /* Media Query */
@@ -113,7 +116,7 @@ body {
     }
 
     .grid-container {
-        grid-template-rows: 10% 28% 65%;
+        grid-template-rows: 5em 13em 25em;
         column-gap: 15px;
         row-gap: 30px;
     }
@@ -141,11 +144,9 @@ body {
     .benefactorsTable {
         font-weight: 11px;
         font-size: 10px;
-        padding: 5px;
     }
 
     .benefactorsTable thead th {
-        padding: 5px;
         font-size: 11px;
     }
 
@@ -154,7 +155,6 @@ body {
     }
 
     .benefactorsTableRows td {
-        padding: 5px;
         font-size: 11px;
         text-align: left;
     }
@@ -166,10 +166,8 @@ body {
     .flex-wrapper {
         padding: 5px;
         flex-direction: column;
-        width: 300px;
-    }
-
-    .flex-wrapper div img {
-        width: 290px;
+        align-items: center;
+        height: 20em;
+        width: 25em;
     }
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Axios from "../../lib/client";
 import getTokenDetails from "../../lib/jwt";
+import images from "../../images/images";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -19,9 +20,10 @@ const Login = () => {
       })
       .catch((err) => {
         //This ERROR CHECK IS FAILING
-        if (err.response.data.hasOwnProperty("message")) {
+       /**  if (err.response.data.hasOwnProperty("message")) {
           setErrorMessage(err.response.data.message);
-        }
+        }*/
+        window.alert("Hoops!!!.. Some error occured please try again, make sure you're connected to internet" );
       });
   };
 
@@ -31,7 +33,7 @@ const Login = () => {
           <div className="LoginHero">
             <Link to="/">
               <img
-                src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+                src= {images.logo}
                 alt="Repify"
                 className="LoginLogo"
               />
@@ -143,7 +145,7 @@ const SignUp = () => {
         <div className="LoginHero">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/repify/image/upload/v1602121150/RepifyLogo.png"
+              src={images.logo}
               alt="Repify"
               className="LoginLogo"
             />

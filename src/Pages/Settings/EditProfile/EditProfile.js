@@ -1,6 +1,7 @@
 import React from "react";
-import profileImage from "./image.jpg";
+import profileImage from "../../../images/images";
 import "./EditProfile.css";
+import images from "../../../images/images";
 
 
 const EditProfile = () => {
@@ -19,7 +20,7 @@ const EditProfile = () => {
           </form>
         </div>
         <div className="img-container">
-          <img id="profileImg" src={profileImage} alt="profile"/>
+          <img id="profileImg" src={images.profile_picture_placeholder} alt="profile"/>
           <button id="saveChangeBtn">Save Changes</button>
         </div>
       </div>

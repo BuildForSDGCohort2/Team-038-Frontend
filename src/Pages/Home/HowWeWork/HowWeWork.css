@@ -61,7 +61,6 @@
 }
 
 .column .image {
-    background-image: url('./image.png');
     width: 148px;
     height: 103px;
     background-repeat: no-repeat;
@@ -93,7 +92,7 @@
     }
 
     .column .image {
-        background-image: none;
+        display: none;
     }
 
     .column .title {
